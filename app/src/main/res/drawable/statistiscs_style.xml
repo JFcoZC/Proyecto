@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Cuando el boton es presionado poner esta imagen-->
+    <item android:drawable="@drawable/statisticspress" android:state_pressed="true" />
+    <!--BAJO CONDICIONES NORMALES PONER ESTA FOTO -->
+    <item android:drawable="@drawable/statistics" />
+</selector>

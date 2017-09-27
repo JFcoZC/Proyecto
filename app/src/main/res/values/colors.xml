@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="duskYellow">#ffff00</color>
+    <color name="lightGrey">#999999</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#248ffc</color>
+    <color name="dark">#000000</color>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlActivated">@color/duskYellow</item>
+        <item name="colorControlNormal">@color/lightGrey</item>
+    </style>
+</resources>
+

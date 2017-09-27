@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Cuando el boton es presionado poner esta imagen-->
+    <item android:drawable="@drawable/exppresionado" android:state_pressed="true" />
+    <!-- Cuando el boton es enfocado poner esta imagen-->
+    <item android:drawable="@drawable/expfocused" android:state_focused="true" />
+    <!--BAJO CONDICIONES NORMALES PONER ESTA FOTO -->
+    <item android:drawable="@drawable/expnormal" />
+</selector>

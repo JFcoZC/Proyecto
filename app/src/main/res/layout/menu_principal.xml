@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+    <!--tools:taregetApi especifica el nievel de API que soporta este elemento -->
+    <ImageButton
+        android:id="@+id/statistics"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_gravity="end"
+        android:layout_weight="0.0200"
+        android:onClick="ClickStatistics"
+        android:src="@drawable/statistiscs_style" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.033"
+        tools:targetApi="ice_cream_sandwich" />
+
+    <Button
+        android:id="@+id/observador"
+        android:layout_width="@dimen/mainBottom_widht"
+        android:layout_height="@dimen/mainBottom_height"
+        android:layout_gravity="center"
+        android:layout_weight="0.233"
+        android:background="@drawable/obserbutt_style"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.060"
+        tools:targetApi="ice_cream_sandwich" />
+
+    <Button
+        android:id="@+id/explorador"
+        android:layout_width="@dimen/mainBottom_widht"
+        android:layout_height="@dimen/mainBottom_height"
+        android:layout_weight="0.233"
+        android:layout_gravity="center"
+        android:onClick="ClickExploradores"
+        android:background="@drawable/explorbutt_style" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.060"
+        tools:targetApi="ice_cream_sandwich" />
+
+    <Button
+        android:id="@+id/astronauta"
+        android:layout_width="@dimen/mainBottom_widht"
+        android:layout_height="@dimen/mainBottom_height"
+        android:layout_gravity="center"
+        android:layout_weight="0.233"
+        android:onClick="CrearUsuario"
+        android:text="ASTRONAUTA" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.233"
+        tools:targetApi="ice_cream_sandwich" />
+
+
+</LinearLayout>

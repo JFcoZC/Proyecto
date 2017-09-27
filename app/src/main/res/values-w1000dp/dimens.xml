@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Cuando la pantalla horizontal tenga de tamaño 64dp (tablets) o mas usar estas medidas-->
+    <dimen name ="activity_horizontal_margin">64dp</dimen>
+
+    <dimen name = "size_photos_width">666dp</dimen>
+    <dimen name = "size_photos_height">514dp</dimen>
+    <dimen name = "mainBottom_widht">410dp</dimen>
+    <dimen name = "mainBottom_height">70dp</dimen>
+
+</resources>

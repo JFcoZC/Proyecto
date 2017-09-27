@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!--- FILA 1: nombre usuario -->
+    <TableRow
+        android:layout_weight="0.03">
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Nombre Usuario: "
+            android:textSize="20dp"
+            android:textColor="@color/dark"/>
+
+    </TableRow>
+
+    <!--- FILA 2: Grafica de niveles -->
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_weight="0.4">
+
+        <!-- Agregar grafica de barras -->
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bargraph"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </com.github.mikephil.charting.charts.BarChart>
+    </TableRow>
+
+    <!--- FILA 3:  tiempo de uso-->
+    <TableRow
+        android:layout_weight="0.03">
+
+        <TextView
+            android:id="@+id/tiempo"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Tiempo de uso: "
+            android:textSize="20dp"
+            android:textColor="@color/dark"/>
+
+    </TableRow>
+
+    <!--- FILA 4: Score -->
+    <TableRow
+        android:layout_weight="0.03">
+
+        <TextView
+            android:id="@+id/maxscore"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Puntaje máximo: "
+            android:textSize="20dp"
+            android:textColor="@color/dark"/>
+
+    </TableRow>
+
+    <!--- FILA 5: label of skills -->
+    <TableRow
+        android:layout_weight="0.03">
+
+        <TextView
+            android:id="@+id/progreso"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Progreso de hábilidades lectoescritoras "
+            android:textAlignment="center"
+            android:textColor="@color/dark"
+            android:textSize="18dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_weight="0.3">
+    </TableRow>
+
+    <TableRow
+        android:layout_weight="0.1">
+
+        <TextView
+            android:id="@+id/porclvl2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/dark"
+            android:textSize="18dp"/>
+
+    </TableRow>
+
+</TableLayout>

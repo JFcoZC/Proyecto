@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="udlap.ingsoft.proyecto">
+
+    <!-- PERMISO DE PODER ESCRIBIR TXT/ ALMACENAMIENTO INTERNO -->
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+
+    <!-- INICIO DE LA APLICACION -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Alfa Niños"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--*********************INICIO DE LAS ACTIVIDADES ***************************-->
+        <!--Actividad Principal que solo pueda ser creada una sola vez -->
+        <activity android:name=".MenuPrincipal"
+                  android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--FIN ACTIVIDAD menu principal -->
+
+        <!-- Agregar actividad JUEGO-SILABICO que solo pueda ser creada una vez -->
+        <activity android:name=".MainActivity"
+                  android:launchMode="singleInstance">
+
+        </activity>
+        <!--FIN ACTIVIDAD JUEGO-SILABICO -->
+
+        <!-- Agregar actividad Menu Estadisticas que solo pueda ser creada una vez -->
+        <activity android:name=".MenuStatistics"
+                  android:launchMode="singleInstance">
+
+        </activity>
+        <!-- FIN MENU ESTADISTICAS -->
+
+        <!--*************** FIN DE LAS ACTIVIDADES******************************* -->
+
+    </application>
+
+</manifest>
