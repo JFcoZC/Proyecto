@@ -7,32 +7,56 @@ package udlap.ingsoft.proyecto;
  */
 
 //Librerias
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+import android.media.MediaPlayer;
+import android.util.Log;
+
 import java.util.Random;
 
-public class SilabicEx
+public class SilabicEx extends Activity
 {
     //Atributos
     //Por convencion [0] corresponde a la primera silaba correcta y [1] a la segunda correcta
     //silaba correcta
     String[] silabas = new String[4] ;
-    //VALORES EN ENTREROS DE RESOURCES (R)
-    int[] valores = new int [5];
+    //VALORES MediaPlayer DE RESOURCES (R) //SONIDOS silabas
+    MediaPlayer[] valores = new MediaPlayer[4];
     //Valor palabra corecta
-    int palabra, posicion;
+    MediaPlayer palabra;
+    int posicion;
     //Arreglo que representa si las silabas estan siendo marcadas por el checkbox
     int[] estado = {0,0,0,0};
 
     //----------------------------------------------------------------------------------------------
     //Constructor
-    public SilabicEx(String cone, String ctwo, String ctre, String cfou, int word, int[] resources, int id)
+    public SilabicEx(String cone, String ctwo, String ctre, String cfou, int word, int[] resources, int id, Context c)
     {
+        Log.d("fcoz","in");
+        if(c==null)
+        {
+            Log.d("fcoz","null");
+        }//Fin if 1
+        else
+        {
+            Log.d("fcoz","nonull");
+        }
+
        silabas[0] = cone;
        silabas[1] = ctwo;
        silabas[2] = ctre;
        silabas[3] = cfou;
-       palabra = word;
 
-       valores = resources;
+        Log.d("fcoz","");
+
+       palabra =  MediaPlayer.create(c,word);
+
+        Log.d("fcozz","");
+
+       valores = ToMediaPlayer(resources, c);
+
+        Log.d("fcozzz","");
        //Posicion en el arreglo de SilabicEx
        posicion = id;
 
@@ -40,10 +64,7 @@ public class SilabicEx
     //------------------------------------
     //Setters & Getters
     //Metodo que regresa el valor entero de un Resource asociado (usado para los audios)
-    int getResourceNum(int indx)
-    {
-        return valores[indx];
-    }//Fin metodo getResourceNum
+    MediaPlayer getResourceNum(int indx) { return valores[indx]; }//Fin metodo getResourceNum
 
     //Metodo que regresa la cadena de la silaba en la posicion especificada
     String getThisSilaba(int i)
@@ -70,7 +91,7 @@ public class SilabicEx
     int StateSecondWrong() { return estado[3]; }//Metodo que regresa estado segunda silaba incorrecta
 
     //Metodo que regresa el valor entero del Resource de toda la palabra(usado para el audio)
-    int getPalabraValue()
+    MediaPlayer getPalabraValue()
     {
         return palabra;
     }//Fin metodo getPalabraValue
@@ -146,5 +167,25 @@ public class SilabicEx
         estado[3] = 0;
 
     }//Fin metodo ResetEstados
+    //------------------------------------------------------------------------------------
+    //Metodo que conveirte el valor entero de la R de cada sonido a un MediaPLayer para
+    //que este sea pasado al MediaPlayer sin tener que andar creando un MediaPlayer
+    //cada vez que se quiera reproducir un sonido
+   MediaPlayer[] ToMediaPlayer(int[] sonidos, Context C)
+    {
+        //Crear un arreglo de asfd del mismo tamaño que el de sonidos(siempre son 5 sonidos)
+        //4 silabas y palabra
+        MediaPlayer[] posiciones = new MediaPlayer[sonidos.length];
+
+        for(int i = 0; i < posiciones.length; i++)
+        {
+
+            posiciones[i] = MediaPlayer.create(C, sonidos[i]);
+
+        }//Fin for 1
+
+        return posiciones;
+
+    }
     //------------------------------------------------------------------------------------
 }//Fin clase SilabicEx

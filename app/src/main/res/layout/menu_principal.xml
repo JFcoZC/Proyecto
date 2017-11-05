@@ -11,11 +11,11 @@
     <!--tools:taregetApi especifica el nievel de API que soporta este elemento -->
     <ImageButton
         android:id="@+id/statistics"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="end"
-        android:layout_weight="0.0200"
         android:onClick="ClickStatistics"
+        android:background="@color/transparent"
         android:src="@drawable/statistiscs_style" />
 
     <Space
@@ -30,6 +30,7 @@
         android:layout_height="@dimen/mainBottom_height"
         android:layout_gravity="center"
         android:layout_weight="0.233"
+        android:onClick="ClickObservadores"
         android:background="@drawable/obserbutt_style"/>
 
     <Space
@@ -59,7 +60,7 @@
         android:layout_height="@dimen/mainBottom_height"
         android:layout_gravity="center"
         android:layout_weight="0.233"
-        android:onClick="CrearUsuario"
+        android:onClick="ClickAstronautas"
         android:text="ASTRONAUTA" />
 
     <Space

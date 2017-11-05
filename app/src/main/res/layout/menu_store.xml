@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <!-- FILA BOTON HOME -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout>
+
+            <ImageButton
+                android:id="@+id/HomeButstore"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left"
+                android:clickable="true"
+                android:onClick="HomeClick"
+                android:padding="1dp"
+                android:src="@drawable/homebut_style" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="5"
+                android:textSize="38dp" />
+
+            <ImageView
+                android:id="@+id/starstore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="1dp"
+                android:src="@drawable/goldstart" />
+
+        </LinearLayout>
+
+
+    </TableRow>
+    <!-- FIN FILA BOTON HOME -->
+
+    <!-- FILA 1 -->
+    <TableRow>
+
+        <!-- INICIO COLUMNA 1 -->
+        <LinearLayout
+            android:layout_weight="0.01">
+
+            <ImageView
+                android:id="@+id/img1store"
+                android:layout_weight="0.1"
+                android:layout_height="100dp"
+                android:layout_width="100dp"
+                app:srcCompat="@drawable/ch2"/>
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA 2 -->
+        <LinearLayout
+            android:layout_weight="0.01">
+
+            <ImageView
+                android:id="@+id/img2store"
+                android:layout_weight="0.1"
+                android:layout_height="100dp"
+                android:layout_width="100dp"
+                app:srcCompat="@drawable/ch3"/>
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA 3 -->
+        <LinearLayout
+            android:layout_weight="0.01">
+
+            <ImageView
+                android:id="@+id/img3store"
+                android:layout_weight="0.1"
+                android:layout_height="100dp"
+                android:layout_width="100dp"
+                app:srcCompat="@drawable/ch4"/>
+
+        </LinearLayout>
+
+        <!-- ESPACIO MARGEN DERECHO -->
+    </TableRow>
+    <!-- Fin Fla1-->
+
+    <!-- INICIO FILA 2  BOTON FILA 1-->
+    <TableRow>
+
+        <!-- INICIO COLUMNA 1 -->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.01">
+
+            <Button
+                android:id="@+id/B1store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="SelectSilabicEx"
+                android:background="@color/greenwhats"
+                android:text="3" />
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA 2 -->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.01">
+
+            <Button
+                android:id="@+id/B2store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="SelectSilabicEx"
+                android:background="@color/greenwhats"
+                android:text="5" />
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA 3 -->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.01">
+
+            <Button
+                android:id="@+id/B3store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="SelectSilabicEx"
+                android:text="3" />
+
+        </LinearLayout>
+
+    </TableRow>
+    <!-- Fin fila 2-->
+    <!--****************************************************-->
+    <!-- FILA 3 -->
+    <TableRow>
+
+        <!-- ESPACIO MARGEN IZQUIERDO -->
+
+
+        <!-- INICIO COLUMNA 1 -->
+        <LinearLayout
+            android:layout_weight="0.01">
+
+            <ImageView
+                android:id="@+id/img4store"
+                android:layout_weight="0.1"
+                android:layout_height="100dp"
+                android:layout_width="100dp"
+                app:srcCompat="@drawable/ch5"/>
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA 2 -->
+        <LinearLayout
+            android:layout_weight="0.01">
+
+            <ImageView
+                android:id="@+id/img5store"
+                android:layout_weight="0.1"
+                android:layout_height="100dp"
+                android:layout_width="100dp"
+                app:srcCompat="@drawable/ch7"/>
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA 3 -->
+        <LinearLayout
+            android:layout_weight="0.01">
+
+            <ImageView
+                android:id="@+id/img6store"
+                android:layout_weight="0.1"
+                android:layout_height="100dp"
+                android:layout_width="100dp"
+                app:srcCompat="@drawable/ch6"/>
+
+        </LinearLayout>
+
+        <!-- ESPACIO MARGEN DERECHO -->
+    </TableRow>
+    <!-- Fin Fla 3-->
+
+    <!-- INICIO FILA 4  BOTON FILA 2-->
+    <TableRow>
+
+        <!-- INICIO COLUMNA 1 -->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.01">
+
+            <Button
+                android:id="@+id/B4store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="SelectSilabicEx"
+                android:text="10" />
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA 2 -->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.01">
+
+            <Button
+                android:id="@+id/B5store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="SelectSilabicEx"
+                android:text="19" />
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA 3 -->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.01">
+
+            <Button
+                android:id="@+id/B6tore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="SelectSilabicEx"
+                android:text="30" />
+
+        </LinearLayout>
+
+    </TableRow>
+    <!-- Fin fila 4-->
+
+
+</TableLayout>

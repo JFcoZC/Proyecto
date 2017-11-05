@@ -3,12 +3,15 @@ package udlap.ingsoft.proyecto;
 //Librerias
 
 import android.app.Activity;
-import android.graphics.Color;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.content.Intent;
-import android.widget.Button;
+
+import java.util.concurrent.ExecutionException;
 
 
 /**
@@ -17,26 +20,78 @@ import android.widget.Button;
  */
 
 //INICIO CLASE MENUPRINCIPAL
-public class MenuPrincipal extends Activity
+public class MenuPrincipal extends AppCompatActivity
 {
     //VARIABLES GLOBALES
+    AlertDialog alert;
+    int idusuario = -1;
 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_principal);
 
+        //Iniciar una ventana de alerta en la activity correspondiente al context de ctxt
+        alert = new AlertDialog.Builder(this).create();
+        alert.setTitle("Estado de Acceso");
+
+        //Crear boton de cancel/dimiss en el alertdialog
+        alert.setButton("OK", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                dialog.dismiss();
+            }//Fin metodo onCLick
+        }); //Fin metodo setButton
+
+        //Solo mostrar la ventana de alerta solo la primera vez que se accede, cuando el usaurio
+        //se acaba de registrar
+        //RECIBIR LA INFO MANDADA YA SEA QUE VENGA DE ACTIVIDAD LOGIN O REGISTRO (ambas mandan las dos variables)
+        Intent inten = getIntent();
+        //El 0 es el valor de default que va a recibir la variable si no hay nada en el intent
+        int firsttime = inten.getIntExtra("primeraVez", 0);
+        idusuario = inten.getIntExtra("ID Usuario", 0);
+
+        //Ver si es la priera vez que accede el usuario
+        if(firsttime == 1)
+        {
+            //Si ES LA PRIMERA VEZ, mostrar cual es su id en ventana de alerta
+            alert.setMessage("Registro exitoso! ID asignado: "+idusuario);
+            alert.show();
+
+        }//Fin if 1
+
+        //++++++++++ INICIO DE CREAR USUARIO CON INFOR RECUPERADA DESDE LA BDs++++++++++++++++++++++
+        //Crear un objeto de la clase Usuario a partir del id y contexto que le es pasado; el usuario
+        //es automaticamnete generado con la info correspondiente al id que es recuperada desde la
+        //base de datos
+        Usuario currentuser = new Usuario(idusuario,this);
+        //++++++++++ FIN DE INICIALIZACION DE USUARIO+++++++++++++++++++++++++++++++++++++++++++++++
+
         //**Fin de la actividad
-        Log.d("Fin Act:MenuPrincipal", "v1");
+        Log.d("Fin Act:MenuPrincipal", "v2");
 
     }//Fin metodo que llama archivo xml .menu_principal
+    //----------------------------------------------------------------------------------------------
+    //Metodo que inicia actividades correspondientes al nivel observadores
+    public void ClickObservadores(View v)
+    {
+        Intent in = new Intent(this, MenuObservadores.class);
+        //Mandar id de usuario actual a actividad del MenuObservadores
+        in.putExtra("IDUSER",idusuario);
+        startActivity(in);
+
+    }//Fin metodo ClickObservadores
     //----------------------------------------------------------------------------------------------
     //Metodo que inicia actividades correspondientes al nivel exploradores
     public void ClickExploradores(View v)
     {
         //Un intent es un objeto que permite un enlace en tiempo de ejecución entre 2 actividades
         //son generalemnte utilziadas para realizar varias tareas al mismo tiempo
-        Intent in = new Intent(this, MainActivity.class);
+        Intent in = new Intent(this, MenuExploradores.class);
+        //Mandar id de usuario actual a actividad del MenuExploradores
+        in.putExtra("IDUSER",idusuario);
         startActivity(in);
 
     }//Fin metodo ClickExplroadores
@@ -45,17 +100,19 @@ public class MenuPrincipal extends Activity
     public void ClickStatistics(View vi)
     {
         Intent inte = new Intent(this, MenuStatistics.class);
+        //Mandar id de usuario actual a actividad del MenuStatistics
+        inte.putExtra("IDUSR",idusuario);
         startActivity(inte);
     }//Fin metodo ClickSatistics
     //----------------------------------------------------------------------------------------------
-    //Metodo de prueba que crea un Usuario
-    public void CrearUsuario(View v)
+    //Metodo que inicia actividades correspondientes a nivel astronautas
+    public void ClickAstronautas(View vi)
     {
-        Datos datos = new Datos(this);
+        //Inciiar actividad
+        Intent inte = new Intent(this, MenuAstronautas.class);
+        //Mandar id de usuario actual a actividad del MenuAstronautas
+        inte.putExtra("IDUSER",idusuario);
+        startActivity(inte);
 
-        datos.Alta(1,"Paco");
-        datos.Alta(2,"Pedro");
-
-    }//Fin metodo CrearUsuario
-    //----------------------------------------------------------------------------------------------
+    }//Fin metodo ClickAstronautas
 }//Fin clase MenuPrincipal

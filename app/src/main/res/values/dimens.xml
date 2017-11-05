@@ -7,4 +7,9 @@
     <dimen name = "size_photos_height">257dp</dimen>
     <dimen name = "mainBottom_widht">310dp</dimen>
     <dimen name = "mainBottom_height">50dp</dimen>
+
+    <!-- MEDIDAS PARA BOTONES DE EJERCICIOS DE CADA NIVEL -->
+    <dimen name = "menu_niveles_width">310dp</dimen>
+    <dimen name = "menu_niveles_height">70dp</dimen>
+
 </resources>

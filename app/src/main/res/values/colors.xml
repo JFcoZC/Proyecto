@@ -7,11 +7,10 @@
     <color name="lightGrey">#999999</color>
     <color name="white">#ffffff</color>
     <color name="blue">#248ffc</color>
+    <color name="greenwhats">#00A300</color>
     <color name="dark">#000000</color>
+    <color name="bggray">#E8E7E6</color>
+    <color name="transparent">#00000000</color>
 
-    <style name="RatingBar" parent="Theme.AppCompat">
-        <item name="colorControlActivated">@color/duskYellow</item>
-        <item name="colorControlNormal">@color/lightGrey</item>
-    </style>
 </resources>
 
