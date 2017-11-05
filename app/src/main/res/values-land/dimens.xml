@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Cuando la pantalla pequeña este de forma de landscape-->
+    <dimen name ="activity_horizontal_margin_lscape">16dp</dimen>
+
+    <dimen name = "size_photos_width">273dp</dimen>
+    <dimen name = "size_photos_height">197dp</dimen>
+    <dimen name = "mainBottom_widht">410dp</dimen>
+    <dimen name = "mainBottom_height">70dp</dimen>
+
+</resources>

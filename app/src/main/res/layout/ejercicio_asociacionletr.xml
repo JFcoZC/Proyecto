@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="visible"
+    android:background="@color/duskYellow"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+
+    <TableRow
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <ImageView
+
+            android:id="@+id/imageView"
+            android:layout_width="228dp"
+            android:layout_height="350dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            app:srcCompat="@drawable/burro"
+            tools:layout_editor_absoluteX="78dp"
+            tools:layout_editor_absoluteY="16dp" />
+    </TableRow>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="122dp"
+        android:layout_height="70dp"
+        android:text="B b"
+        android:textAlignment="center"
+        android:textColor="@color/greenwhats"
+        android:textSize="60sp"
+        tools:fontFamily="sans-serif-condensed"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="287dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="142dp"
+        android:layout_height="53dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:onClick="OnClick2"
+        app:srcCompat="@drawable/bocina"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="383dp" />
+
+
+
+</TableLayout>

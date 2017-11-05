@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+    <ImageButton
+        android:id="@+id/HomeButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="left"
+        android:layout_weight="0"
+        android:clickable="true"
+        android:onClick="HomeClick"
+        android:background="@color/transparent"
+        android:src="@drawable/homebut_style" />
+
+    <Button
+        android:id="@+id/silabas"
+        android:layout_width="@dimen/menu_niveles_width"
+        android:layout_height="@dimen/menu_niveles_height"
+        android:layout_gravity="center"
+        android:text="Lectura animada"
+        android:layout_weight="0" />
+
+    <Button
+        android:id="@+id/sopaletras"
+        android:layout_width="@dimen/menu_niveles_width"
+        android:layout_height="@dimen/menu_niveles_height"
+        android:layout_gravity="center"
+        android:onClick="OrtografiaClick"
+        android:text="Juego ortografía"
+        android:layout_weight="0" />
+
+    <!--RELATIVE LAYOUT PARA PODER UNA IMAGENN ENCIMA DE OTRA -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/astroima"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ch3bk"/>
+
+        <!--Imagen que se quiere encima de la anterior -->
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

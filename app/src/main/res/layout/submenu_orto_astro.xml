@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- INICIO FILA BOTON DE HOME -->
+    <TableRow
+        android:layout_weight="0">
+
+        <ImageButton
+            android:id="@+id/HomeButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="0"
+            android:layout_gravity="left"
+            android:clickable="true"
+            android:onClick="HomeClick"
+            android:background="@color/transparent"
+            android:src="@drawable/homebut_style" />
+
+    </TableRow>
+
+    <!--INICIO FILA 0 -->
+    <TableRow
+        android:layout_weight="0.05">
+
+    </TableRow>
+
+    <!--**************** INICIO FILA 1 INCLUYENDO ESTRELLAS *******************-->
+    <!-- INICIO FILA 1 -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0">
+
+        <!-- INICIO COLUMNA MARGEN IZQUIERDO -->
+
+        <!--INICIO Columna 1 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B1astro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectOrtografiaEx"
+                android:text="1" />
+
+        </LinearLayout>
+
+        <!--INICIO Columna 2 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B2astro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectOrtografiaEx"
+                android:text="2" />
+
+        </LinearLayout>
+
+        <!--INICIO Columna 3 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B3astro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectOrtografiaEx"
+                android:text="3" />
+
+        </LinearLayout>
+
+        <!--INICIO Columna 4 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B4astro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectOrtografiaEx"
+                android:text="4" />
+
+        </LinearLayout>
+    </TableRow>
+
+    <!-- INICIO FILA 1 ESTRELLAS -->
+    <TableRow
+        android:layout_weight="0">
+
+        <!-- INICIO COLUMNA/RATINGBAR1 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb1astro1"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"/>
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA/RATINGBAR2 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb2astro1"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA/RATINGBAR3 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb3astro1"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb4astro1"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </TableRow>
+    <!--**************** FIN FILA 1 INCLUYENDO ESTRELLAS *******************-->
+
+    <!-- INICIO FILA 2-->
+    <TableRow
+        android:layout_weight="0.0">
+
+        <!--INICIO Columna 1 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B5astro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
+                android:text="5" />
+
+        </LinearLayout>
+
+        <!--INICIO Columna 2 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B6astro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectOrtografiaEx"
+                android:text="6" />
+
+        </LinearLayout>
+
+        <!--INICIO Columna 3 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B7astro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:text="7" />
+
+        </LinearLayout>
+
+        <!--INICIO Columna 4 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B8astro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:text="8" />
+
+        </LinearLayout>
+    </TableRow>
+
+    <!-- INICIO FILA 1 ESTRELLAS -->
+    <TableRow
+        android:layout_weight="0">
+
+        <!-- INICIO COLUMNA/RATINGBAR1 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb5astro1"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"/>
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA/RATINGBAR2 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb6astro1"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA/RATINGBAR3 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb7astro1"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb8astro1"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </TableRow>
+
+    <!-- INICIO FILA 3 -->
+    <TableRow
+        android:layout_weight="0.3">
+
+    </TableRow>
+
+    <!--INICIO FILA 4 -->
+    <TableRow
+        android:layout_weight="0.3">
+
+    </TableRow>
+
+    <!--INICIO FILA LAST -->
+    <TableRow
+        android:layout_weight="0.1">
+
+    </TableRow>
+
+</TableLayout>
