@@ -23,6 +23,7 @@
         android:layout_height="@dimen/menu_niveles_height"
         android:layout_gravity="center"
         android:text="Lectura animada"
+        android:onClick="LecturasClick"
         android:layout_weight="0" />
 
     <Button

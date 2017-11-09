@@ -29,7 +29,7 @@ public class Usuario
     int NUMEXLTWO = 0;
     int NUMEXLTREE = 6;
     int NUMEXLFOUR = 0;
-    int NUMEXLFIVE = 0;
+    int NUMEXLFIVE = 3;
     int NUMEXLSIX = 3;
 
     //Atributos
@@ -99,7 +99,19 @@ public class Usuario
     public float getProgresslvltree() {return levelsProgress[2]; }
 
     //--
-    //Regresar la puntuacion actual de cada ejercicio del nivel
+    public float[] getScoreslvltwo()
+    {
+        float[] scoresEx = new float[NUMEXLTWO];
+
+        for(int i = 0; i < NUMEXLTWO; i++)
+        {
+            scoresEx[i] = exercisesprogress[1][i];
+        }//Fin for 1
+
+        return scoresEx;
+    }//Fin getScoreslvltwo
+    //--
+    //Regresar la puntuacion actual de cada ejercicio del nivel (ASOCIACION SILABICA)
     public float[] getScoreslvltree()
     {
         float[] scoresEejrcicios = new float[NUMEXLTREE];
@@ -110,7 +122,21 @@ public class Usuario
         }//Fin for 1
 
         return scoresEejrcicios;
-    }//Fin getScoreslvltwo
+    }//Fin getScoreslvltree
+    //--
+    //Regresar la puntuacion actual de cada ejercicio del nivel CINCO(LECTURAS)
+    public float[] getScoreslvlfive()
+    {
+        float[] scoresex = new float[NUMEXLFIVE];
+
+        for(int i = 0; i < NUMEXLFIVE; i++)
+        {
+            scoresex[i] = exercisesprogress[4][i];
+        }//Fin for 1
+
+        return scoresex;
+
+    }//Fin metodo getScoreslvlFive
     //--
     //Regresar la puntuacion actual de cada ejercicio del nivel SEIS (ORTOGRAFIA)
     public float[] getScoreslvlsix()

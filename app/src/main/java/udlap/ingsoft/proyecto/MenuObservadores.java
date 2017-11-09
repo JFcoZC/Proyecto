@@ -18,6 +18,9 @@ public class MenuObservadores extends AppCompatActivity
     //Declaracion de elementos interfaz
     ImageButton bhome;
 
+    //DECLARAR VARIABLE GLOBAL DEL ID DEL USUARIO ACTUAL
+    int IDCURRENTUSER = -1;
+
     //METODOS
     //Llamar a XML para mostrar la pantalla del Menu
     protected void onCreate(Bundle savedInstanceState)
@@ -26,6 +29,12 @@ public class MenuObservadores extends AppCompatActivity
         setContentView(R.layout.menu_observadores);
 
         bhome = (ImageButton) findViewById(R.id.HomeButton);
+
+        //Recibir el Id del usuario actual
+        Intent in = getIntent();
+        //El 0 es un valor que se asignara en caso de que no se encuentre ningun valor que halla
+        //sido pasado a esta activity
+        IDCURRENTUSER = in.getIntExtra("IDUSER",0);
 
     }//Fin metodo onCreate
     //----------------------------------------------------------------------------------------------
@@ -63,6 +72,12 @@ public class MenuObservadores extends AppCompatActivity
     //Metodo que llama a submenu de ejercicio de asociacion de letras
     public void ClickAsociaLetras(View v)
     {
+
+        Intent in = new Intent(this,SubmenuAsocialObser.class);
+        //Mandar ID del usuario actual a siguiente pantalla de submenu de ejercicio Asocialetras
+        in.putExtra("IDUSER",IDCURRENTUSER);
+        //Iniciar actividad submenu ascoiar letras
+        startActivity(in);
 
     }//Fin metodo AsociarLetras
     //----------------------------------------------------------------------------------------------

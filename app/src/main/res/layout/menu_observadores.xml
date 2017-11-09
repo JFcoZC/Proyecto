@@ -31,6 +31,7 @@
         android:layout_height="@dimen/menu_niveles_height"
         android:layout_gravity="center"
         android:text="Diferenciación de letras"
+        android:onClick="ClickAsociaLetras"
         android:layout_weight="0" />
 
     <!--RELATIVE LAYOUT PARA PODER UNA IMAGENN ENCIMA DE OTRA -->

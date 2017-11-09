@@ -63,7 +63,7 @@ public class SubmenuOrtoAstro extends AppCompatActivity
 
 
     }//Fin metodo onCreate
-
+    //----------------------------------------------------------------------------------------------
     //Cada que el usurio deja de ocupar esta activity y depues vuelve a ella en el momento en que
     //vuelve a la activity se ejecuta este metodo
     @Override

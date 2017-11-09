@@ -70,6 +70,13 @@
         </activity>
         <!-- Fin ACTIVIDAD EJERCICIO ABECEDARIO -->
 
+        <!-- AGREGAR SUBMENU DE EHERCICIOS ASOCIACION DE LETRAS QUE SOLO SE CREE 1 VEZ -->
+        <activity android:name=".SubmenuAsocialObser"
+            android:launchMode="singleInstance">
+
+        </activity>
+        <!-- Fin submmenu de ejercicios ASOCIACION DE LETRAS -->
+
         <!-- Agregar ACTIVIDAD EJERCICIO ASOCIACION LETRAS -->
         <activity android:name=".EjercicioAsociacionletr"
             android:launchMode="singleInstance">
@@ -108,6 +115,20 @@
                   android:screenOrientation="portrait">
         </activity>
         <!--FIN ACTIVIDAD MENU ASTRONAUTAS -->
+
+        <!-- Agregar submenu de LECTURAS ANIMADAS QUE SOLO PUEDA SER CREADO 1 VEZ -->
+        <activity android:name=".SubmenuLecturaAstro"
+                  android:launchMode="singleInstance">
+
+        </activity>
+        <!-- FIN SUBMENU DE LECTURAS ANIMADAS -->
+
+        <!-- Agregar EJERCICIOS de Lectuas Animadas que solo se cree una sola vez -->
+        <activity android:name=".EjercicioLectura"
+                  android:launchMode="singleInstance">
+
+        </activity>
+        <!-- FIN ACTIVIDAD LECTURA ANIMADA -->
 
         <!-- Agregar submenu de juegos ortografia que solo pueda ser creada una vez-->
         <activity android:name=".SubmenuOrtoAstro"

@@ -68,5 +68,16 @@ public class MenuAstronautas extends AppCompatActivity
         startActivity(in);
 
     }//Fin metodo OrtografiaClick
+    //----------------------------------------------------------------------------------------------
+    //Metodo que inicia actividad de Submenu lecturas animadas
+    public void LecturasClick(View v)
+    {
+        Intent in = new Intent(this, SubmenuLecturaAstro.class);
+        //Mandar ID usuario actual a siguiente pantalla de submenu de lecturas animadas
+        in.putExtra("IDUSER",IDCURRENTUSER);
+        //Iniciar nueva actividad
+        startActivity(in);
+
+    }//Fin metodo LecturasClick
 
 }//Fin clase MenuAstronautas
