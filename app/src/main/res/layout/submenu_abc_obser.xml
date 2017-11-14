@@ -47,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="A" />
+                android:text="A"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -60,7 +61,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="B" />
+                android:text="B"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -73,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="C" />
+                android:text="C"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -86,7 +89,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="D" />
+                android:text="D"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
     </TableRow>
@@ -112,7 +116,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="E" />
+                android:text="E"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -125,7 +130,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="F" />
+                android:text="F"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -138,7 +144,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="G" />
+                android:text="G"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -151,7 +158,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="H" />
+                android:text="H"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
     </TableRow>
@@ -175,7 +183,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="I" />
+                android:text="I"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -188,7 +197,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="J" />
+                android:text="J"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -201,7 +211,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="K" />
+                android:text="K"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -214,7 +225,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="L" />
+                android:text="L"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -239,7 +251,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="M" />
+                android:text="M"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -252,7 +265,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="N" />
+                android:text="N"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -265,7 +279,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="Ñ" />
+                android:text="Ñ"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -278,7 +293,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="O" />
+                android:text="O"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -303,7 +319,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="P" />
+                android:text="P"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -316,7 +333,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="Q" />
+                android:text="Q"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -329,7 +347,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="R" />
+                android:text="R"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -342,7 +361,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="S" />
+                android:text="S"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -367,7 +387,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="T" />
+                android:text="T"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -380,7 +401,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="U" />
+                android:text="U"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -393,7 +415,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="V" />
+                android:text="V"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -406,7 +429,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="W" />
+                android:text="W"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -431,7 +455,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="X" />
+                android:text="X"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -444,7 +469,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="Y" />
+                android:text="Y"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -457,7 +483,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectLetra"
-                android:text="Z" />
+                android:text="Z"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 

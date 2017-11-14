@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/blue">
 
     <!-- INICIO FILA BOTON DE HOME -->
     <TableRow
@@ -46,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectSilabicEx"
-                android:text="1" />
+                android:text="1"
+                android:theme="@style/AppTheme.BotonExp"/>
 
         </LinearLayout>
 
@@ -59,7 +61,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectSilabicEx"
-                android:text="2" />
+                android:text="2"
+                android:theme="@style/AppTheme.BotonExp"/>
 
         </LinearLayout>
 
@@ -72,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectSilabicEx"
-                android:text="3" />
+                android:text="3"
+                android:theme="@style/AppTheme.BotonExp"/>
 
         </LinearLayout>
 
@@ -85,7 +89,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectSilabicEx"
-                android:text="4" />
+                android:text="4"
+                android:theme="@style/AppTheme.BotonExp"/>
 
         </LinearLayout>
     </TableRow>
@@ -173,7 +178,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectSilabicEx"
-                android:text="5" />
+                android:text="5"
+                android:theme="@style/AppTheme.BotonExp"/>
 
         </LinearLayout>
 
@@ -186,7 +192,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectSilabicEx"
-                android:text="6" />
+                android:text="6"
+                android:theme="@style/AppTheme.BotonExp"/>
 
         </LinearLayout>
 
@@ -198,7 +205,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:text="7" />
+                android:text="7"
+                android:theme="@style/AppTheme.BotonExp"/>
 
         </LinearLayout>
 
@@ -210,7 +218,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:text="8" />
+                android:text="8"
+                android:theme="@style/AppTheme.BotonExp"/>
 
         </LinearLayout>
     </TableRow>

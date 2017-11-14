@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -22,8 +23,11 @@ public class SubmSilabicExp extends AppCompatActivity
     //DECLARACION VARIABLE GLOBAL DEL USUARIO
     Usuario CURRENTUSER;
 
+    //Variable de posicion de ejercicio al que se desea entrar
+    int NUMEX = 0;
+
     //ATRIBUTOS
-    //----- Atributos de jeugo silabico ----------------------
+    //----- Atributos de juego silabico ----------------------
     int NUMSILABICGAMES = 6;
     float[] scoreslvltrh;
     //Arreglo con id de ratingbars
@@ -96,9 +100,47 @@ public class SubmSilabicExp extends AppCompatActivity
     //que ejercicio debe ser abierto al iniciar la siguiente pantalla
     public void SelectSilabicEx(View v)
     {
+        //Determinar que boton se ha oprimido
+        switch(v.getId())
+        {
+            case R.id.B1exp1:
+                NUMEX = 0;
+                break;
+
+            case R.id.B2exp1:
+                NUMEX = 1;
+                break;
+
+            case R.id.B3exp1:
+                NUMEX = 2;
+                break;
+
+            case R.id.B4exp1:
+                NUMEX = 3;
+                break;
+
+            case R.id.B5exp1:
+                NUMEX = 4;
+                break;
+
+            case R.id.B6exp1:
+                NUMEX = 5;
+                break;
+
+            default:
+                break;
+
+        }//Fin estrucutra swutch
+
+        //--------------------------------------------------------
+        //Log.d("eeeinx","Num ejer mandado desde submenu:"+NUMEX);
+        //--------------------------------------------------------
+
         //Un intent es un objeto que permite un enlace en tiempo de ejecución entre 2 actividades
         //son generalemnte utilziadas para realizar varias tareas al mismo tiempo
         Intent in = new Intent(this, EjercicioSilabico.class);
+        //MANDAR POSICION DE EJERCICIO SILABICO EN EL QUE SE DEBE ABRIR LA SIGUIENTE PANTALLA
+        in.putExtra("INDXEX", NUMEX);
         //MANDAR ID DE USUARIO ACTUAL A ACTIVITY EjercicioSilabico
         in.putExtra("IDUSER", IDCURRENTUSER);
 

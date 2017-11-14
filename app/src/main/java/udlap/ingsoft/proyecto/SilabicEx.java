@@ -171,7 +171,7 @@ public class SilabicEx extends Activity
     //Metodo que conveirte el valor entero de la R de cada sonido a un MediaPLayer para
     //que este sea pasado al MediaPlayer sin tener que andar creando un MediaPlayer
     //cada vez que se quiera reproducir un sonido
-   MediaPlayer[] ToMediaPlayer(int[] sonidos, Context C)
+    MediaPlayer[] ToMediaPlayer(int[] sonidos, Context C)
     {
         //Crear un arreglo de asfd del mismo tamaño que el de sonidos(siempre son 5 sonidos)
         //4 silabas y palabra

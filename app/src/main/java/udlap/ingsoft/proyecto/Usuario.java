@@ -10,6 +10,8 @@ import java.util.concurrent.ExecutionException;
 /**
  * Clase que contiene los atributos que conforman a un Usuario; contiene la información
  * que se mostrara en el menu de estadisticas para mostrar su progreso
+ *
+ * NOTA: EN ESTA CLASE ESTAN los prints para el debug de lo que se recupera con cada lectura
  * José Francisco Zerón Cabrera
  */
 
@@ -377,6 +379,7 @@ public class Usuario
 
 
             //----------------------------------------------------
+            //PRINT PARA DEBUG DE LOS DATOS QUE SE ESTAN LEYENDO DE LA BDS
             Log.d("eee:","-------");
             Log.d("eee","posicion de "+csepar+":"+ipos);
             Log.d("eee:","length cadena:"+cadena.length());

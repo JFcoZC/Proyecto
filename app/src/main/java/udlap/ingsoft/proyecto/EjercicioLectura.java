@@ -37,6 +37,9 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
     long FINTIME = 0;
     long FULLTIME;
 
+    //DECLAR CARIABLE GLOBAL DE INTENT para obtener datos provenientes de actividad anterior
+    Intent inten;
+
     //-------------------Inicio variables actualziar rating bars---------------------
     //DECLARAR VARIABLE GLOBAL DE ID USAURIO ACTUAL
     int IDCURRENTUSER = -1;
@@ -95,7 +98,19 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
         //IMPORTANTE!! para que al girar el dispositivo no ocurra nada
         this.setRequestedOrientation(
                 ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+
+        //-------- INICIAR PANTALLA CON VIDEO Y DATOS CORRESPONDIENTES AL BOTON SEÑALADO------------
+        inten = getIntent();
+        //El 0 es un valor de dfault por si no se encuentra el valor que se buscaba, se asigna 0 por
+        //default
+        numlectura = inten.getIntExtra("INDXEX",0);
+        //preparamos el nuevo video .
         setUpVideoView();
+        //cambiamos los checkboxes
+        posactualex = cambiaRespuesta(ejercicios[numlectura]);
+        //volvemos a resetear los estados de las cajas (por si acaso)
+        Reset(ejercicios[numlectura]);
+        //------------------------ FIN MOSTRAR LA LECTURA CORRESPONDIENTE --------------------------
 
         //Tomar tiempo de que se inicia el ejercicio
         INICIOTIME = System.currentTimeMillis();
@@ -145,14 +160,38 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
         }//Fin if 1
     }//Fin metodo HomeClick
     //----------------------------------------------------------------------------------------------
+    //--------Metodo que se llama cada vez que la Actividad recibe una nueva actividad--------------
+    //SI ESTE METODO NO ESTA DECLARADO, EL EJERCICIO CUANDO ES SELECCIONADO EN EL SUBMENU SOLO ES
+    //CAMBIADO LA PRIMERA VEZ, PERO DESPUES YA NO PORQUE EL INTENT Y SUS DATOS NO SE ACTUALIZAN
+    public void onNewIntent(Intent in)
+    {
+        //Actualizar los datos deL intent de la actividad anterior, por dados del neuvo intent
+        super.onNewIntent(in);
+        this.setIntent(in);
+    }//Fin metodo onNewIntent
+    //----------------------------------------------------------------------------------------------
     //Metodo que ejecuta las acciones cuando una vez que el usuario a dejado de usar una activity
     //pero la vuelve a abrir, entonces entra en ejecucion este metodo
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void onResume()
     {
         super.onResume();
 
         //Incializar tiempo de uso de la aplicación
         INICIOTIME = System.currentTimeMillis();
+
+        //-------- INICIAR PANTALLA CON VIDEO Y DATOS CORRESPONDIENTES AL BOTON SEÑALADO------------
+        inten = getIntent();
+        //El 0 es un valor de dfault por si no se encuentra el valor que se buscaba, se asigna 0 por
+        //default
+        numlectura = inten.getIntExtra("INDXEX",0);
+        //preparamos el nuevo video que tambien usa valor de variable 'numlectura' .
+        setUpVideoView();
+        //cambiamos los checkboxes
+        posactualex = cambiaRespuesta(ejercicios[numlectura]);
+        //volvemos a resetear los estados de las cajas (por si acaso)
+        Reset(ejercicios[numlectura]);
+        //------------------------ FIN MOSTRAR LA LECTURA CORRESPONDIENTE --------------------------
 
     }//Fin metodo onResume
     //----------------------------------------------------------------------------------------------

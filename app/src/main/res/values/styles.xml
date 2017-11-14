@@ -7,10 +7,29 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <!-- ESTILO RATING BAR -->
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="colorControlActivated">@color/duskYellow</item>
         <item name="colorControlNormal">@color/lightGrey</item>
+    </style>
+
+    <!--https://stackoverflow.com/questions/38587950/change-color-of-button-with-theme -->
+    <!-- ESTILO BOTON EXPLORADORES -->
+    <style name="AppTheme.BotonExp" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/orange</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+
+    <!-- ESTILO BOTON OBSERVADORES -->
+    <style name="BotonObser" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/purple</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- ESTILO BOTON ASTRONAUTAS -->
+    <style name="BotonAstro" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/reedapple</item>
+        <item name="android:textColor">@color/greenwhats</item>
     </style>
 
 </resources>

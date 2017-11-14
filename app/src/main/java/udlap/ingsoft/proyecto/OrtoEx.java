@@ -1,5 +1,9 @@
 package udlap.ingsoft.proyecto;
 
+import android.app.Activity;
+import android.content.Context;
+import android.media.MediaPlayer;
+
 import java.util.Random;
 
 /**
@@ -12,23 +16,26 @@ public class OrtoEx
     //Por convencion [0] corresponde a la primera silaba correcta y [1] a la segunda correcta
     //silaba correcta
     String[] opciones = new String[2] ;
-    //VALORES EN ENTREROS DE RESOURCES (R)
-    int[] valores = new int [1];
+    //VALORES  MediaPlayer DE RESOURCES (R) /Sonidos bueno/malo
+    MediaPlayer[] valores = new MediaPlayer[2];
     //Valor palabra corecta
-    int palabra, posicion;
+    MediaPlayer palabra;
+    int posicion;
     //Arreglo que representa si las silabas estan siendo marcadas por el checkbox
     int[] estado = {0,0};
 
     //----------------------------------------------------------------------------------------------
     //Constructor
-    public OrtoEx(String op1, String op2, int word, int[] resources, int id)
+    public OrtoEx(String op1, String op2, int word, int[] resources, int id, Context c)
     {
         opciones[0] = op1;
         opciones[1] = op2;
 
-        palabra = word;
+        //SI DA ERROR AQUI POR "UNABLE TO INITIATE ACTIVITY" LA SOLUCION ES INICIALIZAR EL ARREGLO
+        //DE EJERCICIOS EN ONCREATE PORQUE SE LE ESTA PASANDO EL CONTEXT
+        palabra = MediaPlayer.create(c,word);
 
-        valores = resources;
+        valores = ToMediaPlayer(resources,c);
         //Posicion en el arreglo de SilabicEx
         posicion = id;
 
@@ -36,7 +43,7 @@ public class OrtoEx
     //------------------------------------
     //Setters & Getters
     //Metodo que regresa el valor entero de un Resource asociado (usado para los audios)
-    int getResourceNum(int indx)
+    MediaPlayer getResourceNum(int indx)
     {
         return valores[indx];
     }//Fin metodo getResourceNum
@@ -57,7 +64,7 @@ public class OrtoEx
     int StateFirstWrong() {return estado[1];}//Fin metodo StateFirstWrong
 
     //Metodo que regresa el valor entero del Resource de toda la palabra(usado para el audio)
-    int getPalabraValue()
+    MediaPlayer getPalabraValue()
     {
         return palabra;
     }//Fin metodo getPalabraValue
@@ -125,6 +132,26 @@ public class OrtoEx
         estado[1] = 0;
 
     }//Fin metodo ResetEstados
+    //------------------------------------------------------------------------------------
+    //Metodo que conveirte el valor entero de la R de cada sonido a un MediaPLayer para
+    //que este sea pasado al MediaPlayer sin tener que andar creando un MediaPlayer
+    //cada vez que se quiera reproducir un sonido
+    MediaPlayer[] ToMediaPlayer(int[] sonidos, Context C)
+    {
+        //Crear un arreglo de asfd del mismo tamaño que el de sonidos(siempre son 5 sonidos)
+        //4 silabas y palabra
+        MediaPlayer[] posiciones = new MediaPlayer[sonidos.length];
+
+        for(int i = 0; i < posiciones.length; i++)
+        {
+
+            posiciones[i] = MediaPlayer.create(C, sonidos[i]);
+
+        }//Fin for 1
+
+        return posiciones;
+
+    }
     //------------------------------------------------------------------------------------
 }//Fin clase OrtoEx
 

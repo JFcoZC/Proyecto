@@ -21,6 +21,9 @@ public class SubmenuOrtoAstro extends AppCompatActivity
     //DECLARACION VARIABLE GLOBAL DEL USUARIO
     Usuario CURRENTUSER;
 
+    //VARIABLE DEL EJERCICIO AL QUE SE DESEA ENTRAR
+    int NUMEX = 0;
+
     //ATRIBUTOS
     //----- Atributos de juego ORTOGRAFIA ----------------------
     float[] scoreslvlsix;
@@ -90,9 +93,31 @@ public class SubmenuOrtoAstro extends AppCompatActivity
     //que ejercicio debe ser abierto al iniciar la siguiente pantalla
     public void SelectOrtografiaEx(View v)
     {
+        //Determinar que boton se ha oprimido
+        switch(v.getId())
+        {
+            case R.id.B1astro1:
+                NUMEX = 0;
+                break;
+
+            case R.id.B2astro1:
+                NUMEX = 1;
+                break;
+
+            case R.id.B3astro1:
+                NUMEX = 2;
+                break;
+
+            default:
+                break;
+
+        }//Fin estructura switch
+
         //Un intent es un objeto que permite un enlace en tiempo de ejecución entre 2 actividades
         //son generalemnte utilziadas para realizar varias tareas al mismo tiempo
         Intent in = new Intent(this, EjercicioOrtografia.class);
+        //MANDAR POSICION DE EJERCICIO SELECCIONADO POR USUARIO
+        in.putExtra("INDXEX",NUMEX);
         //MANDAR ID DE USUARIO ACTUAL A ACTIVITY EjercicioOrtografico
         in.putExtra("IDUSER", IDCURRENTUSER);
 

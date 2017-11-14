@@ -27,6 +27,8 @@ import android.content.Intent;
 //Inicio del programa
 
 //https://stackoverflow.com/questions/5869871/how-to-catch-a-click-event-on-a-button
+//FUENTE UTILIZADA PARA ARREGLAR PROBLEMA QUE NO PERMITE CONVERTIR ID DE RECURSO RAW A MediaPlayer:
+//https://stackoverflow.com/questions/11760069/error-unable-to-instantiate-activity
 
 
 //Inicio Main Class
@@ -43,6 +45,9 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
     long INICIOTIME = 0;
     long FINTIME = 0;
     long FULLTIME;
+
+    //DECLAR CARIABLE GLOBAL DE INTENT para obtener datos provenientes de actividades anteriroes
+    Intent inten;
 
     //DECLARAR VARIABLE GLOBAL DE ID USAURIO ACTUAL
     int IDCURRENTUSER = -1;
@@ -98,11 +103,20 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         //ser declarado de forma global
         //-----------------------------------------
 
-        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        //Determinar en que numero de ejercicio comenzar
-        //excercise =
-
-        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        //----OBTENER POSICION DE EJERCICIO QUE DEBE SER DESPLEGADO Y MOSTRARLO---------------------
+        inten = getIntent();
+        //El 0 es un valor de dfault por si no se encuentra el valor que se buscaba, se asigna 0 por
+        //default
+        excercise = inten.getIntExtra("INDXEX",0);
+        //------------------------------
+        //Log.d("eeeinx:","CREADO");
+        //Log.d("eeeinx:",""+excercise);
+        //-------------------------------
+        //MOSTRAR LA IMAGEN CORRESPONDIENTE
+        vflip.setDisplayedChild(excercise);
+        //Cambiar silabas de checkboxes y guardar posiciones actuales
+        posactualex = ChangeTextBoxes(ejercicios[excercise]);
+        //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE VIEW FLIPPER-------------------------
 
         //Objetos para reproducción audio tomar el MediaPlayer de forma global
         sound = new MediaPlayer();
@@ -121,6 +135,16 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
 
     }//Fin metodo que llama archivo ejercicio_silabicoabico.xml
     //----------------------------------------------------------------------------------------------
+    //Metodo que se llama cada vez que la Actividad recibe una nueva actividad
+    //SI ESTE METODO NO ESTA DECLARADO, EL EJERCICIO CUANDO ES SELECCIONADO EN EL SUBMENU SOLO ES
+    //CAMBIADO LA PRIMERA VEZ, PERO DESPUES YA NO PORQUE EL INTENT Y SUS DATOS NO SE ACTUALIZAN
+    public void onNewIntent(Intent inten)
+    {
+        //Actualizar los datos deL intent de la actividad anterior, por dados del neuvo intent
+        super.onNewIntent(inten);
+        this.setIntent(inten);
+    }
+    //----------------------------------------------------------------------------------------------
     //Metodo que ejecuta las acciones cuando una vez que el usuario a dejado de usar una activity
     //pero la vuelve a abrir, entonces entra en ejecucion este metodo
     public void onResume()
@@ -130,6 +154,19 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         //Incializar tiempo de uso de la aplicación
         INICIOTIME = System.currentTimeMillis();
 
+        //----OBTENER POSICION DE EJERCICIO QUE DEBE SER DESPLEGADO Y MOSTRARLO---------------------
+        inten = getIntent();
+        //El 0 es un valor de dfault por si no se encuentra el valor que se buscaba, se asigna 0 por
+        //default
+        excercise = inten.getIntExtra("INDXEX",0);
+        Log.d("eeeinx:","REANUDADO");
+        Log.d("eeeinx:",""+excercise);
+        //MOSTRAR LA IMAGEN CORRESPONDIENTE
+        vflip.setDisplayedChild(excercise);
+        //Cambiar silabas de checkboxes y guardar posiciones actuales
+        posactualex = ChangeTextBoxes(ejercicios[excercise]);
+        //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE VIEW FLIPPER-------------------------
+
     }//Fin metodo onResume
     //----------------------------------------------------------------------------------------------
     //Metodo que se incia cuando se mueve a otra actividad
@@ -137,7 +174,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
     {
         super.onStop();
         //***Obtener Datos Actuales del usario desde la BDS
-        Intent inten = getIntent();
+        inten = getIntent();
         IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
         CURRENTUSER = new Usuario(IDCURRENTUSER,this);
 

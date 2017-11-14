@@ -46,7 +46,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectOrtografiaEx"
-                android:text="1" />
+                android:text="1"
+                android:theme="@style/BotonAstro"/>
 
         </LinearLayout>
 
@@ -59,7 +60,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectOrtografiaEx"
-                android:text="2" />
+                android:text="2"
+                android:theme="@style/BotonAstro"/>
 
         </LinearLayout>
 
@@ -72,7 +74,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectOrtografiaEx"
-                android:text="3" />
+                android:text="3"
+                android:theme="@style/BotonAstro"/>
 
         </LinearLayout>
 
@@ -84,8 +87,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:onClick="SelectOrtografiaEx"
-                android:text="4" />
+                android:text="4"
+                android:theme="@style/BotonAstro"/>
 
         </LinearLayout>
     </TableRow>
@@ -172,8 +175,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:onClick="SelectOrtografiaEx"
-                android:text="5" />
+                android:text="5"
+                android:theme="@style/BotonAstro"/>
 
         </LinearLayout>
 
@@ -185,8 +188,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:onClick="SelectOrtografiaEx"
-                android:text="6" />
+                android:text="6"
+                android:theme="@style/BotonAstro"/>
 
         </LinearLayout>
 
@@ -198,7 +201,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:text="7" />
+                android:text="7"
+                android:theme="@style/BotonAstro"/>
 
         </LinearLayout>
 
@@ -210,7 +214,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:text="8" />
+                android:text="8"
+                android:theme="@style/BotonAstro"/>
 
         </LinearLayout>
     </TableRow>

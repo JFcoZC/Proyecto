@@ -47,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="1" />
+                android:text="1"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -60,7 +61,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="2" />
+                android:text="2"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -73,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="3" />
+                android:text="3"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -86,7 +89,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="4" />
+                android:text="4"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
     </TableRow>
@@ -186,7 +190,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="5" />
+                android:text="5"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -199,7 +204,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="6" />
+                android:text="6"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -212,7 +218,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="7" />
+                android:text="7"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -225,7 +232,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="8" />
+                android:text="8"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
     </TableRow>
@@ -325,7 +333,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="9" />
+                android:text="9"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -338,7 +347,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="10" />
+                android:text="10"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -351,7 +361,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="11" />
+                android:text="11"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -364,7 +375,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="12" />
+                android:text="12"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
     </TableRow>
@@ -464,7 +476,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="13" />
+                android:text="13"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -477,7 +490,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="14" />
+                android:text="14"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -490,7 +504,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="15" />
+                android:text="15"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -503,7 +518,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="16" />
+                android:text="16"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
     </TableRow>
@@ -603,7 +619,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="17" />
+                android:text="17"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -616,7 +633,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="18" />
+                android:text="18"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -629,7 +647,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="19" />
+                android:text="19"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
 
@@ -642,7 +661,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="20" />
+                android:text="20"
+                android:theme="@style/BotonObser"/>
 
         </LinearLayout>
     </TableRow>

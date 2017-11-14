@@ -21,6 +21,9 @@ public class SubmenuLecturaAstro extends AppCompatActivity
     //DECLARACION VARIABLE GLOBAL DEL USUARIO
     Usuario CURRENTUSER;
 
+    //VARIABLE DE LECTURA A LA QUE SE DESEA ENTRAR
+    int NUMEX = 0;
+
     //Atributos de LECTURAS ANIMADAS
     float[] scoreslvlfive;
     //Arreglo con id de rating bars de Lecturas; debe coincidir con el NUEXERCISE definifo en la
@@ -83,8 +86,29 @@ public class SubmenuLecturaAstro extends AppCompatActivity
     //actividad de lecturas
     public void selectLectura(View v)
     {
+        //Determinar que boton se a oprimido
+        switch(v.getId())
+        {
+            case R.id.B1astroL:
+                NUMEX = 0;
+                break;
+
+            case R.id.B2astroL:
+                NUMEX = 1;
+                break;
+
+            case R.id.B3astroL:
+                NUMEX = 2;
+                break;
+
+            default:
+                break;
+        }//Fin estructura switch
+
         //Inicar ejecución de Actividad de Lecturas animadas
         Intent in = new Intent(this,EjercicioLectura.class);
+        //MANDAR POSICION DE LECTURA SELECCIONADA POR USUARIO
+        in.putExtra("INDXEX",NUMEX);
         //Mandar id usuario a actividad eLecturas animadas
         in.putExtra("IDUSER",IDCURRENTUSER);
         //Iniciar Actividad

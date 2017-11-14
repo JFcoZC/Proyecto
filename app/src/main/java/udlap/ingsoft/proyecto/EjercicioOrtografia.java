@@ -32,6 +32,9 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
     long FINTIME = 0;
     long FULLTIME;
 
+    //DECLAR CARIABLE GLOBAL DE INTENT para obtener datos provenientes de actividades anteriroes
+    Intent inten;
+
     //DECLARAR VARIABLE GLOBAL DE ID USAURIO ACTUAL
     int IDCURRENTUSER = -1;
 
@@ -44,14 +47,16 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
     //contador para indicar el numero de ejercicio
     int excercise = 0;
 
-    //iniciar el numero de ejercicios ortograficos
-    OrtoEx[] ejercicios = OrtoExInitializer(NUMEXCER);
+    //!!!!IMPPORTANTE: DECLARACION DE ARREGLO DE ejercicios ortograficos
+    OrtoEx[] ejercicios;
 
     //array para guardar resultados
     float[] scoreOrtoEx = new float[NUMEXCER];
 
     int[] posactualex = {0,1};
 
+    //MediaPlayer para la reproduccion de sonidos
+    MediaPlayer sound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -60,6 +65,14 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ejercicio_ortografia);
+
+        //!!!!IMPPORTANTE: Incializar el numero de ejercicios Silabicos de dos silabas
+        ejercicios = OrtoExInitializer(NUMEXCER);
+        //Importante ya que se esta pasando el contexto a cada constructor de un ejercicio silabico
+        //para que genere el objeto y debido a que el  contexto se crea hasta que se entra al OnCreate
+        //aqui es donde se deben incializar los ejercicios pero el arreglo de ejercicios debe
+        //ser declarado de forma global
+        //-----------------------------------------
 
         //Objeto que permite pasar las fotos como slides
         vflip = (ViewFlipper) findViewById(R.id.ViewFlipper);
@@ -74,8 +87,29 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         next.setOnClickListener(this);
         prev.setOnClickListener(this);
 
+        //----OBTENER POSICION DE EJERCICIO QUE DEBE SER DESPLEGADO Y MOSTRARLO---------------------
+        inten = getIntent();
+        //El 0 es un valor de dfault por si no se encuentra el valor que se buscaba, se asigna 0 por
+        //default
+        excercise = inten.getIntExtra("INDXEX",0);
+        //Mostrar la imagen correspondiente
+        vflip.setDisplayedChild(excercise);
+        //CAMBIAR POSICIONES DE PALABRAS DE CHECKBOXES Y GUARDAR POSICIONES ACTUALES
+        posactualex = ChangeTextBoxes(ejercicios[excercise]);
+        //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE EN VIEWFLIPPER-----------------------
+
         INICIOTIME = System.currentTimeMillis();
     }//Fin metodo que llama al xml
+    //----------------------------------------------------------------------------------------------
+    //--------Metodo que se llama cada vez que la Actividad recibe una nueva actividad--------------
+    //SI ESTE METODO NO ESTA DECLARADO, EL EJERCICIO CUANDO ES SELECCIONADO EN EL SUBMENU SOLO ES
+    //CAMBIADO LA PRIMERA VEZ, PERO DESPUES YA NO PORQUE EL INTENT Y SUS DATOS NO SE ACTUALIZAN
+    public void onNewIntent(Intent in)
+    {
+        //Actualizar los datos deL intent de la actividad anterior, por dados del neuvo intent
+        super.onNewIntent(in);
+        this.setIntent(in);
+    }//Fin metodo onNewIntent
     //----------------------------------------------------------------------------------------------
     //Metodo que ejecuta las acciones cuando una vez que el usuario a dejado de usar una activity
     //pero la vuelve a abrir, entonces entra en ejecucion este metodo
@@ -85,6 +119,17 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
 
         //Incializar tiempo de uso de la aplicación
         INICIOTIME = System.currentTimeMillis();
+
+        //----OBTENER POSICION DE EJERCICIO QUE DEBE SER DESPLEGADO Y MOSTRARLO---------------------
+        inten = getIntent();
+        //El 0 es un valor de dfault por si no se encuentra el valor que se buscaba, se asigna 0 por
+        //default
+        excercise = inten.getIntExtra("INDXEX",0);
+        //Mostrar la imagen correspondiente
+        vflip.setDisplayedChild(excercise);
+        //CAMBIAR POSICIONES DE PALABRAS DE CHECKBOXES Y GUARDAR POSICIONES ACTUALES
+        posactualex = ChangeTextBoxes(ejercicios[excercise]);
+        //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE EN VIEWFLIPPER-----------------------
 
     }//Fin metodo onResume
     //----------------------------------------------------------------------------------------------
@@ -227,8 +272,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         boolean selected = ( (CheckBox) v).isChecked();
 
         //Objetos para reproducción audio
-
-        MediaPlayer sound = MediaPlayer.create(EjercicioOrtografia.this, ejercicios[excercise].getPalabraValue() );
+        sound = ejercicios[excercise].getPalabraValue();
 
         //Asignar a objeto clase RaitingBar aquella raitingbar que tenga como valor de id:
         //'ratingBar'
@@ -244,7 +288,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
                     ejercicios[excercise].OpcionSelected(posactualex[0]);
 
                     //Asignar y reproducir audio
-                    sound = MediaPlayer.create(EjercicioOrtografia.this, ejercicios[excercise].getResourceNum(posactualex[0]) );
+                    sound = ejercicios[excercise].getResourceNum(posactualex[0]);
                     sound.start();
 
                 }
@@ -263,7 +307,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
                     ejercicios[excercise].OpcionSelected(posactualex[1]);
 
                     //Asignar y reproducir sonido
-                    sound = MediaPlayer.create(EjercicioOrtografia.this, ejercicios[excercise].getResourceNum(posactualex[1]) );
+                    sound = ejercicios[excercise].getResourceNum(posactualex[1]);
                     sound.start();
 
                 }
@@ -311,13 +355,13 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
 
 
         int[] recursos = {R.raw.good,R.raw.bad};
-        ortoexcercises[0] = new OrtoEx("burro","vurro", R.raw.burro, recursos,0);
+        ortoexcercises[0] = new OrtoEx("burro","vurro", R.raw.burro, recursos,0,EjercicioOrtografia.this);
 
         int[] recursos1 = {R.raw.good,R.raw.bad};
-        ortoexcercises[1] = new OrtoEx("vaca","baca", R.raw.vaca, recursos1,1);
+        ortoexcercises[1] = new OrtoEx("vaca","baca", R.raw.vaca, recursos1,1,EjercicioOrtografia.this);
 
         int[] recursos2 = {R.raw.good,R.raw.bad};
-        ortoexcercises[2] = new OrtoEx("jirafa","girafa", R.raw.jirafa, recursos2,2);
+        ortoexcercises[2] = new OrtoEx("jirafa","girafa", R.raw.jirafa, recursos2,2,EjercicioOrtografia.this);
 
         return ortoexcercises;
 
@@ -343,10 +387,10 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
     {
         boolean selected = vflip.isClickable();
 
-        MediaPlayer sound = MediaPlayer.create(EjercicioOrtografia.this, ejercicios[excercise].getPalabraValue() );
+        sound = ejercicios[excercise].getPalabraValue();
 
         if(selected){
-            sound = MediaPlayer.create(EjercicioOrtografia.this, ejercicios[excercise].getPalabraValue() );
+            sound = ejercicios[excercise].getPalabraValue();
             sound.start();
         }
     }

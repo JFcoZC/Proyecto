@@ -66,7 +66,6 @@ public class MenuPrincipal extends AppCompatActivity
         //Crear un objeto de la clase Usuario a partir del id y contexto que le es pasado; el usuario
         //es automaticamnete generado con la info correspondiente al id que es recuperada desde la
         //base de datos
-        Usuario currentuser = new Usuario(idusuario,this);
         //++++++++++ FIN DE INICIALIZACION DE USUARIO+++++++++++++++++++++++++++++++++++++++++++++++
 
         //**Fin de la actividad
