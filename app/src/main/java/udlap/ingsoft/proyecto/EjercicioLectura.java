@@ -28,8 +28,8 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
 {
     private VideoView videoView;
     private VideoView videor;
-    private int [] videoArray={R.raw.cohete,R.raw.videoluna,R.raw.marciano};
-    private String [] pregunta={"¿Qué hace el cohete?", "¿A donde lega el cohete?","¿Que hace el marciano?"};
+    private int [] videoArray={R.raw.cohete,R.raw.videoluna,R.raw.marciano,R.raw.estrellavid,R.raw.astronauta};
+    private String [] pregunta={"¿Qué hace el cohete?", "¿A donde lega el cohete?","¿Qué hace el marciano?","¿Qué hemos visto?","¿Qué somos?"};
     private int position = 0;
 
     //Tiempo de juego
@@ -47,8 +47,8 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
     //DECLARAR VARIABLE GLOBAL DE USUARIO ACTUAL
     Usuario CURRENTUSER;
 
-    //DETERMINA EL NUMERO DE EJERCICIOS SILABICOS DE 2 SILABAS (checar esta variable tambien en clase Usuario)
-    int NUMLECTURAS = 3; //numero de ejercicios disponibles
+    //DETERMINA EL NUMERO DE EJERCICIOS (checar esta variable tambien en clase Usuario)
+    int NUMLECTURAS = 5; //numero de ejercicios disponibles
     //------------Fin actualizar variables rating bars----------
 
     Button siguiente, previo;
@@ -435,6 +435,9 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
 
             //Guardar score ejercicio actual (f es para indicar que es float)
             scoreLecEx[numlectura] = 3.0f;
+            //0
+            long inicio = System.currentTimeMillis();
+            //while
 
             //onClick(siguiente);
         }//fIN IF 1
@@ -522,6 +525,12 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
 
         int[] sonidos2={R.raw.saluda,R.raw.despide,R.raw.seva};
         ejercicios[2]= new LecturaEx("saluda","se despide","se va",sonidos2,2);
+
+        int[] sonidos3={R.raw.estrella,R.raw.cometa,R.raw.planeta};
+        ejercicios[3]= new LecturaEx("una estrella","un cometa","un planeta",sonidos3,3);
+
+        int[] sonidos4={R.raw.astronautas,R.raw.aventureros,R.raw.exploradores};
+        ejercicios[4]= new LecturaEx("astronautas","aventureros","exploradores",sonidos4,4);
 
 
         return ejercicios;
