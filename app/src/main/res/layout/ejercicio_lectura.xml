@@ -10,52 +10,57 @@
     <!--BOTONES PREVIOS & NEXT IMAGE -->
     <LinearLayout
         android:gravity="top"
-        android:layout_weight="0.06">
-        <Button
-            android:id="@+id/previo"
-            android:text="previo"
-            android:layout_width="88dp"
-            android:layout_height="35dp"
-            android:layout_marginRight="50dp"
-            tools:layout_alignParentLeft="false"
-            tools:layout_alignParentRight = "true"
-            app:layout_constraintLeft_toRightOf="@+id/HomeButton"
-            android:layout_marginLeft="8dp" />
+        android:weightSum="1"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp">
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.28"
+            android:background="@color/dark"
+            android:cropToPadding="false"
+            android:elevation="0dp"
+            android:onClick="HomeClick"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/home" />
 
         <ImageButton
             android:id="@+id/repetir"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.29"
+            android:background="@color/dark"
             android:onClick="HomeClick"
-            android:clickable="true"
-            app:srcCompat="@drawable/imgtrans"
-            tools:layout_alignParentLeft="true" />
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/imgtrans" />
 
-        <Button
-            android:id="@+id/siguiente"
-            android:text="sig"
-            android:layout_width="88dp"
-            android:layout_height="35dp"
-            app:layout_constraintLeft_toRightOf="@+id/previo"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="15dp"
-            app:layout_constraintRight_toRightOf="parent" />
         <ImageButton
-            android:id="@+id/HomeButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginRight="50dp"
-            android:onClick="HomeClick"
-            android:clickable="true"
-            app:srcCompat="@drawable/home"
-            tools:layout_alignParentLeft="true" />
+            android:id="@+id/previo"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.16"
+            android:background="@color/dark"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/flecha2" />
+
+        <ImageButton
+            android:id="@+id/siguiente"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:background="@android:color/black"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/flecha" />
     </LinearLayout>
 
 
 
     <ViewFlipper
 
-        android:layout_marginLeft="18dp">
+        android:layout_marginLeft="12dp">
         <VideoView
             android:id="@+id/cohete"
             android:layout_width="360dp"
@@ -85,6 +90,15 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             tools:layout_editor_absoluteY="310dp" />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
     </LinearLayout>
 
 
@@ -92,6 +106,7 @@
     <LinearLayout
         android:gravity="center"
         android:layout_weight="0.06">
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"

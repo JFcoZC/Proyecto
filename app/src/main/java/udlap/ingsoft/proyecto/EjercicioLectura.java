@@ -51,8 +51,7 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
     int NUMLECTURAS = 5; //numero de ejercicios disponibles
     //------------Fin actualizar variables rating bars----------
 
-    Button siguiente, previo;
-    ImageButton home,imgtrans;  //botones home y repeat
+    ImageButton home,imgtrans, siguiente, previo;  //botones home y repeat siguiente y previo
     ViewFlipper vflip; //instancia viewflipper
     CheckBox checkdespega,checkespera,checkdespeja;//checkboxes de logica
     TextView mensaje;
@@ -83,9 +82,9 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
         vflip = (ViewFlipper) findViewById(R.id.ViewFlipper);
 
         //objeto que repretenta los botones de siguiente previo menu y repeticion respectivamente.
-        siguiente = (Button) findViewById(R.id.siguiente);
-        previo = (Button) findViewById(R.id.previo);
-        home = (ImageButton) findViewById(R.id.HomeButton);
+        siguiente = (ImageButton) findViewById(R.id.siguiente);
+        previo = (ImageButton) findViewById(R.id.previo);
+        home = (ImageButton) findViewById(R.id.home);
         imgtrans = (ImageButton) findViewById(R.id.repetir);
 
         //objeto de tipo videoview
