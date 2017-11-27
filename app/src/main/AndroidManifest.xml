@@ -11,7 +11,7 @@
     <!-- INICIO DE LA APLICACION -->
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/anlog"
         android:label="Alfa Niños"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -21,7 +21,7 @@
         <!--Actividad Principal que solo pueda ser creada una sola vez -->
         <!-- (ACTIVIDAD LOGIN) -->
         <activity android:name=".Login"
-            android:launchMode="singleInstance">
+            android:launchMode="singleTop">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,14 +34,14 @@
 
         <!-- ACTIVIDAD PANTALLA DE REGISTRO -->
         <activity android:name=".Registro"
-            android:launchMode="singleInstance">
+            android:launchMode="singleTop">
 
         </activity>
         <!-- FIN ACTIVIDAD PANTALLA DE REGISTRO-->
 
         <!-- ACTIVIDAD MENU PRINCIPAL-->
         <activity android:name=".MenuPrincipal"
-                  android:launchMode="singleInstance">
+                  android:launchMode="singleTop">
 
         </activity>
         <!--FIN ACTIVIDAD menu principal -->
@@ -49,8 +49,7 @@
         <!-- Agregar menu de nivel **OBSERVADORES** que solo pueda ser creado una vez -->
         <!-- Bloquear a que esta pantalla solo este en modo portrait-->
         <activity android:name=".MenuObservadores"
-                  android:label="Menu Observadores"
-                  android:launchMode="singleInstance"
+                  android:launchMode="singleTop"
                   android:screenOrientation="portrait">
 
         </activity>
@@ -58,28 +57,30 @@
 
         <!-- Agregar submmenu de ejercicios abecedario que solo pueda ser creado una vez -->
         <activity android:name=".SubmenuAbcObser"
-                  android:launchMode="singleInstance">
+                  android:launchMode="singleTop">
 
         </activity>
         <!-- Fin submmenu de ejercicios abecedario -->
 
         <!-- Agregar ACTIVIDAD EJERCICIO ABECEDARIO -->
         <activity android:name=".EjercicioAbecedario"
-            android:launchMode="singleInstance">
+            android:launchMode="singleTop">
 
         </activity>
         <!-- Fin ACTIVIDAD EJERCICIO ABECEDARIO -->
 
         <!-- AGREGAR SUBMENU DE EHERCICIOS ASOCIACION DE LETRAS QUE SOLO SE CREE 1 VEZ -->
         <activity android:name=".SubmenuAsocialObser"
-            android:launchMode="singleInstance">
+            android:launchMode="singleTop">
 
         </activity>
         <!-- Fin submmenu de ejercicios ASOCIACION DE LETRAS -->
 
         <!-- Agregar ACTIVIDAD EJERCICIO ASOCIACION LETRAS -->
+        <!-- Bloquear a que esta pantalla solo este en modo portrait-->
         <activity android:name=".EjercicioAsociacionletr"
-            android:launchMode="singleInstance">
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
 
         </activity>
         <!-- Fin ACTIVIDAD EJERCICIO ABECEDARIO -->
@@ -87,22 +88,22 @@
         <!-- Agregar menu de nivel **EXPLORADORES** que solo pueda ser creado una vez -->
         <!-- Bloquear a que esta pantalla solo este en modo portrait-->
         <activity android:name=".MenuExploradores"
-                  android:label="Menu Exploradores"
-                  android:launchMode="singleInstance"
+                  android:launchMode="singleTop"
                   android:screenOrientation="portrait">
 
         </activity>
 
         <!-- Agregar submmenu de juegos silabicos que solo pueda ser creado una vez -->
         <activity android:name=".SubmSilabicExp"
-                  android:launchMode="singleInstance">
+                  android:launchMode="singleTop">
 
         </activity>
 
         <!-- Agregar actividad JUEGO-SILABICO que solo pueda ser creada una vez -->
+        <!-- Bloquear a que esta pantalla solo este en modo portrait-->
         <activity android:name=".EjercicioSilabico"
-                  android:label="Juego Silabico"
-                  android:launchMode="singleInstance">
+                  android:launchMode="singleTop"
+                  android:screenOrientation="portrait">
 
         </activity>
         <!--FIN ACTIVIDAD JUEGO-SILABICO -->
@@ -110,44 +111,45 @@
         <!-- Agregar menu de nivel ASTRONAUTAS que solo pueda ser creado una vez -->
         <!-- Bloquear a que esta pantalla solo este en modo portrait-->
         <activity android:name=".MenuAstronautas"
-                  android:label="Menu Astronautas"
-                  android:launchMode="singleInstance"
+                  android:launchMode="singleTop"
                   android:screenOrientation="portrait">
         </activity>
         <!--FIN ACTIVIDAD MENU ASTRONAUTAS -->
 
         <!-- Agregar submenu de LECTURAS ANIMADAS QUE SOLO PUEDA SER CREADO 1 VEZ -->
         <activity android:name=".SubmenuLecturaAstro"
-                  android:launchMode="singleInstance">
+                  android:launchMode="singleTop">
 
         </activity>
         <!-- FIN SUBMENU DE LECTURAS ANIMADAS -->
 
         <!-- Agregar EJERCICIOS de Lectuas Animadas que solo se cree una sola vez -->
+        <!-- Bloqueo de esta pantalla solo este en modo portrait,est declarado en el main aqui no-->
         <activity android:name=".EjercicioLectura"
-                  android:launchMode="singleInstance">
+                  android:launchMode="singleTop">
 
         </activity>
         <!-- FIN ACTIVIDAD LECTURA ANIMADA -->
 
         <!-- Agregar submenu de juegos ortografia que solo pueda ser creada una vez-->
         <activity android:name=".SubmenuOrtoAstro"
-                  android:launchMode="singleInstance">
+                  android:launchMode="singleTop">
 
         </activity>
         <!-- FIN SUBMENU JEUGOS ORTOGRAFIA -->
 
         <!-- Agregar actividad JUEGO ORTOGRAFIA que solo pueda ser creado una sola vez -->
+        <!-- Bloquear a que esta pantalla solo este en modo portrait-->
         <activity android:name=".EjercicioOrtografia"
-                  android:launchMode="singleInstance">
+                  android:screenOrientation="portrait"
+                  android:launchMode="singleTop">
 
         </activity>
         <!-- FIN ACTIVIDAD JUEGO ORTOGRAFIA -->
 
         <!-- Agregar actividad Menu Estadisticas que solo pueda ser creada una vez -->
         <activity android:name=".MenuStatistics"
-                  android:label="Estadisticas"
-                  android:launchMode="singleInstance">
+                  android:launchMode="singleTop">
 
         </activity>
         <!-- FIN MENU ESTADISTICAS -->

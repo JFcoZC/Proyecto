@@ -10,19 +10,78 @@
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:background="@color/purple">
+
+
+            <ImageButton
+                android:id="@+id/HomeButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left"
+                android:layout_weight="0.01"
+                android:clickable="true"
+                android:onClick="HomeClick"
+                android:background="@color/transparent"
+                app:srcCompat="@drawable/homebut_style" />
+
+            <ImageButton
+                android:id="@+id/btnPrev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:scaleType="fitCenter"
+                android:layout_weight="0.1"
+                android:background="@color/transparent"
+                android:rotation="180"
+                android:adjustViewBounds="true"
+                android:maxHeight="40dp"
+                android:maxWidth="50dp"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:onClick="nextPrev"
+                app:srcCompat="@drawable/flecha_style"/>
+
+            <ImageButton
+                android:id="@+id/btnNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="0.2"
+                android:maxHeight="40dp"
+                android:maxWidth="50dp"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:scaleType="fitCenter"
+                android:background="@color/transparent"
+                app:srcCompat="@drawable/flecha_style"
+                android:adjustViewBounds="true"
+                android:onClick="nextPrev"/>
+
+        </LinearLayout>
+
+    </TableRow>
 
     <TableRow
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:gravity="center">
 
         <ImageView
 
             android:id="@+id/imageView"
             android:layout_width="228dp"
-            android:layout_height="350dp"
+            android:layout_height="270dp"
             android:adjustViewBounds="false"
             android:cropToPadding="false"
-            app:srcCompat="@drawable/burro"
+            app:srcCompat="@drawable/abeja"
             tools:layout_editor_absoluteX="78dp"
             tools:layout_editor_absoluteY="16dp" />
     </TableRow>
@@ -31,9 +90,9 @@
         android:id="@+id/textView"
         android:layout_width="122dp"
         android:layout_height="70dp"
-        android:text="B b"
+        android:text="A"
         android:textAlignment="center"
-        android:textColor="@color/greenwhats"
+        android:textColor="@color/purple"
         android:textSize="60sp"
         tools:fontFamily="sans-serif-condensed"
         tools:layout_editor_absoluteX="131dp"
@@ -41,12 +100,12 @@
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="142dp"
+        android:layout_width="50dp"
         android:layout_height="53dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:background="@color/transparent"
         android:onClick="OnClick2"
-        app:srcCompat="@drawable/bocina"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/bocina1"
         tools:layout_editor_absoluteX="137dp"
         tools:layout_editor_absoluteY="383dp" />
 

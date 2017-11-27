@@ -51,7 +51,7 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
     int NUMLECTURAS = 3; //numero de ejercicios disponibles
     //------------Fin actualizar variables rating bars----------
 
-    Button siguiente, previo;
+    ImageButton siguiente, previo;
     ImageButton home,imgtrans;  //botones home y repeat
     ViewFlipper vflip; //instancia viewflipper
     CheckBox checkdespega,checkespera,checkdespeja;//checkboxes de logica
@@ -83,8 +83,8 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
         vflip = (ViewFlipper) findViewById(R.id.ViewFlipper);
 
         //objeto que repretenta los botones de siguiente previo menu y repeticion respectivamente.
-        siguiente = (Button) findViewById(R.id.siguiente);
-        previo = (Button) findViewById(R.id.previo);
+        siguiente = (ImageButton) findViewById(R.id.siguiente);
+        previo = (ImageButton) findViewById(R.id.previo);
         home = (ImageButton) findViewById(R.id.HomeButton);
         imgtrans = (ImageButton) findViewById(R.id.repetir);
 
@@ -112,6 +112,12 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
         Reset(ejercicios[numlectura]);
         //------------------------ FIN MOSTRAR LA LECTURA CORRESPONDIENTE --------------------------
 
+        //******* IMPORTANTE NECESARIO INICAR AQUI PARA QUE CON CAMBIO DE PANTALLAS CON HOME NO SE
+        //PIERDA EL IDUSER**
+        //***Obtener Datos Actuales del usario desde la BDS
+        Intent inten = getIntent();
+        IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
+
         //Tomar tiempo de que se inicia el ejercicio
         INICIOTIME = System.currentTimeMillis();
 
@@ -132,6 +138,9 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
             //1) se puede usar this porque la clase Activity (que hereda la MainActivity) extiende de Context
             //2)La clase que se le debe asignar al intent
             Intent in = new Intent(this, MenuPrincipal.class);
+
+            //Mandar id a actividad de menu principal
+            in.putExtra("IDUSER",IDCURRENTUSER);
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
@@ -202,22 +211,28 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
         //***Obtener Datos Actuales del usario desde la BDS
         Intent inten = getIntent();
         IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
 
-        //***Actualizar Datos de Usuario con puntuacion Actual
-        //arregloDePuntos/Número de ejercicio 5(4) y Numero de ejercicicos creados
-        CURRENTUSER.LevelProgress(scoreLecEx,4,NUMLECTURAS);
-        //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
-        FINTIME = System.currentTimeMillis();
-        FULLTIME = FINTIME - INICIOTIME;
-        CURRENTUSER.calcularUserData(FULLTIME);
-        //RESETEAR RELOJES
-        FULLTIME = 0;
-        INICIOTIME = 0;
-        FINTIME = 0;
+        //OBTENER DATOS ACTUALES DE USUARIO Y HACER SOBREESCRITURA DE BDS SOLO SI HAY CONEXION
+        if(IDCURRENTUSER != -1)
+        {
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
 
-        //***Realizar sobre escritura informacion de usuario en BDs
-        CURRENTUSER.updtadeDataDB(this);
+            //***Actualizar Datos de Usuario con puntuacion Actual
+            //arregloDePuntos/Número de ejercicio 5(4) y Numero de ejercicicos creados
+            CURRENTUSER.LevelProgress(scoreLecEx, 4, NUMLECTURAS);
+            //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
+            FINTIME = System.currentTimeMillis();
+            FULLTIME = FINTIME - INICIOTIME;
+            CURRENTUSER.calcularUserData(FULLTIME);
+            //RESETEAR RELOJES
+            FULLTIME = 0;
+            INICIOTIME = 0;
+            FINTIME = 0;
+
+            //***Realizar sobre escritura informacion de usuario en BDs
+            CURRENTUSER.updtadeDataDB(this);
+
+        }//fin if 1
 
     }//Fin metodo onStop
     //----------------------------------------------------------------------------------------------
@@ -229,18 +244,24 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
         //***Obtener Datos Actuales del usario desde la BDS
         Intent inten = getIntent();
         IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
 
-        //***Actualizar Datos de Usuario con puntuacion Actual
-        //arregloDePuntos/Número de ejercicio 2(3) y Numero de ejercicicos creados
-        CURRENTUSER.LevelProgress(scoreLecEx,4,NUMLECTURAS);
-        //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
-        FINTIME = System.currentTimeMillis();
-        FULLTIME = FINTIME - INICIOTIME;
-        CURRENTUSER.calcularUserData(FULLTIME);
+        //OBTENER LOS DATOS ACTUALES DE LA BDS PARA DESPUES ACTUALIZARLOS SOLO SI HA CONEXION A LA BDS
+        if(IDCURRENTUSER != -1)
+        {
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
 
-        //***Realizar sobreedcritura informacion de usuario en BDs
-        CURRENTUSER.updtadeDataDB(this);
+            //***Actualizar Datos de Usuario con puntuacion Actual
+            //arregloDePuntos/Número de ejercicio 2(3) y Numero de ejercicicos creados
+            CURRENTUSER.LevelProgress(scoreLecEx, 4, NUMLECTURAS);
+            //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
+            FINTIME = System.currentTimeMillis();
+            FULLTIME = FINTIME - INICIOTIME;
+            CURRENTUSER.calcularUserData(FULLTIME);
+
+            //***Realizar sobreedcritura informacion de usuario en BDs
+            CURRENTUSER.updtadeDataDB(this);
+
+        } //FIN IF 1
 
     }//Fin metodo onDestroy
     //----------------------------------------------------------------------------------------------

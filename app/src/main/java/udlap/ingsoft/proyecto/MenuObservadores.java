@@ -52,7 +52,8 @@ public class MenuObservadores extends AppCompatActivity
             //1) se puede usar this porque la clase Activity (que hereda la EjercicioSilabico) extiende de Context
             //2)La clase que se le debe asignar al intent
             Intent in = new Intent(this, MenuPrincipal.class);
-
+            //Mandar id a actividad de menu principal
+            in.putExtra("IDUSER",IDCURRENTUSER);
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
 
@@ -65,6 +66,9 @@ public class MenuObservadores extends AppCompatActivity
     {
         //Llamara actividad que lleve a SubmenuAbecedario
         Intent in = new Intent(this,SubmenuAbcObser.class);
+        //Mandar ID del usuario actual a siguiente pantalla de submenu de ejercicio Asocialetras
+        in.putExtra("IDUSER",IDCURRENTUSER);
+
         startActivity(in);
 
     }//Fin metodo ClickAbecedario

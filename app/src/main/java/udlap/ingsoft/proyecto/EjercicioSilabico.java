@@ -35,7 +35,7 @@ import android.content.Intent;
 public class EjercicioSilabico extends AppCompatActivity implements View.OnClickListener
 {
     //Declaracion de variables (globales)
-    Button next, prev;
+    ImageButton next, prev;
     ImageButton home;
     ViewFlipper vflip;
     CheckBox uno,dos,tres,cuatro;
@@ -90,8 +90,8 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         vflip = (ViewFlipper) findViewById(R.id.ViewFlipper);
 
         //Botones
-        next = (Button) findViewById(R.id.siguiente);
-        prev = (Button) findViewById(R.id.previo);
+        next = (ImageButton) findViewById(R.id.siguiente);
+        prev = (ImageButton) findViewById(R.id.previo);
 
         home = (ImageButton) findViewById(R.id.HomeButton);
 
@@ -124,10 +124,17 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         //Asignar y reproducir sonido
         sound = ejercicios[excercise].getPalabraValue();
 
+        //Resetear rating bar y checkboxes de ejercicio
+        Reset(ejercicios[excercise]);
+
         //Register a callback to be invoked when this view is clicked
         //Cuando una view suceda en estos botones ir a achecar a la logica del metodo onClick
         next.setOnClickListener(this);
         prev.setOnClickListener(this);
+
+        //***Obtener Datos Actuales del usario desde la BDS
+        inten = getIntent();
+        IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
 
         INICIOTIME = System.currentTimeMillis();
         //**Fin del programa
@@ -165,6 +172,8 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         vflip.setDisplayedChild(excercise);
         //Cambiar silabas de checkboxes y guardar posiciones actuales
         posactualex = ChangeTextBoxes(ejercicios[excercise]);
+        //Restear valores checkobx y rbar
+        Reset(ejercicios[excercise]);
         //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE VIEW FLIPPER-------------------------
 
     }//Fin metodo onResume
@@ -176,22 +185,28 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         //***Obtener Datos Actuales del usario desde la BDS
         inten = getIntent();
         IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
 
-        //***Actualizar Datos de Usuario con puntuacion Actual
-        //arregloDePuntos/Número de ejercicio 2(3) y Numero de ejercicicos creados
-        CURRENTUSER.LevelProgress(scoreSilEx,2,NUMEXCER);
-        //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
-        FINTIME = System.currentTimeMillis();
-        FULLTIME = FINTIME - INICIOTIME;
-        CURRENTUSER.calcularUserData(FULLTIME);
-        //RESETEAR RELOJES
-        FULLTIME = 0;
-        INICIOTIME = 0;
-        FINTIME = 0;
+        //OBTENER Y ACTUALIZAR DATOS ACTUALES CON LA BDS SOLO SU HAY CONEXION A LA BDS
+        if(IDCURRENTUSER != -1)
+        {
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
 
-        //***Realizar sobre escritura informacion de usuario en BDs
-        CURRENTUSER.updtadeDataDB(this);
+            //***Actualizar Datos de Usuario con puntuacion Actual
+            //arregloDePuntos/Número de ejercicio 2(3) y Numero de ejercicicos creados
+            CURRENTUSER.LevelProgress(scoreSilEx, 2, NUMEXCER);
+            //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
+            FINTIME = System.currentTimeMillis();
+            FULLTIME = FINTIME - INICIOTIME;
+            CURRENTUSER.calcularUserData(FULLTIME);
+            //RESETEAR RELOJES
+            FULLTIME = 0;
+            INICIOTIME = 0;
+            FINTIME = 0;
+
+            //***Realizar sobre escritura informacion de usuario en BDs
+            CURRENTUSER.updtadeDataDB(this);
+
+        }//FIN IF 1
 
     }//Fin metodo onStop
     //----------------------------------------------------------------------------------------------
@@ -203,18 +218,24 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         //***Obtener Datos Actuales del usario desde la BDS
         Intent inten = getIntent();
         IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
 
-        //***Actualizar Datos de Usuario con puntuacion Actual
-        //arregloDePuntos/Número de ejercicio 2(3) y Numero de ejercicicos creados
-        CURRENTUSER.LevelProgress(scoreSilEx,2,NUMEXCER);
-        //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
-        FINTIME = System.currentTimeMillis();
-        FULLTIME = FINTIME - INICIOTIME;
-        CURRENTUSER.calcularUserData(FULLTIME);
+        //OBTENER DATOS DE BDS Y ACTUALZIARLOS SOLAMENTE SI HAY CONEXION A LA BDS
+        if(IDCURRENTUSER != -1)
+        {
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
 
-        //***Realizar sobreedcritura informacion de usuario en BDs
-        CURRENTUSER.updtadeDataDB(this);
+            //***Actualizar Datos de Usuario con puntuacion Actual
+            //arregloDePuntos/Número de ejercicio 2(3) y Numero de ejercicicos creados
+            CURRENTUSER.LevelProgress(scoreSilEx, 2, NUMEXCER);
+            //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
+            FINTIME = System.currentTimeMillis();
+            FULLTIME = FINTIME - INICIOTIME;
+            CURRENTUSER.calcularUserData(FULLTIME);
+
+            //***Realizar sobreedcritura informacion de usuario en BDs
+            CURRENTUSER.updtadeDataDB(this);
+
+        }//FIN IF 1
 
     }//Fin metodo onDestroy
     //----------------------------------------------------------------------------------------------
@@ -232,6 +253,9 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
             //1) se puede usar this porque la clase Activity (que hereda la EjercicioSilabico) extiende de Context
             //2)La clase que se le debe asignar al intent
             Intent in = new Intent(this, MenuPrincipal.class);
+
+            //Mandar id a actividad de menu principal
+            in.putExtra("IDUSER",IDCURRENTUSER);
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);

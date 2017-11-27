@@ -28,7 +28,7 @@ public class Usuario
 
     //Numero de ejercicios por nivel/tipos de ejercicios
     int NUMEXLONE = 0;
-    int NUMEXLTWO = 0;
+    int NUMEXLTWO = 27;
     int NUMEXLTREE = 6;
     int NUMEXLFOUR = 0;
     int NUMEXLFIVE = 3;
@@ -125,6 +125,20 @@ public class Usuario
 
         return scoresEejrcicios;
     }//Fin getScoreslvltree
+    //--
+    //Regresar la puntuacion actual de cada ejercicio del nivel (SOPA DE LETRAS)
+    public float[] getScoreslvlfour()
+    {
+        float[] scorese = new float[NUMEXLFOUR];
+
+        for(int i = 0; i < NUMEXLFOUR; i++)
+        {
+            scorese[i] = exercisesprogress[3][i];
+        }//FIn for 1
+
+        return scorese;
+
+    }//Fin getScoreslvlfour
     //--
     //Regresar la puntuacion actual de cada ejercicio del nivel CINCO(LECTURAS)
     public float[] getScoreslvlfive()
@@ -300,8 +314,8 @@ public class Usuario
     //Obtener el nivel de progreso de los tres niveles con base en los datos actuales de los 6 ejericios
     public void FinalLevelsProgress()
     {
-        //Obtener el progreso en % del nivel 1 50% ABECEDARIO 50% ASOCIACION DE LETRAS
-        levelsProgress[0] = ( PromSkillsEx(exercisesprogress[0],NUMEXLONE) ) + (PromSkillsEx(exercisesprogress[1],NUMEXLTWO) );
+        //Obtener el progreso en % del nivel 1 100% ASOCIACION DE LETRAS
+        levelsProgress[0] = ( (PromSkillsEx(exercisesprogress[1],NUMEXLTWO) )*2 );
 
         //Obtener el progreso en % del nivel 2 50% JUEO SILABAS 50% SOPA DE LETRAS
         levelsProgress[1] = ( PromSkillsEx(exercisesprogress[2],NUMEXLTREE) ) + ( PromSkillsEx(exercisesprogress[3],NUMEXLFOUR) ) ;
@@ -380,11 +394,11 @@ public class Usuario
 
             //----------------------------------------------------
             //PRINT PARA DEBUG DE LOS DATOS QUE SE ESTAN LEYENDO DE LA BDS
-            Log.d("eee:","-------");
-            Log.d("eee","posicion de "+csepar+":"+ipos);
-            Log.d("eee:","length cadena:"+cadena.length());
-            Log.d("eee","cadena: "+cadena);
-            Log.d("eee:","-------");
+            //Log.d("eee:","-------");
+            //Log.d("eee","posicion de "+csepar+":"+ipos);
+            //Log.d("eee:","length cadena:"+cadena.length());
+            //Log.d("eee","cadena: "+cadena);
+            //Log.d("eee:","-------");
             //----------------------------------------------------
 
             //Si la posicion del caracter de separacion es mayor al length de la cadena o regresa -1

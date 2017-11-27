@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/anlog"
+        android:adjustViewBounds="true"
+        android:maxHeight="200dp"
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/Idlog"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPhonetic"
-        android:hint="ID USUARIO"/>
+        android:hint="ID USUARIO"
+        android:textColorHint="@color/purple"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/dark"/>
 
     <Button
         android:layout_gravity="center"
@@ -25,5 +41,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onRegister"/>
+
+    <Button
+        android:layout_marginTop="75dp"
+        android:text="Jugar sin conexión"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="noConnect"
+        android:theme="@style/BotonObser"/>
 
 </LinearLayout>

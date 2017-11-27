@@ -61,7 +61,7 @@
         android:layout_gravity="center"
         android:layout_weight="0.233"
         android:onClick="ClickAstronautas"
-        android:text="ASTRONAUTA" />
+        android:background="@drawable/astrobutt_style" />
 
     <Space
         android:layout_width="match_parent"

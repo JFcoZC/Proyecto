@@ -46,18 +46,23 @@ public class SubmenuLecturaAstro extends AppCompatActivity
         //0 valor de default que rescibiria la variable si no hay nada en el Intent
         IDCURRENTUSER = in.getIntExtra("IDUSER",0);
 
-        //***Obtener los scores del usuario actual
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
+        //OBTENER SOLO LOS SCORES DEL USUARIO PAR ACTUALIZAR RBS SOLO SI HAY CONEXION A  LA BDs
+        if(IDCURRENTUSER != -1)
+        {
+            //***Obtener los scores del usuario actual
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
 
-        //Obtener los escores del lvlSIX=juego de ORTOGRAFIA
-        scoreslvlfive = CURRENTUSER.getScoreslvlfive();
+            //Obtener los escores del lvlSIX=juego de ORTOGRAFIA
+            scoreslvlfive = CURRENTUSER.getScoreslvlfive();
 
-        //Crear objeto de la clase SubMenu utilizando la view actual
-        SubMenu submsilabas = new SubMenu(scoreslvlfive,idrbslec,findViewById(android.R.id.content));
+            //Crear objeto de la clase SubMenu utilizando la view actual
+            SubMenu submsilabas = new SubMenu(scoreslvlfive, idrbslec, findViewById(android.R.id.content));
 
-        //Hacer actualizacion de los ratingbars antes de entrar al submenu
-        submsilabas.updateAllRbs();
-        //---- FIN ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-----
+            //Hacer actualizacion de los ratingbars antes de entrar al submenu
+            submsilabas.updateAllRbs();
+            //---- FIN ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-----
+
+        }//FIN IF 1
 
     }//Fin metodo onCreate
     //----------------------------------------------------------------------------------------------
@@ -68,17 +73,22 @@ public class SubmenuLecturaAstro extends AppCompatActivity
     {
         super.onResume();
 
-        //------ ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-------
-        //Obtener los scores del usuario actual DESDE LA BDS
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
-        scoreslvlfive = CURRENTUSER.getScoreslvlfive();
+        //ACTUALIZAR RBS SOLO SI HAY CONEXION A LA BDS
+        if(IDCURRENTUSER != -1)
+        {
+            //------ ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-------
+            //Obtener los scores del usuario actual DESDE LA BDS
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
+            scoreslvlfive = CURRENTUSER.getScoreslvlfive();
 
-        //Crear objeto de la clase SubMenu utilizando la view actual
-        SubMenu submsilabas = new SubMenu(scoreslvlfive,idrbslec,findViewById(android.R.id.content));
+            //Crear objeto de la clase SubMenu utilizando la view actual
+            SubMenu submsilabas = new SubMenu(scoreslvlfive, idrbslec, findViewById(android.R.id.content));
 
-        //Hacer actualizacion de los ratingbars antes de entrar al submenu
-        submsilabas.updateAllRbs();
-        //---- FIN ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-----
+            //Hacer actualizacion de los ratingbars antes de entrar al submenu
+            submsilabas.updateAllRbs();
+            //---- FIN ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-----
+
+        } //FIN IF 1
 
     }//Fin on resume
     //----------------------------------------------------------------------------------------------
@@ -129,6 +139,9 @@ public class SubmenuLecturaAstro extends AppCompatActivity
             //1) se puede usar this porque la clase Activity (que hereda la EjercicioSilabico) extiende de Context
             //2)La clase que se le debe asignar al intent
             Intent in = new Intent(this, MenuPrincipal.class);
+
+            //Mandar id a actividad de menu principal
+            in.putExtra("IDUSER",IDCURRENTUSER);
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);

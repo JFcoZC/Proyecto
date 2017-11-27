@@ -73,7 +73,7 @@ public class Login extends AppCompatActivity
         {
             Intent in = new Intent(this, MenuPrincipal.class);
             //Mandar id de usuario a actividad de menu principal
-            in.putExtra("ID Usuario",idfound);
+            in.putExtra("IDUSER",idfound);
             //Mandar clave de primera vez a menu principal
             //Avisar que NOOO es la priemra vez que se accede al menu principal
             in.putExtra("primeraVez", -1);
@@ -90,5 +90,15 @@ public class Login extends AppCompatActivity
         startActivity(in);
 
     }//Fin metodo onRegister
+    //----------------------------------------------------------------------------------------------
+    //Metod que lleva a Menu principal avisando que no se consultara informacion de la bds
+    public void noConnect(View v)
+    {
+        Intent in = new Intent(this, MenuPrincipal.class);
+        //Mandar id -1 indicando que no hay connexion a la bds
+        in.putExtra("IDUSER",-1);
+        startActivity(in);
+
+    }//Fin metodo no connect
     //----------------------------------------------------------------------------------------------
 }//Fin clase Login

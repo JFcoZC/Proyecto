@@ -58,10 +58,10 @@ public class ValidarLoginBD extends AsyncTask<String,Void,String>
         String type = params[0];
         String iduser = params[1];
         //Direccion ip del servidor+php file con login
-        String login_url ="http://192.168.1.68/login.php";
-        String regis_url ="http://192.168.1.68/register.php";
-        String read_url = "http://192.168.1.68/read.php";
-        String write_url = "http://192.168.1.68/write.php";
+        String login_url ="http://192.168.1.69/login.php";
+        String regis_url ="http://192.168.1.69/register.php";
+        String read_url = "http://192.168.1.69/read.php";
+        String write_url = "http://192.168.1.69/write.php";
 
         if(type.equals("Entrar"))
         {
@@ -265,6 +265,8 @@ public class ValidarLoginBD extends AsyncTask<String,Void,String>
                     String idtosearch = params[1];
                     //------
 
+                    Log.d("DDLEERBDMENSAJE","lECURA DE USUARIO:"+idtosearch);
+
                     //Crear objeto URL con php de registro
                     URL url = new URL(read_url);
 
@@ -324,7 +326,7 @@ public class ValidarLoginBD extends AsyncTask<String,Void,String>
                     //Mientras no se llegue al final del archivo delimitado por null
                     while( (line = buffre.readLine()) != null)
                     {
-                        Log.d("DDMENSAJE",line);
+                        Log.d("DDLEERBDMENSAJE",line);
                         //Ir concatenando cada linea no vacia
                         result+=line;
                     }//Fin while 1
@@ -369,6 +371,8 @@ public class ValidarLoginBD extends AsyncTask<String,Void,String>
                 String[] e4 = temp.separar(params[8],"|");
                 String[] e5 = temp.separar(params[9],"|");
                 String[] e6 = temp.separar(params[10],"|");
+
+                Log.d("DDESCRBDMENSAJE","escritura de usuario "+id);
 
                 //Crear objeto tipo URL preveniendo el uso de una URL mal formada
                 try
@@ -453,7 +457,7 @@ public class ValidarLoginBD extends AsyncTask<String,Void,String>
                     //Mientras no se llegue al final del archivo delimitado por null
                     while( (line = buffre.readLine()) != null)
                     {
-                        Log.d("DDMENSAJE",line);
+                        Log.d("DDESCRBDMENSAJE",line);
                         //Ir concatenando cada linea no vacia
                         result+=line;
                     }//Fin while 1

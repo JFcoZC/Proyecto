@@ -51,6 +51,9 @@ public class MenuAstronautas extends AppCompatActivity
             //2)La clase que se le debe asignar al intent
             Intent in = new Intent(this, MenuPrincipal.class);
 
+            //Mandar id a actividad de menu principal
+            in.putExtra("IDUSER",IDCURRENTUSER);
+
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
 

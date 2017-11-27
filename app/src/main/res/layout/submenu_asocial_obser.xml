@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="1"
+                android:text="A"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="2"
+                android:text="B"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="3"
+                android:text="C"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="4"
+                android:text="D"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -190,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="5"
+                android:text="E"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -204,7 +204,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="6"
+                android:text="F"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -218,7 +218,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="7"
+                android:text="G"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -232,7 +232,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="8"
+                android:text="H"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -333,7 +333,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="9"
+                android:text="I"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -347,7 +347,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="10"
+                android:text="J"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -361,7 +361,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="11"
+                android:text="K"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -375,7 +375,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="12"
+                android:text="L"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -476,7 +476,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="13"
+                android:text="M"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -490,7 +490,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="14"
+                android:text="N"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -504,7 +504,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="15"
+                android:text="Ñ"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -518,7 +518,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="16"
+                android:text="O"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -619,7 +619,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="17"
+                android:text="P"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -633,7 +633,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="18"
+                android:text="Q"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -647,7 +647,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="19"
+                android:text="R"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -661,7 +661,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:onClick="SelectNivel"
-                android:text="20"
+                android:text="S"
                 android:theme="@style/BotonObser"/>
 
         </LinearLayout>
@@ -730,24 +730,290 @@
                 android:theme="@style/RatingBar"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
+            android:layout_height="wrap_content" />
         </LinearLayout>
 
     </TableRow>
 
-    <!-- INICIO FILA 5 ESTRELLAS -->
+    <!-- FIN FILA 5 ESTRELLAS -->
     <TableRow
         android:layout_weight="0.02">
 
 
     </TableRow>
-    <!--**************** FIN FILA 1 INCLUYENDO ESTRELLAS *******************-->
+    <!--**************** FIN FILA 5 INCLUYENDO ESTRELLAS *******************-->
 
-    <!--INICIO FILA LAST -->
+    <!--**************** INICIO FILA 6 INCLUYENDO ESTRELLAS *******************-->
+    <!-- INICIO FILA 6 -->
     <TableRow
-        android:layout_weight="0.1">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0">
+
+        <!-- INICIO COLUMNA MARGEN IZQUIERDO -->
+
+        <!--INICIO Columna 1 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B21astro2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectNivel"
+                android:text="T"
+                android:theme="@style/BotonObser" />
+
+        </LinearLayout>
+
+        <!--INICIO Columna 2 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B22astro2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectNivel"
+                android:text="U"
+                android:theme="@style/BotonObser"/>
+
+        </LinearLayout>
+
+        <!--INICIO Columna 3 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B23astro2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectNivel"
+                android:text="V"
+                android:theme="@style/BotonObser"/>
+
+        </LinearLayout>
+
+        <!--INICIO Columna 4 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B24astro2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectNivel"
+                android:text="W"
+                android:theme="@style/BotonObser"/>
+
+        </LinearLayout>
+    </TableRow>
+
+    <!-- INICIO FILA 1 ESTRELLAS -->
+    <TableRow
+        android:layout_weight="0">
+
+        <!-- INICIO COLUMNA/RATINGBAR1 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb21astro2"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"/>
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA/RATINGBAR2 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb22astro2"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA/RATINGBAR3 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb23astro2"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb24astro2"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
     </TableRow>
+
+    <!-- FIN FILA 6 ESTRELLAS -->
+    <TableRow
+        android:layout_weight="0.02">
+
+
+    </TableRow>
+    <!--**************** FIN FILA 6 INCLUYENDO ESTRELLAS *******************-->
+
+    <!--**************** INICIO FILA 7 INCLUYENDO ESTRELLAS *******************-->
+    <!-- INICIO FILA 7 -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0">
+
+        <!-- INICIO COLUMNA MARGEN IZQUIERDO -->
+
+        <!--INICIO Columna 1 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B25astro2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectNivel"
+                android:text="X"
+                android:theme="@style/BotonObser"/>
+
+        </LinearLayout>
+
+        <!--INICIO Columna 2 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B26astro2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectNivel"
+                android:text="Y"
+                android:theme="@style/BotonObser"/>
+
+        </LinearLayout>
+
+        <!--INICIO Columna 3 -->
+        <LinearLayout android:layout_weight="0.2">
+
+            <Button
+                android:id="@+id/B27astro2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:onClick="SelectNivel"
+                android:text="Z"
+                android:theme="@style/BotonObser"/>
+
+        </LinearLayout>
+
+        <!--INICIO Columna 4 -->
+        <LinearLayout android:layout_weight="0.2">
+
+
+
+        </LinearLayout>
+    </TableRow>
+
+    <!-- INICIO FILA 1 ESTRELLAS -->
+    <TableRow
+        android:layout_weight="0">
+
+        <!-- INICIO COLUMNA/RATINGBAR1 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb25astro2"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"/>
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA/RATINGBAR2 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb26astro2"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- INICIO COLUMNA/RATINGBAR3 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+            <RatingBar
+                android:id="@+id/rb27astro2"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
+
+
+        </LinearLayout>
+
+    </TableRow>
+
+    <!-- FIN FILA 7 ESTRELLAS -->
+    <TableRow
+        android:layout_weight="0.02">
+
+
+    </TableRow>
+    <!--**************** FIN FILA 7 INCLUYENDO ESTRELLAS *******************-->
+
 
 </TableLayout>

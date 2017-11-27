@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.support.annotation.ColorInt;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.os.Bundle;
 import android.content.Intent;
@@ -68,12 +69,21 @@ public class MenuStatistics extends AppCompatActivity
         //Llamar metodo que construye la grafica con datos actuales
         CreateBarchart(iduser,this);
 
-    }//Fin metodo que llama al menuStatistics del archivo .xml
+        Log.d("DDONCREATE","----");
 
+    }//Fin metodo que llama al menuStatistics del archivo .xml
+    //----------------------------------------------------------------------------------------------
     //EJECUTAR ESTO CADA QUE SE VUELVE A ENTRAR A LA ACTIVIDAD
     public void onResume()
     {
         super.onResume();
+
+        Log.d("DDONRESUME","+++++");
+
+        //Recibir informacion mandada de MENUPRINCIPAL
+        Intent in = getIntent();
+        //El 0 es el valor de default que va a recibir la variable si no hay nada en el intent
+        iduser = in.getIntExtra("IDUSR",0);
 
         Actualizar(iduser,this);
         CreateBarchart(iduser,this);
@@ -81,6 +91,15 @@ public class MenuStatistics extends AppCompatActivity
     }//Fin metodo onResume que se eejcuta cada vez que se vuelve a entrar a esta pantalla
 
     //Inicio metodos
+    //--------Metodo que se llama cada vez que la Actividad recibe una nueva actividad--------------
+    //SI ESTE METODO NO ESTA DECLARADO, EL IDUSER CUANDO ES MANDADO AQUI EN EL LOGIN SOLO ES
+    //CAMBIADO LA PRIMERA VEZ, PERO DESPUES YA NO PORQUE EL INTENT Y SUS DATOS NO SE ACTUALIZAN
+    public void onNewIntent(Intent in)
+    {
+        //Actualizar los datos deL intent de la actividad anterior, por dados del neuvo intent
+        super.onNewIntent(in);
+        this.setIntent(in);
+    }//Fin metodo onNewIntent
     //----------------------------------------------------------------------------------------------
     //Metodo que crea la grafica de barras
     public void CreateBarchart(int iduser, Context c)
@@ -101,7 +120,7 @@ public class MenuStatistics extends AppCompatActivity
         //CALCULAR DATOS PASANDOLOE COMO TIEMPO 0 YA QUE SOLO SE CUENTA EL TIEMPO EN JUEGOS
         usera.calcularUserData(0);
 
-        entradasgraf.add(new BarEntry(0f,40f));
+        entradasgraf.add(new BarEntry(0f,usera.getProgresslvlone()));
         entradasgraf.add(new BarEntry(1f,usera.getProgresslvltwo()));
         entradasgraf.add(new BarEntry(2f,usera.getProgresslvltree()));
 
@@ -232,7 +251,8 @@ public class MenuStatistics extends AppCompatActivity
         //1) se puede usar this porque la clase Activity (que hereda la EjercicioSilabico) extiende de Context
         //2)La clase que se le debe asignar al intent
         Intent in = new Intent(this, MenuPrincipal.class);
-
+        //Mandar id a actividad de menu principal
+        in.putExtra("IDUSER",iduser);
         //Inicar nueva actividad creada en line anterior/ ir a menu principal
         startActivity(in);
 

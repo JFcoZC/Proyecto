@@ -74,7 +74,7 @@ public class Registro extends AppCompatActivity
         {
             Intent in = new Intent(this, MenuPrincipal.class);
             //Mandar id a actividad de menu principal
-            in.putExtra("ID Usuario",idfound);
+            in.putExtra("IDUSER",idfound);
             //Avisar que es la priemra vez que se accede al menu principal para que se mustre
             //el id que se le asigno
             in.putExtra("primeraVez", 1);

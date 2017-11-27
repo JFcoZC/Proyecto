@@ -54,25 +54,28 @@ public class SubmSilabicExp extends AppCompatActivity
         //0 valor de default que rescibiria la variable si no hay nada en el Intent
         IDCURRENTUSER = in.getIntExtra("IDUSER",0);
 
-        //***Obtener los scores del usuario actual
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
-        //Datos dat = new Datos(this);
-        //Usuario dos = dat.SearchName("Pedro");
+        //ACTUALIZAR RBS DE SUBMENU SOLO SI HAY CONEXION A LA BDS
+        if(IDCURRENTUSER != -1)
+        {
+            //***Obtener los scores del usuario actual
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
+            //Datos dat = new Datos(this);
+            //Usuario dos = dat.SearchName("Pedro");
 
-        //Obtener los escores del lvltwo=juego de silabas
-        //Usuario usr = new Usuario(60,this);
-        scoreslvltrh = CURRENTUSER.getScoreslvltree();
+            //Obtener los escores del lvltwo=juego de silabas
+            //Usuario usr = new Usuario(60,this);
+            scoreslvltrh = CURRENTUSER.getScoreslvltree();
 
-        //Crear objeto de la clase SubMenu utilizando la view actual
-        SubMenu submsilabas = new SubMenu(scoreslvltrh,idrbs,findViewById(android.R.id.content));
+            //Crear objeto de la clase SubMenu utilizando la view actual
+            SubMenu submsilabas = new SubMenu(scoreslvltrh, idrbs, findViewById(android.R.id.content));
 
-        //Hacer actualizacion de los ratingbars antes de entrar al submenu
-        submsilabas.updateAllRbs();
-        //---- FIN ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-----
-
+            //Hacer actualizacion de los ratingbars antes de entrar al submenu
+            submsilabas.updateAllRbs();
+            //---- FIN ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-----
+        }//Fin if 1
 
     }//Fin metodo onCreate
-
+    //----------------------------------------------------------------------------------------------
     //Cada que el usurio deja de ocupar esta activity y depues vuelve a ella en el momento en que
     //vuelve a la activity se ejecuta este metodo
     @Override
@@ -80,18 +83,22 @@ public class SubmSilabicExp extends AppCompatActivity
     {
         super.onResume();
 
-        //------ ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-------
-        //Obtener los scores del usuario actual DESDE LA BDS
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
-        //Usuario dos = dat.SearchName("Pedro");
-        scoreslvltrh = CURRENTUSER.getScoreslvltree();
+        //ACTUALIZAR RBS SOLAMENTE SI HAY CONEXION A LA BDS
+        if(IDCURRENTUSER != -1)
+        {
+            //------ ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-------
+            //Obtener los scores del usuario actual DESDE LA BDS
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
+            //Usuario dos = dat.SearchName("Pedro");
+            scoreslvltrh = CURRENTUSER.getScoreslvltree();
 
-        //Crear objeto de la clase SubMenu utilizando la view actual
-        SubMenu submsilabas = new SubMenu(scoreslvltrh,idrbs,findViewById(android.R.id.content));
+            //Crear objeto de la clase SubMenu utilizando la view actual
+            SubMenu submsilabas = new SubMenu(scoreslvltrh, idrbs, findViewById(android.R.id.content));
 
-        //Hacer actualizacion de los ratingbars antes de entrar al submenu
-        submsilabas.updateAllRbs();
-        //---- FIN ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-----
+            //Hacer actualizacion de los ratingbars antes de entrar al submenu
+            submsilabas.updateAllRbs();
+            //---- FIN ACTUALIZAR RATINGBARS DE EJERCICIOS SUBMENU-----
+        }//Fin  if 1
 
     }//Fin on resume
 
@@ -163,6 +170,9 @@ public class SubmSilabicExp extends AppCompatActivity
             //1) se puede usar this porque la clase Activity (que hereda la EjercicioSilabico) extiende de Context
             //2)La clase que se le debe asignar al intent
             Intent in = new Intent(this, MenuPrincipal.class);
+
+            //Mandar id a actividad de menu principal
+            in.putExtra("IDUSER",IDCURRENTUSER);
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);

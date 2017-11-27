@@ -31,6 +31,8 @@ public class MenuPrincipal extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_principal);
 
+        Log.d("DDMENUPRINC","ONCREATE MENUPRINCIPAL");
+
         //Iniciar una ventana de alerta en la activity correspondiente al context de ctxt
         alert = new AlertDialog.Builder(this).create();
         alert.setTitle("Estado de Acceso");
@@ -51,7 +53,7 @@ public class MenuPrincipal extends AppCompatActivity
         Intent inten = getIntent();
         //El 0 es el valor de default que va a recibir la variable si no hay nada en el intent
         int firsttime = inten.getIntExtra("primeraVez", 0);
-        idusuario = inten.getIntExtra("ID Usuario", 0);
+        idusuario = inten.getIntExtra("IDUSER", 0);
 
         //Ver si es la priera vez que accede el usuario
         if(firsttime == 1)
@@ -72,6 +74,14 @@ public class MenuPrincipal extends AppCompatActivity
         Log.d("Fin Act:MenuPrincipal", "v2");
 
     }//Fin metodo que llama archivo xml .menu_principal
+    //----------------------------------------------------------------------------------------------
+    //Cada vez que se vuelva a entrar a la app verificar el Id de usario que se le esta pasano
+    public void onResume()
+    {
+        super.onResume();
+
+
+    }//Fin metodo on  Resume
     //----------------------------------------------------------------------------------------------
     //Metodo que inicia actividades correspondientes al nivel observadores
     public void ClickObservadores(View v)
@@ -98,10 +108,15 @@ public class MenuPrincipal extends AppCompatActivity
     //Metodo que inica actividades correspondientes a  menu statistics
     public void ClickStatistics(View vi)
     {
-        Intent inte = new Intent(this, MenuStatistics.class);
-        //Mandar id de usuario actual a actividad del MenuStatistics
-        inte.putExtra("IDUSR",idusuario);
-        startActivity(inte);
+        //Si no hay conexion a BDS (-1) no abrir estadisticas
+        if(idusuario != -1)
+        {
+            Intent inte = new Intent(this, MenuStatistics.class);
+            //Mandar id de usuario actual a actividad del MenuStatistics
+            inte.putExtra("IDUSR",idusuario);
+            startActivity(inte);
+        }//Fin if 1
+
     }//Fin metodo ClickSatistics
     //----------------------------------------------------------------------------------------------
     //Metodo que inicia actividades correspondientes a nivel astronautas

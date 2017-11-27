@@ -22,7 +22,7 @@ import android.widget.ViewFlipper;
 public class EjercicioOrtografia extends AppCompatActivity implements View.OnClickListener
 {
     //variables globales
-    Button next, prev;
+    ImageButton next, prev;
     ImageButton home;
     ViewFlipper vflip;
     CheckBox uno,dos;
@@ -78,8 +78,8 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         vflip = (ViewFlipper) findViewById(R.id.ViewFlipper);
 
         //Botones
-        next = (Button) findViewById(R.id.siguiente);
-        prev = (Button) findViewById(R.id.previo);
+        next = (ImageButton) findViewById(R.id.siguiente);
+        prev = (ImageButton) findViewById(R.id.previo);
 
         home = (ImageButton) findViewById(R.id.HomeButton);
 
@@ -97,6 +97,12 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         //CAMBIAR POSICIONES DE PALABRAS DE CHECKBOXES Y GUARDAR POSICIONES ACTUALES
         posactualex = ChangeTextBoxes(ejercicios[excercise]);
         //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE EN VIEWFLIPPER-----------------------
+
+        //******* IMPORTANTE NECESARIO INICAR AQUI PARA QUE CON CAMBIO DE PANTALLAS CON HOME NO SE
+        //PIERDA EL IDUSER**
+        //***Obtener Datos Actuales del usario desde la BDS
+        Intent inten = getIntent();
+        IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
 
         INICIOTIME = System.currentTimeMillis();
     }//Fin metodo que llama al xml
@@ -138,24 +144,30 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
     {
         super.onStop();
         //***Obtener Datos Actuales del usario desde la BDS
-        Intent inten = getIntent();
+        inten = getIntent();
         IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
 
-        //***Actualizar Datos de Usuario con puntuacion Actual
-        //arregloDePuntos/Número de ejercicio 5(6) y Numero de ejercicicos creados
-        CURRENTUSER.LevelProgress(scoreOrtoEx,5,NUMEXCER);
-        //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
-        FINTIME = System.currentTimeMillis();
-        FULLTIME = FINTIME - INICIOTIME;
-        CURRENTUSER.calcularUserData(FULLTIME);
-        //RESETEAR RELOJES
-        FULLTIME = 0;
-        INICIOTIME = 0;
-        FINTIME = 0;
+        //OBTENER DATOS DEL USUARIO  DE LA BDS Y SOBREESCRIBIRLOS SOLO SI HAY CNEXION
+        if(IDCURRENTUSER != -1)
+        {
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
 
-        //***Realizar sobre escritura informacion de usuario en BDs
-        CURRENTUSER.updtadeDataDB(this);
+            //***Actualizar Datos de Usuario con puntuacion Actual
+            //arregloDePuntos/Número de ejercicio 5(6) y Numero de ejercicicos creados
+            CURRENTUSER.LevelProgress(scoreOrtoEx, 5, NUMEXCER);
+            //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
+            FINTIME = System.currentTimeMillis();
+            FULLTIME = FINTIME - INICIOTIME;
+            CURRENTUSER.calcularUserData(FULLTIME);
+            //RESETEAR RELOJES
+            FULLTIME = 0;
+            INICIOTIME = 0;
+            FINTIME = 0;
+
+            //***Realizar sobre escritura informacion de usuario en BDs
+            CURRENTUSER.updtadeDataDB(this);
+
+        }//Fin if 1
 
     }//Fin metodo onStop
     //----------------------------------------------------------------------------------------------
@@ -165,24 +177,30 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         super.onDestroy();
 
         //***Obtener Datos Actuales del usario desde la BDS
-        Intent inten = getIntent();
+        inten = getIntent();
         IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
-        CURRENTUSER = new Usuario(IDCURRENTUSER,this);
 
-        //***Actualizar Datos de Usuario con puntuacion Actual
-        //arregloDePuntos/Número de ejercicio 5(6) y Numero de ejercicicos creados
-        CURRENTUSER.LevelProgress(scoreOrtoEx,5,NUMEXCER);
-        //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
-        FINTIME = System.currentTimeMillis();
-        FULLTIME = FINTIME - INICIOTIME;
-        CURRENTUSER.calcularUserData(FULLTIME);
-        //RESETEAR RELOJES
-        FULLTIME = 0;
-        INICIOTIME = 0;
-        FINTIME = 0;
+        //OBTENER DATOS ACTUALES DE BDS Y SOBREESCRIBILOS SOLO SI HAY CONEXION
+        if(IDCURRENTUSER != -1)
+        {
+            CURRENTUSER = new Usuario(IDCURRENTUSER, this);
 
-        //***Realizar sobreedcritura informacion de usuario en BDs
-        CURRENTUSER.updtadeDataDB(this);
+            //***Actualizar Datos de Usuario con puntuacion Actual
+            //arregloDePuntos/Número de ejercicio 5(6) y Numero de ejercicicos creados
+            CURRENTUSER.LevelProgress(scoreOrtoEx, 5, NUMEXCER);
+            //ACTUALIZAR EL RESTO DE LOS CALCULOS ESTADISTICOS
+            FINTIME = System.currentTimeMillis();
+            FULLTIME = FINTIME - INICIOTIME;
+            CURRENTUSER.calcularUserData(FULLTIME);
+            //RESETEAR RELOJES
+            FULLTIME = 0;
+            INICIOTIME = 0;
+            FINTIME = 0;
+
+            //***Realizar sobreedcritura informacion de usuario en BDs
+            CURRENTUSER.updtadeDataDB(this);
+
+        }//FIN IF 1
 
     }//Fin metodo onDestroy
     //----------------------------------------------------------------------------------------------
@@ -200,6 +218,9 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
             //1) se puede usar this porque la clase Activity (que hereda la MainActivity) extiende de Context
             //2)La clase que se le debe asignar al intent
             Intent in = new Intent(this, MenuPrincipal.class);
+
+            //Mandar id a actividad de menu principal
+            in.putExtra("IDUSER",IDCURRENTUSER);
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
