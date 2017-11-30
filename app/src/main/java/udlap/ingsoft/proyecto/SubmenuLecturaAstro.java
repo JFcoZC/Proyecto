@@ -28,7 +28,7 @@ public class SubmenuLecturaAstro extends AppCompatActivity
     float[] scoreslvlfive;
     //Arreglo con id de rating bars de Lecturas; debe coincidir con el NUEXERCISE definifo en la
     //clase USUARIO
-    int[] idrbslec = {R.id.rb1astroL,R.id.rb2astroL,R.id.rb3astroL};
+    int[] idrbslec = {R.id.rb1astroL,R.id.rb2astroL,R.id.rb3astroL,R.id.rb4astroL,R.id.rb5astroL,R.id.rb7astroL,R.id.rb8astroL};
 
     //Metodos
     //----------------------------------------------------------------------------------------------
@@ -109,6 +109,21 @@ public class SubmenuLecturaAstro extends AppCompatActivity
 
             case R.id.B3astroL:
                 NUMEX = 2;
+                break;
+            case R.id.B4astroL:
+                NUMEX = 3;
+                break;
+            case R.id.B5astroL:
+                NUMEX = 4;
+                break;
+            case R.id.B6astroL:
+                NUMEX = 5;
+                break;
+            case R.id.B7astroL:
+                NUMEX = 6;
+                break;
+            case R.id.B8astroL:
+                NUMEX = 7;
                 break;
 
             default:

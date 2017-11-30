@@ -28,8 +28,8 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
 {
     private VideoView videoView;
     private VideoView videor;
-    private int [] videoArray={R.raw.cohete,R.raw.videoluna,R.raw.marciano};
-    private String [] pregunta={"¿Qué hace el cohete?", "¿A donde lega el cohete?","¿Que hace el marciano?"};
+    private int [] videoArray={R.raw.cohete,R.raw.videoluna,R.raw.marciano,R.raw.estrellavid,R.raw.astronauta,R.raw.martevid,R.raw.jupitervid,R.raw.sol,R.raw.sistemasolar,R.raw.tierravid};
+    private String [] pregunta={"¿Qué hace el cohete?", "¿A donde lega el cohete?","¿Que hace el marciano?","¿Qué hemos visto?","¿Qué somos?","¿de que color es el planeta?","¿Cual es el planeta mas grande?","¿Qué es el sol?","¿Donde estamos?","¿De que forma es la tierra?"};
     private int position = 0;
 
     //Tiempo de juego
@@ -48,7 +48,7 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
     Usuario CURRENTUSER;
 
     //DETERMINA EL NUMERO DE EJERCICIOS SILABICOS DE 2 SILABAS (checar esta variable tambien en clase Usuario)
-    int NUMLECTURAS = 3; //numero de ejercicios disponibles
+    int NUMLECTURAS = 10; //numero de ejercicios disponibles
     //------------Fin actualizar variables rating bars----------
 
     ImageButton siguiente, previo;
@@ -543,6 +543,27 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
 
         int[] sonidos2={R.raw.saluda,R.raw.despide,R.raw.seva};
         ejercicios[2]= new LecturaEx("saluda","se despide","se va",sonidos2,2);
+
+        int[] sonidos3={R.raw.estrella,R.raw.cometa,R.raw.planeta};
+        ejercicios[3]= new LecturaEx("estrella","cometa","planeta",sonidos3,3);
+
+        int[] sonidos4={R.raw.astronautas,R.raw.aventureros,R.raw.exploradores};
+        ejercicios[4]= new LecturaEx("astronautas","aventureros","exploradores",sonidos4,4);
+
+        int[] sonidos5={R.raw.rojo,R.raw.verde,R.raw.amarillo};
+        ejercicios[5]= new LecturaEx("rojo","verde","amarillo",sonidos5,5);
+
+        int[] sonidos6={R.raw.jupiter,R.raw.venus,R.raw.marte};
+        ejercicios[6]= new LecturaEx("jupiter","venus","marte",sonidos6,6);
+
+        int[] sonidos7={R.raw.estrella,R.raw.cometa,R.raw.planeta};
+        ejercicios[7]= new LecturaEx("estrella","cometa","planeta",sonidos7,7);
+
+        int[] sonidos8={R.raw.enelsistemasolar,R.raw.enlaluna,R.raw.encasa};
+        ejercicios[8]= new LecturaEx("sistema solar","luna","casa",sonidos8,8);
+
+        int[] sonidos9={R.raw.esferica,R.raw.cuadrada,R.raw.triangular};
+        ejercicios[9]= new LecturaEx("esferica","cuadrada","triangular",sonidos9,9);
 
 
         return ejercicios;
