@@ -53,6 +53,17 @@ public class MenuExploradores extends AppCompatActivity
 
     }//Fin metodo ClickJuegoSilabico
 
+    //Metodo que inicia actividades de juegosopadeletras
+    public void ClickJuegoSopa(View v)
+    {
+        Intent in = new Intent(this, SubmSopaExp.class);
+
+        //Mandar IDUSUARIO ACTUAL A ACTIVITY Submenu Juego Sopa de letras
+        in.putExtra("IDUSER",IDCURRENTUSER);
+        startActivity(in);
+
+    }//Fin metodo ClickJuegoSopa
+
     //Metodo que llama a ir de regreso a menu principal si se oprime boton Home
     public void HomeClick(View vi)
     {

@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="duskYellow">#ffff00</color>
-    <color name="lightGrey">#999999</color>
+    <color name="lightGrey">#777777</color>
     <color name="white">#ffffff</color>
     <color name="blue">#248ffc</color>
     <color name="reedapple">#FF2C00</color>
@@ -15,6 +15,8 @@
     <color name="transparent">#00000000</color>
     <color name="orange">#FF9C39</color>
     <color name="purple">#952FFF</color>
+    <color name="colorButton">#ff9823</color>
+    <color name="colorWhiteText">#ffffff</color>
 
 </resources>
 

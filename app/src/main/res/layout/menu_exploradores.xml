@@ -34,6 +34,7 @@
         android:layout_height="@dimen/menu_niveles_height"
         android:layout_gravity="center"
         android:text="Sopa de letras"
+        android:onClick="ClickJuegoSopa"
         android:layout_weight="0" />
 
     <!--RELATIVE LAYOUT PARA PODER UNA IMAGENN ENCIMA DE OTRA -->
