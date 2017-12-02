@@ -42,7 +42,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
     Usuario CURRENTUSER;
 
     //num ejercicios juego ortografia (checar esta variable tambien en clase Usuario)
-    int NUMEXCER = 3;
+    int NUMEXCER = 11;
 
     //contador para indicar el numero de ejercicio
     int excercise = 0;
@@ -383,6 +383,30 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
 
         int[] recursos2 = {R.raw.good,R.raw.bad};
         ortoexcercises[2] = new OrtoEx("jirafa","girafa", R.raw.jirafa, recursos2,2,EjercicioOrtografia.this);
+
+        int[] recursos3 = {R.raw.good,R.raw.bad};
+        ortoexcercises[3] = new OrtoEx("árbol","árvol", R.raw.jirafa, recursos3,3, EjercicioOrtografia.this);
+
+        int[] recursos4 = {R.raw.good,R.raw.bad};
+        ortoexcercises[4] = new OrtoEx("cielo","sielo", R.raw.jirafa, recursos4,4, EjercicioOrtografia.this);
+
+        int[] recursos5 = {R.raw.good,R.raw.bad};
+        ortoexcercises[5] = new OrtoEx("volcan","bolcan", R.raw.jirafa, recursos5,5, EjercicioOrtografia.this);
+
+        int[] recursos6 = {R.raw.good,R.raw.bad};
+        ortoexcercises[6] = new OrtoEx("avión","abion", R.raw.jirafa, recursos6,6, EjercicioOrtografia.this);
+
+        int[] recursos7 = {R.raw.good,R.raw.bad};
+        ortoexcercises[7] = new OrtoEx("television","telebision", R.raw.jirafa, recursos7,7, EjercicioOrtografia.this);
+
+        int[] recursos8 = {R.raw.good,R.raw.bad};
+        ortoexcercises[8] = new OrtoEx("policia","polisia", R.raw.jirafa, recursos8,8, EjercicioOrtografia.this);
+
+        int[] recursos9 = {R.raw.good,R.raw.bad};
+        ortoexcercises[9] = new OrtoEx("llaves","llabes", R.raw.jirafa, recursos9,9, EjercicioOrtografia.this);
+
+        int[] recursos10 = {R.raw.good,R.raw.bad};
+        ortoexcercises[10] = new OrtoEx("celular","selular", R.raw.jirafa, recursos10,10, EjercicioOrtografia.this);
 
         return ortoexcercises;
 

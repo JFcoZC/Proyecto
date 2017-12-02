@@ -118,7 +118,80 @@
                 tools:layout_alignParentLeft="true"
                 tools:layout_editor_absoluteY="50dp"
                 tools:layout_editor_absoluteX="26dp" />
+            <ImageView
+                android:id="@+id/imagenArbol"
+                android:layout_width="@dimen/size_photos_width"
+                android:layout_height="@dimen/size_photos_height"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/arbol"
+                tools:layout_alignParentLeft="true"
+                tools:layout_editor_absoluteY="50dp"
+                tools:layout_editor_absoluteX="26dp" />
+            <ImageView
+                android:id="@+id/imagenCielo"
+                android:layout_width="@dimen/size_photos_width"
+                android:layout_height="@dimen/size_photos_height"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/cielo"
+                tools:layout_alignParentLeft="true"
+                tools:layout_editor_absoluteY="50dp"
+                tools:layout_editor_absoluteX="26dp" />
+            <ImageView
+                android:id="@+id/imagenVolcan"
+                android:layout_width="@dimen/size_photos_width"
+                android:layout_height="@dimen/size_photos_height"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/volcan"
+                tools:layout_alignParentLeft="true"
+                tools:layout_editor_absoluteY="50dp"
+                tools:layout_editor_absoluteX="26dp" />
+            <ImageView
+                android:id="@+id/imagenAvion"
+                android:layout_width="@dimen/size_photos_width"
+                android:layout_height="@dimen/size_photos_height"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/avion"
+                tools:layout_alignParentLeft="true"
+                tools:layout_editor_absoluteY="50dp"
+                tools:layout_editor_absoluteX="26dp" />
+            <ImageView
+                android:id="@+id/imagenTelevision"
+                android:layout_width="@dimen/size_photos_width"
+                android:layout_height="@dimen/size_photos_height"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/television"
+                tools:layout_alignParentLeft="true"
+                tools:layout_editor_absoluteY="50dp"
+                tools:layout_editor_absoluteX="26dp" />
 
+            <ImageView
+                android:id="@+id/imagenPolicia"
+                android:layout_width="@dimen/size_photos_width"
+                android:layout_height="@dimen/size_photos_height"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/policia"
+                tools:layout_alignParentLeft="true"
+                tools:layout_editor_absoluteY="50dp"
+                tools:layout_editor_absoluteX="26dp" />
+
+            <ImageView
+                android:id="@+id/imagenLlave"
+                android:layout_width="@dimen/size_photos_width"
+                android:layout_height="@dimen/size_photos_height"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/llaves"
+                tools:layout_alignParentLeft="true"
+                tools:layout_editor_absoluteY="50dp"
+                tools:layout_editor_absoluteX="26dp" />
+            <ImageView
+                android:id="@+id/imagenCelular"
+                android:layout_width="@dimen/size_photos_width"
+                android:layout_height="@dimen/size_photos_height"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/celular"
+                tools:layout_alignParentLeft="true"
+                tools:layout_editor_absoluteY="50dp"
+                tools:layout_editor_absoluteX="26dp" />
 
 
         </ViewFlipper>

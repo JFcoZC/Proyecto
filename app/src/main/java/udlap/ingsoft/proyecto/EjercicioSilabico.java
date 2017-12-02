@@ -56,7 +56,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
     Usuario CURRENTUSER;
 
     //DETERMINA EL NUMERO DE EJERCICIOS SILABICOS DE 2 SILABAS (checar esta variable tambien en clase Usuario)
-    int NUMEXCER = 6;
+    int NUMEXCER = 28;
 
     //!!!!IMPPORTANTE: DECLARACION DE ARREGLO DE ejercicios Silabicos de dos silabas
     SilabicEx[] ejercicios;
@@ -341,6 +341,15 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         //View objects occupes a rectangular area on the screen and is respoinsible
         //for drawing and event handling
 
+        //---------- LIBERAR ESPACIO DE  MEDIA PLAYER CADA VEZ QUE SE LLAME ---------
+        if(sound != null)
+        {
+            //sound.reset();
+            //sound.release();
+            //sound = new MediaPlayer();
+        }
+        //---------------------------------------------------------------------------
+
         //Esta el objeto View v marcado?
         //selected recive el valor booleano de acuerdo a la acción que reciba v (argumento de este
         //metodo)
@@ -374,8 +383,10 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
                     //Asignar y reproducir audio
                     try
                     {
+
                         sound = ejercicios[excercise].getResourceNum(posactualex[0]);
                         sound.start();
+
                     }catch(Exception e)
                     {
                         e.printStackTrace();
@@ -409,6 +420,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
                     {
                         sound = ejercicios[excercise].getResourceNum(posactualex[1]);
                         sound.start();
+
                     }catch(Exception e)
                     {
                         e.printStackTrace();
@@ -434,6 +446,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
                     {
                         sound = ejercicios[excercise].getResourceNum(posactualex[2]);
                         sound.start();
+
                     }catch(Exception e)
                     {
                         e.printStackTrace();
@@ -459,6 +472,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
                     {
                         sound = ejercicios[excercise].getResourceNum(posactualex[3]);
                         sound.start();
+
                     }catch(Exception e)
                     {
                         e.printStackTrace();
@@ -479,10 +493,12 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         }//Fin switch
 
         //Verificar que ha parado la reproducción de audio
-        while(sound.isPlaying())
+        if(sound != null)
         {
-            //Esperar a que acabe de reproducir sonido
-        }//Fin while
+            while (sound.isPlaying()) {
+                //Esperar a que acabe de reproducir sonido
+            }//Fin while
+        }
 
         //------------------ LOGICA DE RESPUESTA CORRECTA ------------------------------------------
         //Verificar seleccion de checkboxes en orden inadecuado
@@ -512,8 +528,16 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
                 //Asignar y reproducir sonido de la palabra correspondiente
                 try
                 {
+
                     sound = ejercicios[excercise].getPalabraValue();
                     sound.start();
+
+                    //Verificar que ha parado la reproducción de audio
+                    while(sound.isPlaying())
+                    {
+                        //Esperar a que acabe de reproducir sonido
+                    }//Fin while
+
                 }catch(Exception e)
                 {
                     e.printStackTrace();
@@ -582,6 +606,9 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
 
         }//Fin else 5
 
+        ///*******************
+        sound.stop();
+
     }//Fin metodo checkBox1click
     //----------------------------------------------------------------------------------------------
     //Metodo que incializa los Ejercicios de 2 silabas
@@ -610,6 +637,72 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
 
         int[] recursofive = {R.raw.tor,R.raw.ta,R.raw.tur,R.raw.ti};
         silexcercises[5] = new SilabicEx("tor","ta","tur","ti", R.raw.torta, recursofive, 5, EjercicioSilabico.this);
+
+        int[] recursosix = {R.raw.bar,R.raw.co,R.raw.ber,R.raw.cu};
+        silexcercises[6] = new SilabicEx("bar","co","ber","cu", R.raw.barco, recursosix, 6, EjercicioSilabico.this);
+
+        int[] recursosev = {R.raw.bol,R.raw.so,R.raw.bal,R.raw.si};
+        silexcercises[7] = new SilabicEx("bol","so","bal","si", R.raw.bolso, recursosev, 7, EjercicioSilabico.this);
+
+        int[] recurso8 = {R.raw.bo,R.raw.tas,R.raw.tes,R.raw.ba};
+        silexcercises[8] = new SilabicEx("bo","tas","tes","ba", R.raw.botas, recurso8, 8, EjercicioSilabico.this);
+
+        int[] recurso9 = {R.raw.bo,R.raw.te,R.raw.ba,R.raw.ta};
+        silexcercises[9] = new SilabicEx("bo","te","ba","ta", R.raw.bote, recurso9, 9, EjercicioSilabico.this);
+
+        int[] recurso10 = {R.raw.ca,R.raw.fe,R.raw.ce,R.raw.fi};
+        silexcercises[10] = new SilabicEx("ca","fé","ce","fi", R.raw.cafe, recurso10, 10, EjercicioSilabico.this);
+
+        int[] recurso11 = {R.raw.co,R.raw.che,R.raw.chi,R.raw.ca};
+        silexcercises[11] = new SilabicEx("co","che","chi","ca", R.raw.coche, recurso11, 11, EjercicioSilabico.this);
+
+        int[] recurso12 = {R.raw.co,R.raw.co,R.raw.cu,R.raw.ce};
+        silexcercises[12] = new SilabicEx("co","co","cu","ce", R.raw.coco, recurso12, 12, EjercicioSilabico.this);
+
+        int[] recurso13 = {R.raw.co,R.raw.pa,R.raw.po,R.raw.ci};
+        silexcercises[13] = new SilabicEx("co","pa","po","ci", R.raw.copa, recurso13, 13, EjercicioSilabico.this);
+
+        int[] recurso14 = {R.raw.da, R.raw.doo, R.raw.de, R.raw.di};
+        silexcercises[14] = new SilabicEx("da","do","de","di", R.raw.dado, recurso14, 14, EjercicioSilabico.this);
+
+        int[] recurso15 = {R.raw.fal,R.raw.da,R.raw.ful,R.raw.di};
+        silexcercises[15] = new SilabicEx("fal","da","ful","di", R.raw.falda, recurso15, 15, EjercicioSilabico.this);
+
+        int[] recurso16 = {R.raw.fo,R.raw.co,R.raw.ca,R.raw.fe};
+        silexcercises[16] = new SilabicEx("fo","co","ca","fe", R.raw.foco, recurso16, 16, EjercicioSilabico.this);
+
+        int[] recurso17 = {R.raw.ga,R.raw.to,R.raw.ti,R.raw.gu};
+        silexcercises[17] = new SilabicEx("ga","to","ti","gu", R.raw.gato, recurso17, 17, EjercicioSilabico.this);
+
+        int[] recurso18 = {R.raw.lo,R.raw.bo,R.raw.la,R.raw.bu};
+        silexcercises[18] = new SilabicEx("lo","bo","la","bu", R.raw.lobo, recurso18, 18, EjercicioSilabico.this);
+
+        int[] recurso19 = {R.raw.lu,R.raw.na,R.raw.lo,R.raw.ni};
+        silexcercises[19] = new SilabicEx("lu","na","lo","ni", R.raw.luna, recurso19, 19, EjercicioSilabico.this);
+
+        int[] recurso20 = {R.raw.me,R.raw.sa,R.raw.mi,R.raw.su};
+        silexcercises[20] = new SilabicEx("me","sa","mi","su", R.raw.mesa, recurso20, 20, EjercicioSilabico.this);
+
+        int[] recurso21 = {R.raw.nu,R.raw.be,R.raw.ni,R.raw.bo};
+        silexcercises[21] = new SilabicEx("nu","be","ni","bo", R.raw.nube, recurso21, 21, EjercicioSilabico.this);
+
+        int[] recurso22 = {R.raw.po,R.raw.so,R.raw.pa,R.raw.sa};
+        silexcercises[22] = new SilabicEx("po","zo","pa","za", R.raw.pozo, recurso22, 22, EjercicioSilabico.this);
+
+        int[] recurso23 = {R.raw.ra,R.raw.ta,R.raw.ro,R.raw.to};
+        silexcercises[23] = new SilabicEx("ra","ta","ro","to", R.raw.rata, recurso23, 23, EjercicioSilabico.this);
+
+        int[] recurso24 = {R.raw.si,R.raw.lla,R.raw.so,R.raw.lle};
+        silexcercises[24] = new SilabicEx("si","lla","llo","lle", R.raw.silla, recurso24, 24, EjercicioSilabico.this);
+
+        int[] recurso25 = {R.raw.ta,R.raw.co,R.raw.te,R.raw.cu};
+        silexcercises[25] = new SilabicEx("ta","co","te","cu", R.raw.taco, recurso25, 25, EjercicioSilabico.this);
+
+        int[] recurso26 = {R.raw.ti,R.raw.na,R.raw.tu,R.raw.ne};
+        silexcercises[26] = new SilabicEx("ti","na","tu","ne", R.raw.tina, recurso26, 26, EjercicioSilabico.this);
+
+        int[] recurso27 = {R.raw.be,R.raw.la,R.raw.va,R.raw.lu};
+        silexcercises[27] = new SilabicEx("ve","la","va","lu", R.raw.vela, recurso27, 27, EjercicioSilabico.this);
 
         return silexcercises;
 

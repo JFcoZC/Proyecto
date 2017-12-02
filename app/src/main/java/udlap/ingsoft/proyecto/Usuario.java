@@ -29,10 +29,10 @@ public class Usuario
     //Numero de ejercicios por nivel/tipos de ejercicios
     int NUMEXLONE = 0;
     int NUMEXLTWO = 27;
-    int NUMEXLTREE = 6;
+    int NUMEXLTREE = 28;
     int NUMEXLFOUR = 28;
     int NUMEXLFIVE = 3;
-    int NUMEXLSIX = 3;
+    int NUMEXLSIX = 11;
 
     //Atributos
     //byte[] borradol = new byte[1];      //1 byte

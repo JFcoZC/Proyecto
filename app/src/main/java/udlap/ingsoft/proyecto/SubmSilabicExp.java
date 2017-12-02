@@ -130,6 +130,94 @@ public class SubmSilabicExp extends AppCompatActivity
                 NUMEX = 5;
                 break;
 
+            case R.id.B7exp1:
+                NUMEX = 6;
+                break;
+
+            case R.id.B8exp1:
+                NUMEX = 7;
+                break;
+
+            case R.id.B9exp1:
+                NUMEX = 8;
+                break;
+
+            case R.id.B10exp1:
+                NUMEX = 9;
+                break;
+
+            case R.id.B11exp1:
+                NUMEX = 10;
+                break;
+
+            case R.id.B12exp1:
+                NUMEX = 11;
+                break;
+
+            case R.id.B13exp1:
+                NUMEX = 12;
+                break;
+
+            case R.id.B14exp1:
+                NUMEX = 13;
+                break;
+
+            case R.id.B15exp1:
+                NUMEX = 14;
+                break;
+
+            case R.id.B16exp1:
+                NUMEX = 15;
+                break;
+
+            case R.id.B17exp1:
+                NUMEX = 16;
+                break;
+
+            case R.id.B18exp1:
+                NUMEX = 17;
+                break;
+
+            case R.id.B19exp1:
+                NUMEX = 18;
+                break;
+
+            case R.id.B20exp1:
+                NUMEX = 19;
+                break;
+
+            case R.id.B21exp1:
+                NUMEX = 20;
+                break;
+
+            case R.id.B22exp1:
+                NUMEX = 21;
+                break;
+
+            case R.id.B23exp1:
+                NUMEX = 22;
+                break;
+
+            case R.id.B24exp1:
+                NUMEX = 23;
+                break;
+
+            case R.id.B25exp1:
+                NUMEX = 24;
+                break;
+
+            case R.id.B26exp1:
+                NUMEX = 25;
+                break;
+
+            case R.id.B27exp1:
+                NUMEX = 26;
+                break;
+
+            case R.id.B28exp1:
+                NUMEX = 27;
+                break;
+
             default:
                 break;
 

@@ -116,6 +116,106 @@ public class SubmenuOrtoAstro extends AppCompatActivity
                 NUMEX = 2;
                 break;
 
+            case R.id.B4astro1:
+                NUMEX = 3;
+                break;
+
+            case R.id.B5astro1:
+                NUMEX = 4;
+                break;
+
+            case R.id.B6astro1:
+                NUMEX = 5;
+                break;
+
+            case R.id.B7astro1:
+                NUMEX = 6;
+                break;
+
+            case R.id.B8astro1:
+                NUMEX = 7;
+                break;
+
+            case R.id.B9astro1:
+                NUMEX = 8;
+                break;
+
+            case R.id.B10astro1:
+                NUMEX = 9;
+                break;
+
+            case R.id.B11astro1:
+                NUMEX = 10;
+                break;
+
+            case R.id.B12astro1:
+                //NUMEX = 11;
+                break;
+
+            case R.id.B13astro1:
+
+                break;
+
+            case R.id.B14astro1:
+
+                break;
+
+            case R.id.B15astro1:
+
+                break;
+
+            case R.id.B16astro1:
+
+                break;
+
+            case R.id.B17astro1:
+
+                break;
+
+            case R.id.B18astro1:
+
+                break;
+
+            case R.id.B19astro1:
+
+                break;
+
+            case R.id.B20astro1:
+
+                break;
+
+            case R.id.B21astro1:
+
+                break;
+
+            case R.id.B22astro1:
+
+                break;
+
+            case R.id.B23astro1:
+
+                break;
+
+            case R.id.B24astro1:
+
+                break;
+
+            case R.id.B25astro1:
+
+                break;
+
+            case R.id.B26astro1:
+
+                break;
+
+            case R.id.B27astro1:
+
+                break;
+
+            case R.id.B28astro1:
+
+                break;
+
             default:
                 break;
 
