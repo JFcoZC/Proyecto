@@ -28,7 +28,7 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
 {
     private VideoView videoView;
     private VideoView videor;
-    private int [] videoArray={R.raw.cohete,R.raw.videoluna,R.raw.marciano,R.raw.estrellavid,R.raw.astronauta,R.raw.martevid,R.raw.jupitervid,R.raw.sol,R.raw.sistemasolar,R.raw.tierravid};
+    private int [] videoArray={R.raw.cohete,R.raw.videoluna,R.raw.marciano,R.raw.estrellavid,R.raw.astronauta,R.raw.martevid,R.raw.jupitervid,R.raw.solv,R.raw.sistemasolar,R.raw.tierravid};
     private String [] pregunta={"¿Qué hace el cohete?", "¿A donde lega el cohete?","¿Que hace el marciano?","¿Qué hemos visto?","¿Qué somos?","¿de que color es el planeta?","¿Cual es el planeta mas grande?","¿Qué es el sol?","¿Donde estamos?","¿De que forma es la tierra?"};
     private int position = 0;
 

@@ -397,7 +397,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         ortoexcercises[6] = new OrtoEx("avión","abion", R.raw.jirafa, recursos6,6, EjercicioOrtografia.this);
 
         int[] recursos7 = {R.raw.good,R.raw.bad};
-        ortoexcercises[7] = new OrtoEx("television","telebision", R.raw.jirafa, recursos7,7, EjercicioOrtografia.this);
+        ortoexcercises[7] = new OrtoEx("televisión","telebisión", R.raw.jirafa, recursos7,7, EjercicioOrtografia.this);
 
         int[] recursos8 = {R.raw.good,R.raw.bad};
         ortoexcercises[8] = new OrtoEx("policia","polisia", R.raw.jirafa, recursos8,8, EjercicioOrtografia.this);

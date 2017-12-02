@@ -607,7 +607,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         }//Fin else 5
 
         ///*******************
-        sound.stop();
+        //sound.stop();
 
     }//Fin metodo checkBox1click
     //----------------------------------------------------------------------------------------------
