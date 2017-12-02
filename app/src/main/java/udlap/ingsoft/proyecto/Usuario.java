@@ -30,10 +30,8 @@ public class Usuario
     int NUMEXLONE = 0;
     int NUMEXLTWO = 27;
     int NUMEXLTREE = 6;
-    int NUMEXLFOUR = 0;
     int NUMEXLFIVE = 10;
     int NUMEXLFOUR = 28;
-    int NUMEXLFIVE = 3;
     int NUMEXLSIX = 3;
 
     //Atributos
