@@ -305,6 +305,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
 
         System.gc();
         sounds[4].start();
+        sounds[4].release();
 
 
 
@@ -350,6 +351,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
             CB4.setChecked(false);
             Sonido1 = sounds[0];
             Sonido1.start();
+            Sonido1.release();
 
             if (CB1.getText().equals(ejercicios[count].keyLetter)){
                 ratingBar.setRating(Float.parseFloat("3.0"));
@@ -365,6 +367,8 @@ public class EjercicioAsociacionletr extends AppCompatActivity
             CB4.setChecked(false);
             Sonido1 = sounds[1];
             Sonido1.start();
+            Sonido1.release();
+
 
             if (CB2.getText().equals(ejercicios[count].keyLetter)){
                 ratingBar.setRating(Float.parseFloat("3.0"));
@@ -380,6 +384,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
             CB4.setChecked(false);
             Sonido1 = sounds[2];
             Sonido1.start();
+            Sonido1.release();
 
             if (CB3.getText().equals(ejercicios[count].keyLetter)){
                 ratingBar.setRating(Float.parseFloat("3.0"));
@@ -395,6 +400,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
             CB3.setChecked(false);
             Sonido1 = sounds[3];
             Sonido1.start();
+            Sonido1.release();
 
             if (CB4.getText().equals(ejercicios[count].keyLetter)){
                 ratingBar.setRating(Float.parseFloat("3.0"));
