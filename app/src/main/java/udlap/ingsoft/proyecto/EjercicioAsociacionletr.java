@@ -144,6 +144,9 @@ public class EjercicioAsociacionletr extends AppCompatActivity
 
 
         sounds[4].start();
+        sounds[4].release();
+        sounds[4] = MediaPlayer.create(this, R.raw.ade);
+
 
         //----OBTENER POSICION DE EJERCICIO QUE DEBE SER DESPLEGADO Y MOSTRARLO---------------------
         inten = getIntent();
@@ -306,6 +309,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
         System.gc();
         sounds[4].start();
         sounds[4].release();
+        sounds[4] = MediaPlayer.create(this, exe.dirSounds[4]);
 
 
 
@@ -352,7 +356,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
             Sonido1 = sounds[0];
             Sonido1.start();
             Sonido1.release();
-
+            Sonido1 = sounds[0];
             if (CB1.getText().equals(ejercicios[count].keyLetter)){
                 ratingBar.setRating(Float.parseFloat("3.0"));
                 scores[count] = 3.0f;
@@ -368,7 +372,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
             Sonido1 = sounds[1];
             Sonido1.start();
             Sonido1.release();
-
+            Sonido1 = sounds[0];
 
             if (CB2.getText().equals(ejercicios[count].keyLetter)){
                 ratingBar.setRating(Float.parseFloat("3.0"));
@@ -385,6 +389,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
             Sonido1 = sounds[2];
             Sonido1.start();
             Sonido1.release();
+            Sonido1 = sounds[0];
 
             if (CB3.getText().equals(ejercicios[count].keyLetter)){
                 ratingBar.setRating(Float.parseFloat("3.0"));
@@ -422,15 +427,17 @@ public class EjercicioAsociacionletr extends AppCompatActivity
         //}
 
         if (v == btnSonido){
-
+            Sonido1 = sounds[4];
             Sonido1.start();
             Sonido1.release();
+            Sonido1 = sounds[4];
         }
 
         if(v == vf){
             Sonido1 = sounds[4];
             Sonido1.start();
             Sonido1.release();
+            Sonido1 = sounds[4];
         }
 
     }//Fin metodo OnClick
