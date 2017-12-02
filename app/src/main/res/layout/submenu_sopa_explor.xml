@@ -99,68 +99,68 @@
     <TableRow
         android:layout_weight="0">
 
-       <!-- INICIO COLUMNA/RATINGBAR1 -->
-       <LinearLayout
-           android:layout_gravity="center"
-           android:layout_weight="0.2">
+        <!-- INICIO COLUMNA/RATINGBAR1 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
 
-           <RatingBar
-               android:id="@+id/rb1exp1"
-               style="?android:attr/ratingBarStyleSmall"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:numStars="3"
-               android:isIndicator="true"
-               android:theme="@style/RatingBar"/>
+            <RatingBar
+                android:id="@+id/rb1exp1"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"/>
 
-       </LinearLayout>
+        </LinearLayout>
 
-     <!-- INICIO COLUMNA/RATINGBAR2 -->
-     <LinearLayout
-         android:layout_gravity="center"
-         android:layout_weight="0.2">
+        <!-- INICIO COLUMNA/RATINGBAR2 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
 
-         <RatingBar
-             android:id="@+id/rb2exp1"
-             android:numStars="3"
-             android:isIndicator="true"
-             android:theme="@style/RatingBar"
-             style="?android:attr/ratingBarStyleSmall"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content" />
+            <RatingBar
+                android:id="@+id/rb2exp1"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-     </LinearLayout>
+        </LinearLayout>
 
-     <!-- INICIO COLUMNA/RATINGBAR3 -->
-     <LinearLayout
-         android:layout_gravity="center"
-         android:layout_weight="0.2">
+        <!-- INICIO COLUMNA/RATINGBAR3 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
 
-         <RatingBar
-             android:id="@+id/rb3exp1"
-             android:numStars="3"
-             android:isIndicator="true"
-             android:theme="@style/RatingBar"
-             style="?android:attr/ratingBarStyleSmall"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content" />
+            <RatingBar
+                android:id="@+id/rb3exp1"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-     </LinearLayout>
+        </LinearLayout>
 
-     <LinearLayout
-         android:layout_gravity="center"
-         android:layout_weight="0.2">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="0.2">
 
-         <RatingBar
-             android:id="@+id/rb4exp1"
-             android:numStars="3"
-             android:isIndicator="true"
-             android:theme="@style/RatingBar"
-             style="?android:attr/ratingBarStyleSmall"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content" />
+            <RatingBar
+                android:id="@+id/rb4exp1"
+                android:numStars="3"
+                android:isIndicator="true"
+                android:theme="@style/RatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-     </LinearLayout>
+        </LinearLayout>
 
     </TableRow>
     <!--**************** FIN FILA 1 INCLUYENDO ESTRELLAS *******************-->
@@ -205,6 +205,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="7"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -218,6 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="8"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -334,6 +336,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="11"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -347,6 +350,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="12"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -464,6 +468,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:text="15"
+                android:onClick="SelectSilabicEx"
                 android:theme="@style/AppTheme.BotonExp"/>
 
         </LinearLayout>
@@ -476,6 +481,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="16"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -592,6 +598,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="19"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -605,6 +612,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="20"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -721,6 +729,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="23"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -734,6 +743,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="24"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -850,6 +860,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="27"
                 android:theme="@style/AppTheme.BotonExp"/>
 
@@ -863,6 +874,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:onClick="SelectSilabicEx"
                 android:text="28"
                 android:theme="@style/AppTheme.BotonExp"/>
 

@@ -1,20 +1,18 @@
 package udlap.ingsoft.proyecto;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
 /**
- * Submenu de nivel explorador que contiene todos los ejerecicios y el progreso de cada nivel
- * de los ejercicios silabicos
- * https://developer.android.com/guide/components/activities/activity-lifecycle.html
+ * Created by Patty on 30/11/2017.
  */
 
-public class SubmSilabicExp extends AppCompatActivity
+public class SubmSopaExp extends AppCompatActivity
 {
     //Variables globales
     ImageButton home;
@@ -27,12 +25,13 @@ public class SubmSilabicExp extends AppCompatActivity
     int NUMEX = 0;
 
     //ATRIBUTOS
-    //----- Atributos de juego silabico ----------------------
-    int NUMSILABICGAMES = 6;
-    float[] scoreslvltrh;
+    //----- Atributos de juego sopa letras ----------------------
+    float[] scoreslvlfour;
     //Arreglo con id de ratingbars
-    int[] idrbs = {R.id.rb1exp1,R.id.rb2exp1,R.id.rb3exp1,R.id.rb4exp1,R.id.rb5exp1,R.id.rb6exp1};
-    //----- FIN ATRIBUTOS JUEGO SILABICO
+    int[] idrbs = {R.id.rb1exp1,R.id.rb2exp1,R.id.rb3exp1,R.id.rb4exp1,R.id.rb5exp1,R.id.rb6exp1,
+                   R.id.rb7exp1,R.id.rb8exp1,R.id.rb9exp1,R.id.rb10exp1,R.id.rb11exp1,R.id.rb12exp1,
+                   R.id.rb13exp1,R.id.rb14exp1,R.id.rb15exp1,R.id.rb16exp1,R.id.rb17exp1,R.id.rb18exp1,
+                   R.id.rb19exp1,R.id.rb20exp1};
 
     //METODOS
     //----------- METODO ON CREATE -------------
@@ -40,7 +39,7 @@ public class SubmSilabicExp extends AppCompatActivity
     {
         super.onCreate(SavedInstanceState);
         //Mostrar contenido de xml correspondiente
-        setContentView(R.layout.submenu_silabic_explor);
+        setContentView(R.layout.submenu_sopa_explor);
 
         home = (ImageButton) findViewById(R.id.HomeButton);
 
@@ -60,10 +59,10 @@ public class SubmSilabicExp extends AppCompatActivity
 
             //Obtener los escores del lvltwo=juego de silabas
             //Usuario usr = new Usuario(60,this);
-            scoreslvltrh = CURRENTUSER.getScoreslvltree();
+            scoreslvlfour = CURRENTUSER.getScoreslvlfour();
 
             //Crear objeto de la clase SubMenu utilizando la view actual
-            SubMenu submsilabas = new SubMenu(scoreslvltrh, idrbs, findViewById(android.R.id.content));
+            SubMenu submsilabas = new SubMenu(scoreslvlfour, idrbs, findViewById(android.R.id.content));
 
             //Hacer actualizacion de los ratingbars antes de entrar al submenu
             submsilabas.updateAllRbs();
@@ -86,10 +85,10 @@ public class SubmSilabicExp extends AppCompatActivity
             //Obtener los scores del usuario actual DESDE LA BDS
             CURRENTUSER = new Usuario(IDCURRENTUSER, this);
             //Usuario dos = dat.SearchName("Pedro");
-            scoreslvltrh = CURRENTUSER.getScoreslvltree();
+            scoreslvlfour = CURRENTUSER.getScoreslvlfour();
 
             //Crear objeto de la clase SubMenu utilizando la view actual
-            SubMenu submsilabas = new SubMenu(scoreslvltrh, idrbs, findViewById(android.R.id.content));
+            SubMenu submsilabas = new SubMenu(scoreslvlfour, idrbs, findViewById(android.R.id.content));
 
             //Hacer actualizacion de los ratingbars antes de entrar al submenu
             submsilabas.updateAllRbs();
@@ -130,6 +129,94 @@ public class SubmSilabicExp extends AppCompatActivity
                 NUMEX = 5;
                 break;
 
+            case R.id.B7exp1:
+                NUMEX = 6;
+                break;
+
+            case R.id.B8exp1:
+                NUMEX = 7;
+                break;
+
+            case R.id.B9exp1:
+                NUMEX = 8;
+                break;
+
+            case R.id.B10exp1:
+                NUMEX = 9;
+                break;
+
+            case R.id.B11exp1:
+                NUMEX = 10;
+                break;
+
+            case R.id.B12exp1:
+                NUMEX = 11;
+                break;
+
+            case R.id.B13exp1:
+                NUMEX = 12;
+                break;
+
+            case R.id.B14exp1:
+                NUMEX = 13;
+                break;
+
+            case R.id.B15exp1:
+                NUMEX = 14;
+                break;
+
+            case R.id.B16exp1:
+                NUMEX = 15;
+                break;
+
+            case R.id.B17exp1:
+                NUMEX = 16;
+                break;
+
+            case R.id.B18exp1:
+                NUMEX = 17;
+                break;
+
+            case R.id.B19exp1:
+                NUMEX = 18;
+                break;
+
+            case R.id.B20exp1:
+                NUMEX = 19;
+                break;
+
+            case R.id.B21exp1:
+                NUMEX = 20;
+                break;
+
+            case R.id.B22exp1:
+                NUMEX = 21;
+                break;
+
+            case R.id.B23exp1:
+                NUMEX = 22;
+                break;
+
+            case R.id.B24exp1:
+                NUMEX = 23;
+                break;
+
+            case R.id.B25exp1:
+                NUMEX = 24;
+                break;
+
+            case R.id.B26exp1:
+                NUMEX = 25;
+                break;
+
+            case R.id.B27exp1:
+                NUMEX = 26;
+                break;
+
+            case R.id.B28exp1:
+                NUMEX = 27;
+                break;
+
             default:
                 break;
 
@@ -141,7 +228,7 @@ public class SubmSilabicExp extends AppCompatActivity
 
         //Un intent es un objeto que permite un enlace en tiempo de ejecución entre 2 actividades
         //son generalemnte utilziadas para realizar varias tareas al mismo tiempo
-        Intent in = new Intent(this, EjercicioSilabico.class);
+        Intent in = new Intent(this, EjercicioSopa.class);
         //MANDAR POSICION DE EJERCICIO SILABICO EN EL QUE SE DEBE ABRIR LA SIGUIENTE PANTALLA
         in.putExtra("INDXEX", NUMEX);
         //MANDAR ID DE USUARIO ACTUAL A ACTIVITY EjercicioSilabico
@@ -177,4 +264,4 @@ public class SubmSilabicExp extends AppCompatActivity
 
     }//Fin metodo HomeClick
 
-}//Fin clase SubmSilabicExp
+}//Fin clase SubmSopaExp

@@ -132,7 +132,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         next.setOnClickListener(this);
         prev.setOnClickListener(this);
 
-        //***Obtener Datos Actuales del usario desde la BDS
+        //***Obtener Datos Actuales del uuario que esta usando la app obtenido de actividad danterior
         inten = getIntent();
         IDCURRENTUSER = inten.getIntExtra("IDUSER",0);
 

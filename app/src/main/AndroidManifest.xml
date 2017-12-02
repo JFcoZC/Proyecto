@@ -108,6 +108,21 @@
         </activity>
         <!--FIN ACTIVIDAD JUEGO-SILABICO -->
 
+        <!-- Agregar submmenu de juegos SOPA DE LETRAS que solo pueda ser creado una vez -->
+        <activity android:name=".SubmSopaExp"
+            android:launchMode="singleTop">
+
+        </activity>
+
+        <!-- Agregar actividad JUEGO-SOPA DE LETRAS que solo pueda ser creada una vez -->
+        <!-- Bloquear a que esta pantalla solo este en modo portrait-->
+        <activity android:name=".EjercicioSopa"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <!--FIN ACTIVIDAD JUEGO-SOPA DE LETRAS -->
+
         <!-- Agregar menu de nivel ASTRONAUTAS que solo pueda ser creado una vez -->
         <!-- Bloquear a que esta pantalla solo este en modo portrait-->
         <activity android:name=".MenuAstronautas"
