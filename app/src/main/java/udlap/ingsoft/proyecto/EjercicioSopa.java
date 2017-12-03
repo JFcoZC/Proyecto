@@ -691,6 +691,7 @@ public class EjercicioSopa extends AppCompatActivity
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
 
         }//Fin metodo HomeClick
         //----------------------------------------------------------------------------------------------

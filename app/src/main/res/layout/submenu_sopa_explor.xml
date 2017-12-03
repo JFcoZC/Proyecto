@@ -105,7 +105,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb1exp1"
+                android:id="@+id/rb1exp2"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb2exp1"
+                android:id="@+id/rb2exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -137,7 +137,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb3exp1"
+                android:id="@+id/rb3exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -152,7 +152,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb4exp1"
+                android:id="@+id/rb4exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -236,7 +236,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb5exp1"
+                android:id="@+id/rb5exp2"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -252,7 +252,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb6exp1"
+                android:id="@+id/rb6exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -268,7 +268,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb7exp1"
+                android:id="@+id/rb7exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -283,7 +283,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb8exp1"
+                android:id="@+id/rb8exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -367,7 +367,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb9exp1"
+                android:id="@+id/rb9exp2"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -383,7 +383,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb10exp1"
+                android:id="@+id/rb10exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -399,7 +399,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb11exp1"
+                android:id="@+id/rb11exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -414,7 +414,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb12exp1"
+                android:id="@+id/rb12exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -498,7 +498,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb13exp1"
+                android:id="@+id/rb13exp2"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -514,7 +514,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb14exp1"
+                android:id="@+id/rb14exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -530,7 +530,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb15exp1"
+                android:id="@+id/rb15exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -545,7 +545,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb16exp1"
+                android:id="@+id/rb16exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -629,7 +629,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb17exp1"
+                android:id="@+id/rb17exp2"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -645,7 +645,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb18exp1"
+                android:id="@+id/rb18exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -661,7 +661,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb19exp1"
+                android:id="@+id/rb19exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -676,7 +676,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb20exp1"
+                android:id="@+id/rb20exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -760,7 +760,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb21exp1"
+                android:id="@+id/rb21exp2"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -776,7 +776,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb22exp1"
+                android:id="@+id/rb22exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -792,7 +792,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb23exp1"
+                android:id="@+id/rb23exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -807,7 +807,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb24exp1"
+                android:id="@+id/rb24exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -891,7 +891,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb25exp1"
+                android:id="@+id/rb25exp2"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -907,7 +907,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb26exp1"
+                android:id="@+id/rb26exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -923,7 +923,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb27exp1"
+                android:id="@+id/rb27exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -938,7 +938,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/rb28exp1"
+                android:id="@+id/rb28exp2"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"

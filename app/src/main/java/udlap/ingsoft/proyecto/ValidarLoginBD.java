@@ -58,10 +58,10 @@ public class ValidarLoginBD extends AsyncTask<String,Void,String>
         String type = params[0];
         String iduser = params[1];
         //Direccion ip del servidor+php file con login
-        String login_url ="http://192.168.1.71/login.php";
-        String regis_url ="http://192.168.1.71/register.php";
-        String read_url = "http://192.168.1.71/read.php";
-        String write_url = "http://192.168.1.71/write.php";
+        String login_url ="http://192.168.1.69/login.php";
+        String regis_url ="http://192.168.1.69/register.php";
+        String read_url = "http://192.168.1.69/read.php";
+        String write_url = "http://192.168.1.69/write.php";
 
         if(type.equals("Entrar"))
         {

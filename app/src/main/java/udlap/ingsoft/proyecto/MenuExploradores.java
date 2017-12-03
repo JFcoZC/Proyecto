@@ -48,6 +48,7 @@ public class MenuExploradores extends AppCompatActivity
         //Mandar IDUSUARIO ACTUAL A ACTIVITY Submenu Juego Silabico
         in.putExtra("IDUSER", IDCURRENTUSER);
         startActivity(in);
+        finish();
 
 
 
@@ -61,6 +62,7 @@ public class MenuExploradores extends AppCompatActivity
         //Mandar IDUSUARIO ACTUAL A ACTIVITY Submenu Juego Sopa de letras
         in.putExtra("IDUSER",IDCURRENTUSER);
         startActivity(in);
+        finish();
 
     }//Fin metodo ClickJuegoSopa
 
@@ -84,6 +86,7 @@ public class MenuExploradores extends AppCompatActivity
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
 
         }//Fin if 1
 

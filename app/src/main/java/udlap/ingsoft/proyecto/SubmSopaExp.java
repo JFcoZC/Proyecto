@@ -28,10 +28,11 @@ public class SubmSopaExp extends AppCompatActivity
     //----- Atributos de juego sopa letras ----------------------
     float[] scoreslvlfour;
     //Arreglo con id de ratingbars
-    int[] idrbs = {R.id.rb1exp1,R.id.rb2exp1,R.id.rb3exp1,R.id.rb4exp1,R.id.rb5exp1,R.id.rb6exp1,
-                   R.id.rb7exp1,R.id.rb8exp1,R.id.rb9exp1,R.id.rb10exp1,R.id.rb11exp1,R.id.rb12exp1,
-                   R.id.rb13exp1,R.id.rb14exp1,R.id.rb15exp1,R.id.rb16exp1,R.id.rb17exp1,R.id.rb18exp1,
-                   R.id.rb19exp1,R.id.rb20exp1};
+    int[] idrbs = {R.id.rb1exp2,R.id.rb2exp2,R.id.rb3exp2,R.id.rb4exp2,R.id.rb5exp2,R.id.rb6exp2,
+                   R.id.rb7exp2,R.id.rb8exp2,R.id.rb9exp2,R.id.rb10exp2,R.id.rb11exp2,R.id.rb12exp2,
+                   R.id.rb13exp2,R.id.rb14exp2,R.id.rb15exp2,R.id.rb16exp2,R.id.rb17exp2,R.id.rb18exp2,
+                   R.id.rb19exp2,R.id.rb20exp2, R.id.rb21exp2,R.id.rb22exp2,R.id.rb23exp2,R.id.rb24exp2,
+                   R.id.rb25exp2,R.id.rb26exp2, R.id.rb27exp2,R.id.rb28exp2};
 
     //METODOS
     //----------- METODO ON CREATE -------------
@@ -235,7 +236,7 @@ public class SubmSopaExp extends AppCompatActivity
         in.putExtra("IDUSER", IDCURRENTUSER);
 
         startActivity(in);
-
+        finish();
 
     }//Fin metodo view v
 
@@ -259,6 +260,7 @@ public class SubmSopaExp extends AppCompatActivity
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
 
         }//Fin if 1
 

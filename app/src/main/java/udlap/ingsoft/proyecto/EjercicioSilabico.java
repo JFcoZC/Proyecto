@@ -15,6 +15,7 @@ import android.view.View;
 //Libreria para objetos clase CheckBox
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 //Libreria para reproducción mp3
 import android.media.MediaPlayer;
@@ -23,6 +24,8 @@ import android.widget.ViewFlipper;
 import android.widget.Button;
 //Libreria para inciar nuevas acticidades
 import android.content.Intent;
+
+import java.io.IOException;
 
 //Inicio del programa
 
@@ -37,7 +40,8 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
     //Declaracion de variables (globales)
     ImageButton next, prev;
     ImageButton home;
-    ViewFlipper vflip;
+    //ViewFlipper vflip;
+    ImageView fotos;
     CheckBox uno,dos,tres,cuatro;
     //MediaPlayer para la reproduccion de sonidos
     MediaPlayer sound;
@@ -74,7 +78,13 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
     //del ejercicio actual
     int[] posactualex = {0,1,2,3};
 
-    //Datos de entrada
+    //Imagenes
+    int images[] = {R.drawable.pino,R.drawable.foto,R.drawable.jabon,R.drawable.mapa,R.drawable.toro,
+                    R.drawable.torta,R.drawable.barco,R.drawable.bolso,R.drawable.botas,R.drawable.bote,
+                    R.drawable.cafe,R.drawable.coche,R.drawable.coco,R.drawable.copa,R.drawable.dado,
+                    R.drawable.falda,R.drawable.foco,R.drawable.gato,R.drawable.lobo,R.drawable.luna,
+                    R.drawable.mesa,R.drawable.nube,R.drawable.pozo,R.drawable.rata,R.drawable.silla,
+                    R.drawable.taco,R.drawable.tina,R.drawable.vela};
 
     //Procesos
 
@@ -86,8 +96,9 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.ejercicio_silabico);
 
         //Incializacion botones es importante si no tira null exception
-        //Objeto que permite pasar las fotos como slides
-        vflip = (ViewFlipper) findViewById(R.id.ViewFlipper);
+        //Objeto DE TIPO IMAGEN PARA PONER LA IMAGEN ACTUAL
+        //vflip = (ViewFlipper) findViewById(R.id.ViewFlipper);
+        fotos = (ImageView) findViewById((R.id.imageView1));
 
         //Botones
         next = (ImageButton) findViewById(R.id.siguiente);
@@ -113,7 +124,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         //Log.d("eeeinx:",""+excercise);
         //-------------------------------
         //MOSTRAR LA IMAGEN CORRESPONDIENTE
-        vflip.setDisplayedChild(excercise);
+        fotos.setImageResource(images[excercise]);
         //Cambiar silabas de checkboxes y guardar posiciones actuales
         posactualex = ChangeTextBoxes(ejercicios[excercise]);
         //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE VIEW FLIPPER-------------------------
@@ -152,6 +163,18 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         this.setIntent(inten);
     }
     //----------------------------------------------------------------------------------------------
+    public void onPause()
+    {
+        //Siempre llamar primero onPause
+        super.onPause();
+
+        //if (sound != null) {
+        //    sound.release();
+        //    sound = null;
+        //}
+
+    }//Fin metodo on pause
+    //----------------------------------------------------------------------------------------------
     //Metodo que ejecuta las acciones cuando una vez que el usuario a dejado de usar una activity
     //pero la vuelve a abrir, entonces entra en ejecucion este metodo
     public void onResume()
@@ -169,7 +192,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         Log.d("eeeinx:","REANUDADO");
         Log.d("eeeinx:",""+excercise);
         //MOSTRAR LA IMAGEN CORRESPONDIENTE
-        vflip.setDisplayedChild(excercise);
+        //vflip.setDisplayedChild(excercise);
         //Cambiar silabas de checkboxes y guardar posiciones actuales
         posactualex = ChangeTextBoxes(ejercicios[excercise]);
         //Restear valores checkobx y rbar
@@ -205,6 +228,11 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
 
             //***Realizar sobre escritura informacion de usuario en BDs
             CURRENTUSER.updtadeDataDB(this);
+
+            //**********Detener media player************
+            Log.d("eeeemp:","destroyed");
+            sound.release();
+            sound = null;
 
         }//FIN IF 1
 
@@ -259,6 +287,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
 
             //Calcular info de scores actuales
             //Datos dat = new Datos(this);
@@ -283,7 +312,6 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         //Se presiona boton next
         if(v == next)
         {
-            vflip.showNext();
 
             //Siguiente ejercicio
             excercise = excercise+1;
@@ -298,6 +326,9 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
             //Cambiar silabas de checkboxes y guardar posiciones actuales
             posactualex = ChangeTextBoxes(ejercicios[excercise]);
 
+            //MOSTRAR LA IMAGEN CORRESPONDIENTE
+            fotos.setImageResource(images[excercise]);
+
             //Resetear estados de seleccion de los checkboxes de las silabas de ejercicio actual
             //Restear botones y Barra de estrellas
             Reset(ejercicios[excercise]);
@@ -308,7 +339,6 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
             //Se presiona boton previous
             if(v == prev)
             {
-                vflip.showPrevious();
 
                 //Ejercicio previo
                 excercise = excercise-1;
@@ -324,6 +354,9 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
                 //Cambiar silabas de checkboxes y guardar posiciones actuales
                 posactualex = ChangeTextBoxes(ejercicios[excercise]);
 
+                //MOSTRAR LA IMAGEN CORRESPONDIENTE
+                fotos.setImageResource(images[excercise]);
+
                 //Resetear estados de seleccion de los checkboxes de las silabas de ejercicio actual
                 //Restear botones y Barra de estrellas
                 Reset(ejercicios[excercise]);
@@ -336,19 +369,9 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
     //----------------------------------------------------------------------------------------------
     //Hacer algo cuando el checkbox este precionado
 
-    public void checkBoxclick(View v)
-    {
+    public void checkBoxclick(View v) throws IOException {
         //View objects occupes a rectangular area on the screen and is respoinsible
         //for drawing and event handling
-
-        //---------- LIBERAR ESPACIO DE  MEDIA PLAYER CADA VEZ QUE SE LLAME ---------
-        if(sound != null)
-        {
-            //sound.reset();
-            //sound.release();
-            //sound = new MediaPlayer();
-        }
-        //---------------------------------------------------------------------------
 
         //Esta el objeto View v marcado?
         //selected recive el valor booleano de acuerdo a la acción que reciba v (argumento de este
@@ -360,7 +383,7 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
 
         //Asignar a objeto clase RaitingBar aquella raitingbar que tenga como valor de id:
         //'ratingBar'
-        RatingBar bar = ( (RatingBar) findViewById(R.id.ratingBar) );
+        final RatingBar bar = ( (RatingBar) findViewById(R.id.ratingBar) );
 
         //Checar que checkbox esta seleccionada con base en su Id
         switch( v.getId())
@@ -493,121 +516,109 @@ public class EjercicioSilabico extends AppCompatActivity implements View.OnClick
         }//Fin switch
 
         //Verificar que ha parado la reproducción de audio
-        if(sound != null)
-        {
-            while (sound.isPlaying()) {
+        //if(sound != null)
+        //{
+            //while (sound.isPlaying()) {
                 //Esperar a que acabe de reproducir sonido
-            }//Fin while
-        }
+            //}//Fin while
+        //}
 
-        //------------------ LOGICA DE RESPUESTA CORRECTA ------------------------------------------
-        //Verificar seleccion de checkboxes en orden inadecuado
-        if(ejercicios[excercise].StateFirstRight() == 0 && ejercicios[excercise].StateSecondRight() == 1)
+        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
         {
-            //Se completo la palabra pero en orden inverso
-            //Poner como 2 el estado de la segunda silaba
-            ejercicios[excercise].estado[1] = 2;
-
-        }//Fin if 4.9
-
-        //Ver si se seleccionaron las posibles respuestas correctas
-        if(ejercicios[excercise].StateFirstRight() == 1 && ejercicios[excercise].StateSecondRight() != 0 && ejercicios[excercise].StateFirstWrong() == 0 && ejercicios[excercise].StateSecondWrong() == 0 )
-        {
-            //Verificar si se selcciono silabas en orden correcto
-            if( ejercicios[excercise].StateSecondRight() == 1)
+            @Override
+            public void onCompletion(MediaPlayer mp)
             {
-                //Respuesta correcta
-                Log.d("correcto", "c");
-
-                //Colorear las estrellas
-                bar.setRating(Float.parseFloat("3.0"));
-
-                //Guardar score ejercicio actual (f es para indicar que es float)
-                scoreSilEx[excercise] = 3.0f;
-
-                //Asignar y reproducir sonido de la palabra correspondiente
-                try
+                //DESPUES DE QUE SE DE REPRODUCIR HACER TO0DO ESTO
+                //------------------ LOGICA DE RESPUESTA CORRECTA ------------------------------------------
+                //Verificar seleccion de checkboxes en orden inadecuado
+                if(ejercicios[excercise].StateFirstRight() == 0 && ejercicios[excercise].StateSecondRight() == 1)
                 {
+                    //Se completo la palabra pero en orden inverso
+                    //Poner como 2 el estado de la segunda silaba
+                    ejercicios[excercise].estado[1] = 2;
 
-                    sound = ejercicios[excercise].getPalabraValue();
-                    sound.start();
+                }//Fin if 4.9
 
-                    //Verificar que ha parado la reproducción de audio
-                    while(sound.isPlaying())
+                //Ver si se seleccionaron las posibles respuestas correctas
+                if(ejercicios[excercise].StateFirstRight() == 1 && ejercicios[excercise].StateSecondRight() != 0 && ejercicios[excercise].StateFirstWrong() == 0 && ejercicios[excercise].StateSecondWrong() == 0 )
+                {
+                    //Verificar si se selcciono silabas en orden correcto
+                    if( ejercicios[excercise].StateSecondRight() == 1)
                     {
-                        //Esperar a que acabe de reproducir sonido
-                    }//Fin while
+                        //Respuesta correcta
+                        Log.d("eeecorrecto", "correcto");
 
-                }catch(Exception e)
-                {
-                    e.printStackTrace();
-                }
-                //Asignar y reproducir audio VERSION ANTERIOR
-                //sound = MediaPlayer.create(EjercicioSilabico.this,  ejercicios[excercise].getPalabraValue() );
-                //sound.start();
+                        //Colorear las estrellas
+                        bar.setRating(Float.parseFloat("3.0"));
+
+                        //Guardar score ejercicio actual (f es para indicar que es float)
+                        scoreSilEx[excercise] = 3.0f;
+
+                        //Asignar y reproducir sonido de la palabra correspondiente
+                        try
+                        {
+
+                            sound = ejercicios[excercise].getPalabraValue();
+                            sound.start();
+
+                            //Verificar que ha parado la reproducción de audio
+                            //while(sound.isPlaying())
+                            //{
+                            //Esperar a que acabe de reproducir sonido
+                            //}//Fin while
+
+                        }catch(Exception e)
+                        {
+                            e.printStackTrace();
+                        }
+                        //Asignar y reproducir audio VERSION ANTERIOR
+                        //sound = MediaPlayer.create(EjercicioSilabico.this,  ejercicios[excercise].getPalabraValue() );
+                        //sound.start();
 
                 /*/---Pasar automaticamente a siguiente ejercicio---
 
-                //Verificar que ha parado la reproducción de audio
-                while(sound.isPlaying())
-                {
-                    //Esperar a que acabe de reproducir sonido
-                }//Fin while
+                USAR ONCOMPLETION PARA PASAR A SIGUIENTE EJERCICIO
 
-                //Siguiente imagen
-                vflip.showNext();
 
-                //Siguiente ejercicio
-                excercise = excercise+1;
-
-                //Si el numero del ejercicio, después del incremento es igual o mayor del length
-                if(excercise >= ejercicios.length )
-                {
-                    //Regresarse al primero
-                    excercise = 0;
-                }//Fin if 2
-
-                //Cambiar silabas de checkboxes y guardar posiciones actuales
-                posactualex = ChangeTextBoxes(ejercicios[excercise]);
-
-                //Resetear estados de seleccion de los checkboxes de las silabas de ejercicio actual
-                //Restear botones y Barra de estrellas
-                Reset(ejercicios[excercise]);
                 //--- Fin pasar automaticamente a siguiente ejercicio ----*/
 
-            }//Fin if 6
+                    }//Fin if 6
 
-            //Verificar si se selecciono silabas en orden inverso
-            if(ejercicios[excercise].estado[1] == 2)
-            {
-                //Dar 2 de 3 estrellas
-                bar.setRating(Float.parseFloat("2.0"));
-                //Guardar score ejercicio actual (f es para indicar que es float)
-                scoreSilEx[excercise] = 2.0f;
+                    //Verificar si se selecciono silabas en orden inverso
+                    if(ejercicios[excercise].estado[1] == 2)
+                    {
+                        //Dar 2 de 3 estrellas
+                        bar.setRating(Float.parseFloat("2.0"));
+                        //Guardar score ejercicio actual (f es para indicar que es float)
+                        scoreSilEx[excercise] = 2.0f;
 
-            }//Fin if 7
+                    }//Fin if 7
 
-        }//Fin if 5
-        else
-        {
-            //Si es incorrecto borrar todoo
-            bar.setRating(Float.parseFloat("0.0"));
-
-
-            if(ejercicios[excercise].StateFirstRight() == 1 || ejercicios[excercise].StateSecondRight() != 0 )
-            {
-                //Mitad de respuesta correcta
-                bar.setRating(Float.parseFloat("1.5"));
-                //Guardar score ejercicio actual (f es para indicar que es float)
-                scoreSilEx[excercise] = 1.5f;
+                }//Fin if 5
+                else
+                {
+                    //Si es incorrecto borrar todoo
+                    bar.setRating(Float.parseFloat("0.0"));
 
 
-            }//Fin if 8
+                    if(ejercicios[excercise].StateFirstRight() == 1 || ejercicios[excercise].StateSecondRight() != 0 )
+                    {
+                        //Mitad de respuesta correcta
+                        bar.setRating(Float.parseFloat("1.5"));
+                        //Guardar score ejercicio actual (f es para indicar que es float)
+                        scoreSilEx[excercise] = 1.5f;
 
-        }//Fin else 5
 
-        ///*******************
-        //sound.stop();
+                    }//Fin if 8
+
+                }//Fin else 5
+
+
+            }//FIN ONCOMPLETION INNER
+
+        }); //FIN IUTTER ON COMPLETION
+
+
 
     }//Fin metodo checkBox1click
     //----------------------------------------------------------------------------------------------

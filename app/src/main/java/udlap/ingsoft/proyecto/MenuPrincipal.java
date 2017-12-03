@@ -90,6 +90,8 @@ public class MenuPrincipal extends AppCompatActivity
         //Mandar id de usuario actual a actividad del MenuObservadores
         in.putExtra("IDUSER",idusuario);
         startActivity(in);
+        finish();
+
 
     }//Fin metodo ClickObservadores
     //----------------------------------------------------------------------------------------------
@@ -102,6 +104,8 @@ public class MenuPrincipal extends AppCompatActivity
         //Mandar id de usuario actual a actividad del MenuExploradores
         in.putExtra("IDUSER",idusuario);
         startActivity(in);
+        finish();
+
 
     }//Fin metodo ClickExplroadores
     //----------------------------------------------------------------------------------------------
@@ -115,6 +119,8 @@ public class MenuPrincipal extends AppCompatActivity
             //Mandar id de usuario actual a actividad del MenuStatistics
             inte.putExtra("IDUSR",idusuario);
             startActivity(inte);
+            finish();
+
         }//Fin if 1
 
     }//Fin metodo ClickSatistics
@@ -127,6 +133,8 @@ public class MenuPrincipal extends AppCompatActivity
         //Mandar id de usuario actual a actividad del MenuAstronautas
         inte.putExtra("IDUSER",idusuario);
         startActivity(inte);
+        finish();
+
 
     }//Fin metodo ClickAstronautas
 }//Fin clase MenuPrincipal

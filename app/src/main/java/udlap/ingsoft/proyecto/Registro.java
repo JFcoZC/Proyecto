@@ -79,6 +79,7 @@ public class Registro extends AppCompatActivity
             //el id que se le asigno
             in.putExtra("primeraVez", 1);
             startActivity(in);
+            finish();
         }//Fin if 1
 
     }//Fin metodo Registrobd

@@ -88,6 +88,7 @@ public class Login extends AppCompatActivity
         //Iniciar actividad
         Intent in = new Intent(this, Registro.class);
         startActivity(in);
+        finish();
 
     }//Fin metodo onRegister
     //----------------------------------------------------------------------------------------------
@@ -98,6 +99,7 @@ public class Login extends AppCompatActivity
         //Mandar id -1 indicando que no hay connexion a la bds
         in.putExtra("IDUSER",-1);
         startActivity(in);
+        finish();
 
     }//Fin metodo no connect
     //----------------------------------------------------------------------------------------------

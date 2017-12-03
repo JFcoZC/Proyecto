@@ -250,7 +250,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/r6astroL"
+                android:id="@+id/rb6astroL"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -384,7 +384,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/r10astroL"
+                android:id="@+id/rb10astroL"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -518,7 +518,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/r14astroL"
+                android:id="@+id/rb14astroL"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -652,7 +652,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/r18astroL"
+                android:id="@+id/rb18astroL"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -786,7 +786,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/r22astroL"
+                android:id="@+id/rb22astroL"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"
@@ -920,7 +920,7 @@
             android:layout_weight="0.2">
 
             <RatingBar
-                android:id="@+id/r26astroL"
+                android:id="@+id/rb26astroL"
                 android:numStars="3"
                 android:isIndicator="true"
                 android:theme="@style/RatingBar"

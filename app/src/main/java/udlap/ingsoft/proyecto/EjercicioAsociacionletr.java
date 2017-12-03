@@ -72,7 +72,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
             new EjercicioLetra("N",R.drawable.naranja, new String[] {"M", "O", "R", "N"}, 1,
                     new int[] {R.raw.m, R.raw.o, R.raw.r , R.raw.n, R.raw.nde}),
             new EjercicioLetra("Ñ",R.drawable.niu, new String[] {"Ñ","N","X","L"}, 1,
-                    new int[] {R.raw.a,R.raw.n,R.raw.x,R.raw.l,R.raw.ade}),
+                    new int[] {R.raw.enie,R.raw.n,R.raw.x,R.raw.l,R.raw.eneniu}),
             new EjercicioLetra("O",R.drawable.oso, new String[] {"F", "Q", "G", "O"}, 1,
                     new int[] {R.raw.f, R.raw.q, R.raw.g , R.raw.o, R.raw.ode}),
             new EjercicioLetra("P",R.drawable.perro, new String[] {"T", "P", "R", "H"}, 1,
@@ -89,8 +89,8 @@ public class EjercicioAsociacionletr extends AppCompatActivity
                     new int[] {R.raw.f, R.raw.u, R.raw.g , R.raw.a, R.raw.ude}),
             new EjercicioLetra("V",R.drawable.vaca, new String[] {"A", "V", "Q", "F"}, 1,
                     new int[] {R.raw.a, R.raw.v, R.raw.q , R.raw.f, R.raw.vde}),
-            new EjercicioLetra("W",R.drawable.abeja, new String[] {"E", "L", "S", "T"}, 1,
-                    new int[] {R.raw.e, R.raw.l, R.raw.s , R.raw.t, R.raw.ude}),
+            new EjercicioLetra("W",R.drawable.waterpolo, new String[] {"W", "L", "S", "T"}, 1,
+                    new int[] {R.raw.dobleu, R.raw.l, R.raw.s , R.raw.t, R.raw.wdwater}),
             new EjercicioLetra("X",R.drawable.xilofono, new String[] {"X", "V", "E", "S"}, 1,
                     new int[] {R.raw.x, R.raw.v, R.raw.e , R.raw.s, R.raw.xde}),
             new EjercicioLetra("Y",R.drawable.yoyo, new String[] {"Y","Q", "R", "T"}, 1,
@@ -123,11 +123,11 @@ public class EjercicioAsociacionletr extends AppCompatActivity
         setContentView(R.layout.ejercicio_asociacionletra);
 
         keyChar = "A";
-        sounds[0] = MediaPlayer.create(this, R.raw.u);
-        sounds[1] = MediaPlayer.create(this, R.raw.e);
-        sounds[2] = MediaPlayer.create(this, R.raw.a);
-        sounds[3] = MediaPlayer.create(this, R.raw.i);
-        sounds[4] = MediaPlayer.create(this, R.raw.ade);
+        //sounds[0] = MediaPlayer.create(this, R.raw.u);
+        //sounds[1] = MediaPlayer.create(this, R.raw.e);
+        //sounds[2] = MediaPlayer.create(this, R.raw.a);
+        //sounds[3] = MediaPlayer.create(this, R.raw.i);
+        //sounds[4] = MediaPlayer.create(this, R.raw.ade);
 
 
 
@@ -143,7 +143,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
 
 
-        sounds[4].start();
+        //sounds[4].start();
 
         //----OBTENER POSICION DE EJERCICIO QUE DEBE SER DESPLEGADO Y MOSTRARLO---------------------
         inten = getIntent();
@@ -153,8 +153,10 @@ public class EjercicioAsociacionletr extends AppCompatActivity
 
         //Todoo esto se hace en una sola linea:
         //Mostrar la imagen correspondiente
+
         //CAMBIAR POSICIONES DE PALABRAS DE CHECKBOXES Y GUARDAR POSICIONES ACTUALES
-        setProperties(ejercicios[count]);
+        //ESTO SE REALIZA SOLO UNA VEZ EN EL ON RESUME PARA EVITAR AMONTONAMIENTOS DE AUDIO
+
         //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE EN VIEWFLIPPER-----------------------
 
         //*********obtener id usuario actual para pasarlo por medio de home ****************
@@ -315,7 +317,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
 
         if (v == btnNext){
             count++;
-            if (count == 25) count =0;
+            if (count == 27) count =0;
             Log.d("eeeee",""+count);
             Log.d("eeeee",""+ejercicios.length);
             setProperties(ejercicios[count]);
@@ -325,7 +327,7 @@ public class EjercicioAsociacionletr extends AppCompatActivity
             if (count == 0){
                 Log.d("eeeee",""+count);
                 Log.d("eeeee",""+ejercicios.length);
-                count = 24;
+                count = 26;
                 setProperties(ejercicios[count]);
                 System.gc();
 
@@ -448,6 +450,8 @@ public class EjercicioAsociacionletr extends AppCompatActivity
 
         //Inicar nueva actividad creada en line anterior/ ir a menu principal
         startActivity(in);
+        finish();
+
 
     }//Fin metodo HomeClick
     //----------------------------------------------------------------------------------------------

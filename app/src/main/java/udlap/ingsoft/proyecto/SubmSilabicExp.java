@@ -31,7 +31,11 @@ public class SubmSilabicExp extends AppCompatActivity
     int NUMSILABICGAMES = 6;
     float[] scoreslvltrh;
     //Arreglo con id de ratingbars
-    int[] idrbs = {R.id.rb1exp1,R.id.rb2exp1,R.id.rb3exp1,R.id.rb4exp1,R.id.rb5exp1,R.id.rb6exp1};
+    int[] idrbs = {R.id.rb1exp1,R.id.rb2exp1,R.id.rb3exp1,R.id.rb4exp1,R.id.rb5exp1,R.id.rb6exp1,
+                    R.id.rb7exp1,R.id.rb8exp1,R.id.rb9exp1,R.id.rb10exp1,R.id.rb11exp1,R.id.rb12exp1,
+                    R.id.rb13exp1,R.id.rb14exp1,R.id.rb15exp1,R.id.rb16exp1,R.id.rb17exp1,R.id.rb18exp1,
+                    R.id.rb19exp1,R.id.rb20exp1,R.id.rb21exp1,R.id.rb22exp1,R.id.rb23exp1,R.id.rb24exp1,
+                    R.id.rb25exp1,R.id.rb26exp1,R.id.rb27exp1,R.id.rb28exp1};
     //----- FIN ATRIBUTOS JUEGO SILABICO
 
     //METODOS
@@ -236,6 +240,7 @@ public class SubmSilabicExp extends AppCompatActivity
         in.putExtra("IDUSER", IDCURRENTUSER);
 
         startActivity(in);
+        finish();
 
 
     }//Fin metodo view v
@@ -260,6 +265,7 @@ public class SubmSilabicExp extends AppCompatActivity
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
 
         }//Fin if 1
 

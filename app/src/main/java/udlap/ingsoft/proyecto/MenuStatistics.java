@@ -255,6 +255,7 @@ public class MenuStatistics extends AppCompatActivity
         in.putExtra("IDUSER",iduser);
         //Inicar nueva actividad creada en line anterior/ ir a menu principal
         startActivity(in);
+        finish();
 
     }//Fin metodo HomeClick
 

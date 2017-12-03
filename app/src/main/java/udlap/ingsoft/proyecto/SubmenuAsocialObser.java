@@ -108,6 +108,7 @@ public class SubmenuAsocialObser extends AppCompatActivity
 
         //Inicar nueva actividad creada en line anterior/ ir a menu principal
         startActivity(in);
+        finish();
 
     }//Fin metodo HomeClick
     //----------------------------------------------------------------------------------------------
@@ -236,6 +237,7 @@ public class SubmenuAsocialObser extends AppCompatActivity
         in.putExtra("IDUSER", IDCURRENTUSER);
 
         startActivity(in);
+        finish();
 
     }//Fin metodo select
 

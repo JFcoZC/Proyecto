@@ -56,6 +56,8 @@ public class MenuObservadores extends AppCompatActivity
             in.putExtra("IDUSER",IDCURRENTUSER);
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
+
 
         }//Fin if 1
 
@@ -70,6 +72,8 @@ public class MenuObservadores extends AppCompatActivity
         in.putExtra("IDUSER",IDCURRENTUSER);
 
         startActivity(in);
+        finish();
+
 
     }//Fin metodo ClickAbecedario
     //----------------------------------------------------------------------------------------------
@@ -82,6 +86,8 @@ public class MenuObservadores extends AppCompatActivity
         in.putExtra("IDUSER",IDCURRENTUSER);
         //Iniciar actividad submenu ascoiar letras
         startActivity(in);
+        finish();
+
 
     }//Fin metodo AsociarLetras
     //----------------------------------------------------------------------------------------------

@@ -28,7 +28,9 @@ public class SubmenuOrtoAstro extends AppCompatActivity
     //----- Atributos de juego ORTOGRAFIA ----------------------
     float[] scoreslvlsix;
     //Arreglo con id de ratingbars
-    int[] idrbsorto = {R.id.rb1astro1,R.id.rb2astro1,R.id.rb3astro1};
+    int[] idrbsorto = {R.id.rb1astro1,R.id.rb2astro1,R.id.rb3astro1,R.id.rb4astro1,R.id.rb5astro1,
+                        R.id.rb6astro1,R.id.rb7astro1,R.id.rb8astro1,R.id.rb9astro1,R.id.rb10astro1,
+                        R.id.rb11astro1};
     //----- FIN ATRIBUTOS JUEGO ORTOGRAFICO
 
     //------- Atributos sopa de letras ------------------
@@ -230,6 +232,7 @@ public class SubmenuOrtoAstro extends AppCompatActivity
         in.putExtra("IDUSER", IDCURRENTUSER);
 
         startActivity(in);
+        finish();
 
 
     }//Fin metodo view v
@@ -254,6 +257,7 @@ public class SubmenuOrtoAstro extends AppCompatActivity
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
 
         }//Fin if 1
 

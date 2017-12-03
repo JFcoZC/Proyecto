@@ -56,6 +56,7 @@ public class MenuAstronautas extends AppCompatActivity
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
 
         }//Fin if 1
 
@@ -69,6 +70,7 @@ public class MenuAstronautas extends AppCompatActivity
         in.putExtra("IDUSER",IDCURRENTUSER);
         //Iniciar nueva actividad
         startActivity(in);
+        finish();
 
     }//Fin metodo OrtografiaClick
     //----------------------------------------------------------------------------------------------
@@ -80,6 +82,7 @@ public class MenuAstronautas extends AppCompatActivity
         in.putExtra("IDUSER",IDCURRENTUSER);
         //Iniciar nueva actividad
         startActivity(in);
+        finish();
 
     }//Fin metodo LecturasClick
 

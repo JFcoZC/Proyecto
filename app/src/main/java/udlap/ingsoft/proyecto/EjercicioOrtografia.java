@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.ViewFlipper;
 
@@ -24,7 +25,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
     //variables globales
     ImageButton next, prev;
     ImageButton home;
-    ViewFlipper vflip;
+    ImageView imagenes;
     CheckBox uno,dos;
 
     //Tiempo de juego
@@ -58,6 +59,11 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
     //MediaPlayer para la reproduccion de sonidos
     MediaPlayer sound;
 
+    //Imagenes
+    int images[] = {R.drawable.burro,R.drawable.vaca,R.drawable.jirafa,R.drawable.arbol,R.drawable.cielo,
+                    R.drawable.volcan,R.drawable.avion,R.drawable.television,R.drawable.policia,R.drawable.llaves,
+                    R.drawable.celular};
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -74,8 +80,8 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         //ser declarado de forma global
         //-----------------------------------------
 
-        //Objeto que permite pasar las fotos como slides
-        vflip = (ViewFlipper) findViewById(R.id.ViewFlipper);
+        //Objeto que CONTINE LA IMAGEN DEPLEGADA EN LAYOUT
+        imagenes = (ImageView) findViewById(R.id.imagenBurro);
 
         //Botones
         next = (ImageButton) findViewById(R.id.siguiente);
@@ -93,7 +99,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         //default
         excercise = inten.getIntExtra("INDXEX",0);
         //Mostrar la imagen correspondiente
-        vflip.setDisplayedChild(excercise);
+        imagenes.setImageResource(images[excercise]);
         //CAMBIAR POSICIONES DE PALABRAS DE CHECKBOXES Y GUARDAR POSICIONES ACTUALES
         posactualex = ChangeTextBoxes(ejercicios[excercise]);
         //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE EN VIEWFLIPPER-----------------------
@@ -132,7 +138,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         //default
         excercise = inten.getIntExtra("INDXEX",0);
         //Mostrar la imagen correspondiente
-        vflip.setDisplayedChild(excercise);
+        imagenes.setImageResource(images[excercise]);
         //CAMBIAR POSICIONES DE PALABRAS DE CHECKBOXES Y GUARDAR POSICIONES ACTUALES
         posactualex = ChangeTextBoxes(ejercicios[excercise]);
         //-------------- FIN MOSTRAR EJERCICIO CORRESPONDIENTE EN VIEWFLIPPER-----------------------
@@ -224,6 +230,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
 
         }//Fin if 1
 
@@ -236,8 +243,6 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         //Se presiona boton next
         if(v == next)
         {
-            vflip.showNext();
-
             //Siguiente ejercicio
             excercise = excercise+1;
 
@@ -251,6 +256,9 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
             //Cambiar silabas de checkboxes y guardar posiciones actuales
             posactualex = ChangeTextBoxes(ejercicios[excercise]);
 
+            //MOSTRAR IMAGEN CORRESPONDIENTE
+            imagenes.setImageResource(images[excercise]);
+
             //Resetear estados de seleccion de los checkboxes de las silabas de ejercicio actual
             //Restear botones y Barra de estrellas
             Reset(ejercicios[excercise]);
@@ -261,7 +269,6 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
             //Se presiona boton previous
             if(v == prev)
             {
-                vflip.showPrevious();
 
                 //Ejercicio previo
                 excercise = excercise-1;
@@ -276,6 +283,9 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
 
                 //Cambiar silabas de checkboxes y guardar posiciones actuales
                 posactualex = ChangeTextBoxes(ejercicios[excercise]);
+
+                //MOSTRAR IMAGEN CORRESPONDIENTE
+                imagenes.setImageResource(images[excercise]);
 
                 //Resetear estados de seleccion de los checkboxes de las silabas de ejercicio actual
                 //Restear botones y Barra de estrellas
@@ -430,7 +440,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
 
     public void imagenClick(View vi)
     {
-        boolean selected = vflip.isClickable();
+        boolean selected = imagenes.isClickable();
 
         sound = ejercicios[excercise].getPalabraValue();
 

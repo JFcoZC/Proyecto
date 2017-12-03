@@ -5,6 +5,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.view.View;
 import android.media.MediaPlayer;
@@ -32,11 +33,11 @@ public class EjercicioAbecedario extends AppCompatActivity
     int[] images = {R.drawable.abeja,R.drawable.burro, R.drawable.carro, R.drawable.dado, R.drawable.estrella, R.drawable.flor,
             R.drawable.gato, R.drawable.helado, R.drawable.iguana, R.drawable.jirafa, R.drawable.koala, R.drawable.leon,
             R.drawable.mono, R.drawable.naranja, R.drawable.niu ,R.drawable.oso, R.drawable.perro, R.drawable.queso, R.drawable.rana,
-            R.drawable.sol, R.drawable.tortuga, R.drawable.uva, R.drawable.vaca, R.drawable.abeja ,R.drawable.xilofono, R.drawable.yoyo,
+            R.drawable.sol, R.drawable.tortuga, R.drawable.uva, R.drawable.vaca, R.drawable.waterpolo ,R.drawable.xilofono, R.drawable.yoyo,
             R.drawable.zorro };
     int[] sounds = {R.raw.ade, R.raw.bde, R.raw.cde, R.raw.dde, R.raw.ede, R.raw.fde, R.raw.gde, R.raw.hde,
-            R.raw.ide, R.raw.jde, R.raw.kde, R.raw.lde, R.raw.mde, R.raw.nde, R.raw.good,R.raw.ode, R.raw.pde, R.raw.qde,
-            R.raw.rde, R.raw.sde, R.raw.tde, R.raw.ude, R.raw.vde, R.raw.good ,R.raw.xde, R.raw.yde, R.raw.zde};
+            R.raw.ide, R.raw.jde, R.raw.kde, R.raw.lde, R.raw.mde, R.raw.nde, R.raw.eneniu,R.raw.ode, R.raw.pde, R.raw.qde,
+            R.raw.rde, R.raw.sde, R.raw.tde, R.raw.ude, R.raw.vde, R.raw.wdwater ,R.raw.xde, R.raw.yde, R.raw.zde};
     float[] scores = new float[27];
 
     //Contador para indicar el numero de ejercicio actual
@@ -51,7 +52,7 @@ public class EjercicioAbecedario extends AppCompatActivity
         setContentView(R.layout.ejercicio_abcedario);
         ibt = (ImageButton) findViewById(R.id.imageButton3);
         txtView = (TextView) findViewById(R.id.textView);
-        mp = MediaPlayer.create(this, sounds[count]);
+        btnNext = (ImageButton) findViewById(R.id.btnNext);
 
         //----OBTENER POSICION DE EJERCICIO QUE DEBE SER DESPLEGADO Y MOSTRARLO---------------------
         inten = getIntent();
@@ -119,18 +120,23 @@ public class EjercicioAbecedario extends AppCompatActivity
     public void nextPrev(View v){
         if (v == btnNext){
             count++;
-            if (count == 26) count =0;
-
+            if (count == 27) count =0;
+            Log.d("eeeeeSIG",""+count);
+            Log.d("eeeee",""+alphabet.length);
             setProperties(count);
             System.gc();
         }else {
             if (count == 0){
-                count = 26;
+                count = 27;
+                Log.d("eeeee",""+count);
+                Log.d("eeeee",""+alphabet.length);
                 setProperties(count);
                 System.gc();
 
             }else{
                 count--;
+                Log.d("eeeeePREV",""+count);
+                Log.d("eeeee",""+alphabet.length);
                 setProperties(count);
                 System.gc();
 
@@ -161,6 +167,8 @@ public class EjercicioAbecedario extends AppCompatActivity
 
         //Inicar nueva actividad creada en line anterior/ ir a menu principal
         startActivity(in);
+        finish();
+
 
     }//Fin metodo HomeClick
     //----------------------------------------------------------------------------------------------

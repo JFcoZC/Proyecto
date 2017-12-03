@@ -28,7 +28,8 @@ public class SubmenuLecturaAstro extends AppCompatActivity
     float[] scoreslvlfive;
     //Arreglo con id de rating bars de Lecturas; debe coincidir con el NUEXERCISE definifo en la
     //clase USUARIO
-    int[] idrbslec = {R.id.rb1astroL,R.id.rb2astroL,R.id.rb3astroL,R.id.rb4astroL,R.id.rb5astroL,R.id.rb7astroL,R.id.rb8astroL};
+    int[] idrbslec = {R.id.rb1astroL,R.id.rb2astroL,R.id.rb3astroL,R.id.rb4astroL,R.id.rb5astroL,
+            R.id.rb16astroL,R.id.rb7astroL,R.id.rb8astroL,R.id.rb9astroL,R.id.rb10astroL};
 
     //Metodos
     //----------------------------------------------------------------------------------------------
@@ -138,6 +139,7 @@ public class SubmenuLecturaAstro extends AppCompatActivity
         in.putExtra("IDUSER",IDCURRENTUSER);
         //Iniciar Actividad
         startActivity(in);
+        finish();
     }//Fin metodo selectLectura
     //----------------------------------------------------------------------------------------------
     //Metodo que llama a ir de regreso a menu principal si se oprime boton Home
@@ -160,6 +162,7 @@ public class SubmenuLecturaAstro extends AppCompatActivity
 
             //Inicar nueva actividad creada en line anterior/ ir a menu principal
             startActivity(in);
+            finish();
 
         }//Fin if 1
 

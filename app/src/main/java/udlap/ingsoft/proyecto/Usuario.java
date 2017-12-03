@@ -31,8 +31,8 @@ public class Usuario
     int NUMEXLTWO = 27;
     int NUMEXLTREE = 28;
     int NUMEXLFOUR = 28;
-    int NUMEXLFIVE = 3;
-    int NUMEXLSIX = 10;
+    int NUMEXLFIVE = 10;
+    int NUMEXLSIX = 11;
 
     //Atributos
     //byte[] borradol = new byte[1];      //1 byte

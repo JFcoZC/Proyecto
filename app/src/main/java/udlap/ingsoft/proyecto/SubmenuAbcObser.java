@@ -51,6 +51,7 @@ public class SubmenuAbcObser extends AppCompatActivity
 
         //Inicar nueva actividad creada en line anterior/ ir a menu principal
         startActivity(in);
+        finish();
 
     }//Fin metodo HomeClick
     //----------------------------------------------------------------------------------------------
@@ -181,6 +182,7 @@ public class SubmenuAbcObser extends AppCompatActivity
         inte.putExtra("IDUSER",IDCURRENTUSER);
 
         startActivity(inte);
+        finish();
 
     }//Fin metodo SelectLetra
 
