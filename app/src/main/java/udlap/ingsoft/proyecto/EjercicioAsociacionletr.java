@@ -417,16 +417,17 @@ public class EjercicioAsociacionletr extends AppCompatActivity
 
         //}
 
-        if (v == btnSonido){
+        //if (v == btnSonido){
 
-            Sonido1.start();
-            Sonido1.release();
-        }
+        //    Sonido1.start();
+        //    Sonido1.release();
+        //}
 
         if(v == vf){
+            //Sonido1.release();
             Sonido1 = sounds[4];
             Sonido1.start();
-            Sonido1.release();
+
         }
 
     }//Fin metodo OnClick

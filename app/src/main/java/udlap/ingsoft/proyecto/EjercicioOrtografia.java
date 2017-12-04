@@ -43,7 +43,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
     Usuario CURRENTUSER;
 
     //num ejercicios juego ortografia (checar esta variable tambien en clase Usuario)
-    int NUMEXCER = 11;
+    int NUMEXCER = 28;
 
     //contador para indicar el numero de ejercicio
     int excercise = 0;
@@ -62,7 +62,10 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
     //Imagenes
     int images[] = {R.drawable.burro,R.drawable.vaca,R.drawable.jirafa,R.drawable.arbol,R.drawable.cielo,
                     R.drawable.volcan,R.drawable.avion,R.drawable.television,R.drawable.policia,R.drawable.llaves,
-                    R.drawable.celular};
+                    R.drawable.celular,R.drawable.almohada,R.drawable.ambulancia,R.drawable.basura,R.drawable.bombilla,
+                    R.drawable.caballo,R.drawable.carro,R.drawable.cepillo,R.drawable.consola,R.drawable.elote,
+                    R.drawable.hamburguesa,R.drawable.helado,R.drawable.jitomate,R.drawable.lampara,R.drawable.playera,
+                    R.drawable.ventilador,R.drawable.zanahoria,R.drawable.zapatos};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -386,7 +389,7 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
 
 
         int[] recursos = {R.raw.good,R.raw.bad};
-        ortoexcercises[0] = new OrtoEx("burro","vurro", R.raw.burro, recursos,0,EjercicioOrtografia.this);
+        ortoexcercises[0] = new OrtoEx("burro","vurro", R.raw.burro, recursos,0, EjercicioOrtografia.this);
 
         int[] recursos1 = {R.raw.good,R.raw.bad};
         ortoexcercises[1] = new OrtoEx("vaca","baca", R.raw.vaca, recursos1,1,EjercicioOrtografia.this);
@@ -395,28 +398,81 @@ public class EjercicioOrtografia extends AppCompatActivity implements View.OnCli
         ortoexcercises[2] = new OrtoEx("jirafa","girafa", R.raw.jirafa, recursos2,2,EjercicioOrtografia.this);
 
         int[] recursos3 = {R.raw.good,R.raw.bad};
-        ortoexcercises[3] = new OrtoEx("árbol","árvol", R.raw.jirafa, recursos3,3, EjercicioOrtografia.this);
+        ortoexcercises[3] = new OrtoEx("arbol","arvol", R.raw.arbol, recursos3,3,EjercicioOrtografia.this);
 
         int[] recursos4 = {R.raw.good,R.raw.bad};
-        ortoexcercises[4] = new OrtoEx("cielo","sielo", R.raw.jirafa, recursos4,4, EjercicioOrtografia.this);
+        ortoexcercises[4] = new OrtoEx("cielo","sielo", R.raw.cielo, recursos4,4,EjercicioOrtografia.this);
 
         int[] recursos5 = {R.raw.good,R.raw.bad};
-        ortoexcercises[5] = new OrtoEx("volcan","bolcan", R.raw.jirafa, recursos5,5, EjercicioOrtografia.this);
+        ortoexcercises[5] = new OrtoEx("volcan","bolcan", R.raw.volcan, recursos5,5,EjercicioOrtografia.this);
 
         int[] recursos6 = {R.raw.good,R.raw.bad};
-        ortoexcercises[6] = new OrtoEx("avión","abion", R.raw.jirafa, recursos6,6, EjercicioOrtografia.this);
+        ortoexcercises[6] = new OrtoEx("avión","abion", R.raw.avion, recursos6,6,EjercicioOrtografia.this);
 
         int[] recursos7 = {R.raw.good,R.raw.bad};
-        ortoexcercises[7] = new OrtoEx("televisión","telebisión", R.raw.jirafa, recursos7,7, EjercicioOrtografia.this);
+        ortoexcercises[7] = new OrtoEx("television","telebision", R.raw.television, recursos7,7,EjercicioOrtografia.this);
 
         int[] recursos8 = {R.raw.good,R.raw.bad};
-        ortoexcercises[8] = new OrtoEx("policia","polisia", R.raw.jirafa, recursos8,8, EjercicioOrtografia.this);
+        ortoexcercises[8] = new OrtoEx("policia","polisia", R.raw.policia, recursos8,8,EjercicioOrtografia.this);
 
         int[] recursos9 = {R.raw.good,R.raw.bad};
-        ortoexcercises[9] = new OrtoEx("llaves","llabes", R.raw.jirafa, recursos9,9, EjercicioOrtografia.this);
+        ortoexcercises[9] = new OrtoEx("llaves","llabes", R.raw.llaves, recursos9,9,EjercicioOrtografia.this);
 
         int[] recursos10 = {R.raw.good,R.raw.bad};
-        ortoexcercises[10] = new OrtoEx("celular","selular", R.raw.jirafa, recursos10,10, EjercicioOrtografia.this);
+        ortoexcercises[10] = new OrtoEx("celular","selular", R.raw.celular, recursos10,10,EjercicioOrtografia.this);
+
+        int[] recursos11 = {R.raw.good,R.raw.bad};
+        ortoexcercises[11] = new OrtoEx("almohada","almoada", R.raw.almohada, recursos11,11,EjercicioOrtografia.this);
+
+        int[] recursos12 = {R.raw.good,R.raw.bad};
+        ortoexcercises[12] = new OrtoEx("ambulancia","amvulancia", R.raw.ambulancia, recursos12,12,EjercicioOrtografia.this);
+
+        int[] recursos13 = {R.raw.good,R.raw.bad};
+        ortoexcercises[13] = new OrtoEx("basura","vasura", R.raw.basura, recursos13,13,EjercicioOrtografia.this);
+
+        int[] recursos14 = {R.raw.good,R.raw.bad};
+        ortoexcercises[14] = new OrtoEx("bombilla","vombilla", R.raw.bombilla, recursos14,14,EjercicioOrtografia.this);
+
+        int[] recursos15 = {R.raw.good,R.raw.bad};
+        ortoexcercises[15] = new OrtoEx("caballo","cavallo", R.raw.caballo, recursos15,15,EjercicioOrtografia.this);
+
+        int[] recursos16 = {R.raw.good,R.raw.bad};
+        ortoexcercises[16] = new OrtoEx("carro","caro", R.raw.carro, recursos16,16,EjercicioOrtografia.this);
+
+        int[] recursos17 = {R.raw.good,R.raw.bad};
+        ortoexcercises[17] = new OrtoEx("cepillo","cepiyo", R.raw.cepillo, recursos17,17,EjercicioOrtografia.this);
+
+        int[] recursos18 = {R.raw.good,R.raw.bad};
+        ortoexcercises[18] = new OrtoEx("consola","conzola", R.raw.consola, recursos18,18,EjercicioOrtografia.this);
+
+        int[] recursos19 = {R.raw.good,R.raw.bad};
+        ortoexcercises[19] = new OrtoEx("elote","helote", R.raw.elote, recursos19,19,EjercicioOrtografia.this);
+
+        int[] recursos20 = {R.raw.good,R.raw.bad};
+        ortoexcercises[20] = new OrtoEx("hamburguesa","amburguesa", R.raw.hamburguesa, recursos20,20,EjercicioOrtografia.this);
+
+        int[] recursos21 = {R.raw.good,R.raw.bad};
+        ortoexcercises[21] = new OrtoEx("helado","elado", R.raw.helado, recursos21,21,EjercicioOrtografia.this);
+
+        int[] recursos22 = {R.raw.good,R.raw.bad};
+        ortoexcercises[22] = new OrtoEx("jitomate","gitomate", R.raw.jitomate, recursos22,22,EjercicioOrtografia.this);
+
+        int[] recursos23 = {R.raw.good,R.raw.bad};
+        ortoexcercises[23] = new OrtoEx("lampara","lanpara", R.raw.lampara, recursos23,23,EjercicioOrtografia.this);
+
+        int[] recursos24 = {R.raw.good,R.raw.bad};
+        ortoexcercises[24] = new OrtoEx("playera","plallera", R.raw.playera, recursos24,24,EjercicioOrtografia.this);
+
+        int[] recursos25 = {R.raw.good,R.raw.bad};
+        ortoexcercises[25] = new OrtoEx("ventilador","bentilador", R.raw.ventilador, recursos25,25,EjercicioOrtografia.this);
+
+        int[] recursos26 = {R.raw.good,R.raw.bad};
+        ortoexcercises[26] = new OrtoEx("zanahoria","sanahoria", R.raw.zanahoria, recursos26,26,EjercicioOrtografia.this);
+
+        int[] recursos27 = {R.raw.good,R.raw.bad};
+        ortoexcercises[27] = new OrtoEx("zapatos","sapatos", R.raw.zapatos, recursos27,27,EjercicioOrtografia.this);
+
+
 
         return ortoexcercises;
 

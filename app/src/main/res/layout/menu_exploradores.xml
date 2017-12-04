@@ -24,7 +24,7 @@
         android:layout_width="@dimen/menu_niveles_width"
         android:layout_height="@dimen/menu_niveles_height"
         android:layout_gravity="center"
-        android:text="Juego silabico"
+        android:text="Juego silábico"
         android:onClick="ClickJuegoSilabico"
         android:layout_weight="0" />
 

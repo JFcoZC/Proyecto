@@ -30,7 +30,10 @@ public class SubmenuOrtoAstro extends AppCompatActivity
     //Arreglo con id de ratingbars
     int[] idrbsorto = {R.id.rb1astro1,R.id.rb2astro1,R.id.rb3astro1,R.id.rb4astro1,R.id.rb5astro1,
                         R.id.rb6astro1,R.id.rb7astro1,R.id.rb8astro1,R.id.rb9astro1,R.id.rb10astro1,
-                        R.id.rb11astro1};
+                        R.id.rb11astro1,R.id.rb12astro1,R.id.rb13astro1,R.id.rb14astro1,R.id.rb15astro1,
+                        R.id.rb16astro1,R.id.rb17astro1,R.id.rb18astro1,R.id.rb19astro1,R.id.rb20astro1,
+                        R.id.rb21astro1,R.id.rb22astro1,R.id.rb23astro1,R.id.rb24astro1,R.id.rb25astro1,
+                        R.id.rb26astro1,R.id.rb27astro1,R.id.rb28astro1};
     //----- FIN ATRIBUTOS JUEGO ORTOGRAFICO
 
     //------- Atributos sopa de letras ------------------
@@ -151,71 +154,71 @@ public class SubmenuOrtoAstro extends AppCompatActivity
                 break;
 
             case R.id.B12astro1:
-                //NUMEX = 11;
+                NUMEX = 11;
                 break;
 
             case R.id.B13astro1:
-
+                NUMEX = 12;
                 break;
 
             case R.id.B14astro1:
-
+                NUMEX = 13;
                 break;
 
             case R.id.B15astro1:
-
+                NUMEX = 14;
                 break;
 
             case R.id.B16astro1:
-
+                NUMEX = 15;
                 break;
 
             case R.id.B17astro1:
-
+                NUMEX = 16;
                 break;
 
             case R.id.B18astro1:
-
+                NUMEX = 17;
                 break;
 
             case R.id.B19astro1:
-
+                NUMEX = 18;
                 break;
 
             case R.id.B20astro1:
-
+                NUMEX = 19;
                 break;
 
             case R.id.B21astro1:
-
+                NUMEX = 20;
                 break;
 
             case R.id.B22astro1:
-
+                NUMEX = 21;
                 break;
 
             case R.id.B23astro1:
-
+                NUMEX = 22;
                 break;
 
             case R.id.B24astro1:
-
+                NUMEX = 23;
                 break;
 
             case R.id.B25astro1:
-
+                NUMEX = 24;
                 break;
 
             case R.id.B26astro1:
-
+                NUMEX = 25;
                 break;
 
             case R.id.B27astro1:
-
+                NUMEX = 26;
                 break;
 
             case R.id.B28astro1:
-
+                NUMEX = 27;
                 break;
 
             default:
