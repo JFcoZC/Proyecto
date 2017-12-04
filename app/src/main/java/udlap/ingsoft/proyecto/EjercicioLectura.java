@@ -28,8 +28,19 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
 {
     private VideoView videoView;
     private VideoView videor;
-    private int [] videoArray={R.raw.cohete,R.raw.videoluna,R.raw.marciano,R.raw.estrellavid,R.raw.astronauta,R.raw.martevid,R.raw.jupitervid,R.raw.solv,R.raw.sistemasolar,R.raw.tierravid};
-    private String [] pregunta={"¿Qué hace el cohete?", "¿A donde lega el cohete?","¿Que hace el marciano?","¿Qué hemos visto?","¿Qué somos?","¿de que color es el planeta?","¿Cual es el planeta mas grande?","¿Qué es el sol?","¿Donde estamos?","¿De que forma es la tierra?"};
+    private int [] videoArray={R.raw.cohete,R.raw.videoluna,R.raw.marciano,R.raw.estrellavid,R.raw.astronauta,R.raw.martevid,
+            R.raw.jupitervid,R.raw.solv,R.raw.sistemasolar,R.raw.tierravid,R.raw.vid11,R.raw.vid12,R.raw.vid13,
+            R.raw.vid14,R.raw.vid15,R.raw.vid16,R.raw.vid17,R.raw.vid18,R.raw.vid19,R.raw.vid20,R.raw.vid21,R.raw.vid22,
+            R.raw.vid23,R.raw.vid24,R.raw.vid25,R.raw.vid26,R.raw.vid27,R.raw.vid28,};
+
+    private String [] pregunta={"¿Qué hace el cohete?", "¿A donde lega el cohete?","¿Que hace el marciano?","¿Qué hemos visto?",
+            "¿Qué somos?","¿de que color es el planeta?","¿Cual es el planeta mas grande?","¿Qué es el sol?","¿Donde estamos?",
+            "¿De que forma es la tierra?","¿De qué color es el marciano?","¿De que color es Jupiter","¿cuantos planetas existen?",
+            "¿Cómo está la luna?","¿Qué hace el extraterrestre?","¿Cómo esta el sol?","¿A donde regresa el cohete?",
+            "¿Qué hacemos en el espacio?","¿De que color es el extraterrestre?","¿Cómo se mueve la estrella?","¿Qué es marte?",
+            "¿De qué color es el sol?","¿Qué hacen los planetas?","¿Dónde vive el marciano?","¿de que color es el cohete?",
+            "Donde viaje el extraterrestre?","¿Qué es la luna?","¿A donde vuelve el cohete?"};
+
     private int position = 0;
 
     //Tiempo de juego
@@ -48,7 +59,7 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
     Usuario CURRENTUSER;
 
     //DETERMINA EL NUMERO DE EJERCICIOS SILABICOS DE 2 SILABAS (checar esta variable tambien en clase Usuario)
-    int NUMLECTURAS = 10; //numero de ejercicios disponibles
+    int NUMLECTURAS = 28; //numero de ejercicios disponibles
     //------------Fin actualizar variables rating bars----------
 
     ImageButton siguiente, previo;
@@ -564,6 +575,60 @@ public class EjercicioLectura extends AppCompatActivity implements View.OnClickL
 
         int[] sonidos9={R.raw.esferica,R.raw.cuadrada,R.raw.triangular};
         ejercicios[9]= new LecturaEx("esferica","cuadrada","triangular",sonidos9,9);
+
+        int[] sonidos10={R.raw.verde,R.raw.rojo,R.raw.amarillo};
+        ejercicios[10]= new LecturaEx("verde","rojo","amarillo",sonidos10,9);
+
+        int[] sonidos11={R.raw.amarillo,R.raw.verde,R.raw.rojo};
+        ejercicios[11]= new LecturaEx("amarillo","verde","rojo",sonidos11,9);
+
+        int[] sonidos12={R.raw.nueve,R.raw.doce,R.raw.seis};
+        ejercicios[12]= new LecturaEx("nueve","doce","seis",sonidos12,9);
+
+        int[] sonidos13={R.raw.durmiendo,R.raw.descansando,R.raw.bailando};
+        ejercicios[13]= new LecturaEx("durmiendo","descansando","bailando",sonidos13,9);
+
+        int[] sonidos14={R.raw.viaja,R.raw.navega,R.raw.conduce};
+        ejercicios[14]= new LecturaEx("viaja","navega","conduce",sonidos14,9);
+
+        int[] sonidos15={R.raw.caliente,R.raw.frio,R.raw.templado};
+        ejercicios[15]= new LecturaEx("caliente","frio","templado",sonidos15,9);
+
+        int[] sonidos16={R.raw.casa,R.raw.marte,R.raw.venus};
+        ejercicios[16]= new LecturaEx("casa","marte","venus",sonidos16,9);
+
+        int[] sonidos17={R.raw.bailamos,R.raw.cantamos,R.raw.reimos};
+        ejercicios[17]= new LecturaEx("bailamos","cantamos","reimos",sonidos17,9);
+
+        int[] sonidos18={R.raw.azul,R.raw.verde,R.raw.rojo};
+        ejercicios[18]= new LecturaEx("azul","verde","rojo",sonidos18,9);
+
+        int[] sonidos19={R.raw.rapido,R.raw.medio,R.raw.lento};
+        ejercicios[19]= new LecturaEx("rapido","medio","lento",sonidos19,9);
+
+        int[] sonidos20={R.raw.vecino,R.raw.companero,R.raw.amigo};
+        ejercicios[20]= new LecturaEx("vecino","compañero","amigo",sonidos20,9);
+
+        int[] sonidos21={R.raw.amarillo,R.raw.verde,R.raw.azul};
+        ejercicios[21]= new LecturaEx("amarillo","verde","azul",sonidos21,9);
+
+        int[] sonidos22={R.raw.sonrien,R.raw.bailan,R.raw.juegan};
+        ejercicios[22]= new LecturaEx("sonrien","bailan","juegan",sonidos22,9);
+
+        int[] sonidos23={R.raw.marte,R.raw.jupiter,R.raw.venus};
+        ejercicios[23]= new LecturaEx("marte","jupiter","venus",sonidos23,9);
+
+        int[] sonidos24={R.raw.azul,R.raw.rojo,R.raw.verde};
+        ejercicios[24]= new LecturaEx("azul","rojo","verde",sonidos24,9);
+
+        int[] sonidos25={R.raw.venus,R.raw.marte,R.raw.jupiter};
+        ejercicios[25]= new LecturaEx("venus","marte","jupiter",sonidos25,9);
+
+        int[] sonidos26={R.raw.satelite,R.raw.planeta,R.raw.estrella};
+        ejercicios[26]= new LecturaEx("satelite","planeta","estrella",sonidos26,9);
+
+        int[] sonidos27={R.raw.tierra,R.raw.marte,R.raw.jupiter};
+        ejercicios[27]= new LecturaEx("tierra","marte","jupiter",sonidos27,9);
 
 
         return ejercicios;

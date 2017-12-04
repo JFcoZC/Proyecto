@@ -29,7 +29,10 @@ public class SubmenuLecturaAstro extends AppCompatActivity
     //Arreglo con id de rating bars de Lecturas; debe coincidir con el NUEXERCISE definifo en la
     //clase USUARIO
     int[] idrbslec = {R.id.rb1astroL,R.id.rb2astroL,R.id.rb3astroL,R.id.rb4astroL,R.id.rb5astroL,
-            R.id.rb16astroL,R.id.rb7astroL,R.id.rb8astroL,R.id.rb9astroL,R.id.rb10astroL};
+            R.id.rb6astroL,R.id.rb7astroL,R.id.rb8astroL,R.id.rb9astroL,R.id.rb10astroL,R.id.rb11astroL
+            ,R.id.rb12astroL,R.id.rb13astroL,R.id.rb14astroL,R.id.rb15astroL,R.id.rb16astroL,R.id.rb17astroL
+            ,R.id.rb18astroL,R.id.rb19astroL,R.id.rb20astroL,R.id.rb21astroL,R.id.rb22astroL,R.id.rb23astroL
+            ,R.id.rb24astroL,R.id.rb25astroL,R.id.rb26astroL,R.id.rb27astroL,R.id.rb28astroL};
 
     //Metodos
     //----------------------------------------------------------------------------------------------
@@ -126,7 +129,66 @@ public class SubmenuLecturaAstro extends AppCompatActivity
             case R.id.B8astroL:
                 NUMEX = 7;
                 break;
-
+            case R.id.B9astroL:
+                NUMEX = 8;
+                break;
+            case R.id.B10astroL:
+                NUMEX = 9;
+                break;
+            case R.id.B11astroL:
+                NUMEX = 10;
+                break;
+            case R.id.B12astroL:
+                NUMEX = 11;
+                break;
+            case R.id.B13astroL:
+                NUMEX = 12;
+                break;
+            case R.id.B14astroL:
+                NUMEX = 13;
+                break;
+            case R.id.B15astroL:
+                NUMEX = 14;
+                break;
+            case R.id.B16astroL:
+                NUMEX = 15;
+                break;
+            case R.id.B17astroL:
+                NUMEX = 16;
+                break;
+            case R.id.B18astroL:
+                NUMEX = 17;
+                break;
+            case R.id.B19astroL:
+                NUMEX = 18;
+                break;
+            case R.id.B20astroL:
+                NUMEX = 19;
+                break;
+            case R.id.B21astroL:
+                NUMEX = 20;
+                break;
+            case R.id.B22astroL:
+                NUMEX = 21;
+                break;
+            case R.id.B23astroL:
+                NUMEX = 22;
+                break;
+            case R.id.B24astroL:
+                NUMEX = 23;
+                break;
+            case R.id.B25astroL:
+                NUMEX = 24;
+                break;
+            case R.id.B26astroL:
+                NUMEX = 25;
+                break;
+            case R.id.B27astroL:
+                NUMEX = 26;
+                break;
+            case R.id.B28astroL:
+                NUMEX = 27;
+                break;
             default:
                 break;
         }//Fin estructura switch
