@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:text="burro"
             android:onClick="checkBoxclick"
-            android:textSize="36sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             tools:text="burro"
             />
@@ -146,7 +146,7 @@
             android:layout_height="wrap_content"
             android:text="vurro"
             android:onClick="checkBoxclick"
-            android:textSize="36sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             tools:text="vurro"
             />

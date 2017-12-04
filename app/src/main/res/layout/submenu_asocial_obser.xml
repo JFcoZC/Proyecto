@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:numStars="3"
                 android:isIndicator="true"
-                android:theme="@style/RatingBar"/>
+                />
 
         </LinearLayout>
 
@@ -124,7 +124,6 @@
                 android:id="@+id/rb2astro2"
                 android:numStars="3"
                 android:isIndicator="true"
-                android:theme="@style/RatingBar"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

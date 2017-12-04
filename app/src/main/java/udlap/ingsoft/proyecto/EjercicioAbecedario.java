@@ -27,6 +27,9 @@ public class EjercicioAbecedario extends AppCompatActivity
     ImageButton btnNext;
     TextView txtView;
 
+    //Variable de control de los botones
+    boolean control = false;
+
     String[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ","O",
             "P", "Q", "R", "S", "T", "U", "V", "W" ,"X", "Y", "Z"};
 
@@ -106,7 +109,7 @@ public class EjercicioAbecedario extends AppCompatActivity
 
     }//Fin metodo onResume
     //----------------------------------------------------------------------------------------------
-    public void setProperties(int n)
+    void setProperties(int n)
     {
         ibt = (ImageView) findViewById(R.id.imageView);
         ibt.setImageResource(images[n]);
@@ -115,33 +118,51 @@ public class EjercicioAbecedario extends AppCompatActivity
         txtView.setText(alphabet[count]);
 
         mp.start();
+
     }//Fin metodo setProperties
     //----------------------------------------------------------------------------------------------
-    public void nextPrev(View v){
-        if (v == btnNext){
+    public void nextPrev(View v)
+    {
+
+        if (v == btnNext && control == false )
+        {
+            control = true;
+
             count++;
             if (count == 27) count =0;
             Log.d("eeeeeSIG",""+count);
             Log.d("eeeee",""+alphabet.length);
             setProperties(count);
             System.gc();
-        }else {
-            if (count == 0){
-                count = 27;
+        }else
+        {
+            if (count == 0 && control == false)
+            {
+                control = true;
+
+                count = 26;
                 Log.d("eeeee",""+count);
                 Log.d("eeeee",""+alphabet.length);
                 setProperties(count);
                 System.gc();
 
-            }else{
-                count--;
-                Log.d("eeeeePREV",""+count);
-                Log.d("eeeee",""+alphabet.length);
-                setProperties(count);
-                System.gc();
+            }else {
+                if(control == false)
+                {
+                    control = true;
+
+                    count--;
+                    Log.d("eeeeePREV", "" + count);
+                    Log.d("eeeee", "" + alphabet.length);
+                    setProperties(count);
+                    System.gc();
+                }
 
             }
         }
+
+        //Regresar a estado original
+        control = false;
     }
     //----------------------------------------------------------------------------------------------
     public void OnClick2(View v){
